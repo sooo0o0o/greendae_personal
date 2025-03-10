@@ -1,0 +1,583 @@
+/*
+    헤더, 메인, 푸터 기본 설정입니다.
+*/
+
+/* 폰트 설정*/
+@font-face {
+    font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
+    src: url('/greendae/font/NotoSansKR-Light.woff2') format('woff2'),
+         url('/greendae/font/NotoSansKR-Light.woff') format('woff'),
+         url('/greendae/font/NotoSansKR-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
+    src: url('/greendae/font/NotoSansKR-Regular.woff2') format('woff2'),
+         url('/greendae/font/NotoSansKR-Regular.woff') format('woff'),
+         url('/greendae/font/NotoSansKR-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
+    src: url('/greendae/font/NotoSansKR-Medium.woff2') format('woff2'),
+         url('/greendae/font/NotoSansKR-Medium.woff') format('woff'),
+         url('/greendae/font/NotoSansKR-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+*{
+    margin : 0px;
+    padding: 0px;
+    font : normal 16px 'Noto Sans KR', sans-serif;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration:  none;
+    color:  black;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+input, textarea{
+    outline: none;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+header > div:nth-child(1){
+    height: 27px;
+    background-color: #3F97F6;
+}
+
+header > div:nth-child(2){
+    height: 77px;
+}
+
+header > div > div{
+    width: 1200px;
+    height: 77px;
+    margin: 0 auto;
+}
+
+header > div > div > p{
+    float: right;
+    margin-top: 2px;
+} 
+
+header > div > div > p > a{
+    color: white;  
+    margin-left: 10px;
+}
+
+header > div:nth-child(2) img{
+    float: left;
+    margin-top: 10px;
+}
+
+header > div:nth-child(2) > div > nav{
+    float: right;
+    width: 660px;
+    height: 77px;
+}
+
+header > div:nth-child(2) > div > nav > ul > li{
+    float: right;
+    width: 16%;
+    height: 100%;
+}
+
+header > div:nth-child(2) > div > nav a{
+    margin-top: 25px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around; /* 항목 간 간격을 고르게 배분 */
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 77px; /* nav의 높이와 동일하게 설정 */
+}
+
+
+/*footer*/
+footer{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+footer > div:nth-child(1){
+    background-color: #1F2838;
+    height: 50px;
+}
+
+footer > div:nth-child(2){
+    background-color: #19202D;
+    height: 169px;
+}
+
+footer > div > div{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+footer li{
+    float: left;
+    width: 19.8%;
+    height: 100%;
+    box-sizing: border-box;
+}
+footer ul li a{
+    margin-top: 15px;
+    display: block;
+    color: white;
+    width: 100%;
+    text-align: center;
+    /*line-height: 50px;*/
+    height: 23px;
+    border-left: 1px solid #A7A7A9;
+}
+
+footer > div > div > ul > li:nth-child(5) > a{
+    border-right: 1px solid #A7A7A9;
+}
+
+footer > div:nth-child(2) > div{
+    height: 104px;
+    padding-top: 40px;
+}
+
+
+footer > div:nth-child(2) > div img{
+    float: left;
+}
+
+footer > div:nth-child(2) > div p{
+    color: #A8A9AC;
+    margin-left: 10px;
+    float: left;
+    font-size: 14px;
+}
+
+footer > div:nth-child(2) > div > div{
+    float: right;
+    background-color: #121721;
+    width: 200px;
+    height: 36px;
+    padding-top: 10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+footer > div:nth-child(2) > div > div > p{
+ 
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+main{
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.main_slider{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.main_slider > div:nth-child(1){
+    width: 100%;
+    height: 560px;
+    background-image: url("/greendae/images/bg-main-vi01.jpg"); 
+    background-position: center; /* 이미지가 중앙에 오도록 설정 */
+    background-size: cover; /* 이미지를 영역에 맞게 덮도록 설정 */
+    text-align: center;
+}
+
+.main_slider div:nth-child(1) p{
+    display: inline-block;
+    color: white;
+}
+
+.main_slider div:nth-child(1) p:nth-child(1){
+    font-size: 24px;
+    font-weight: 350;
+}
+
+.main_slider div:nth-child(1) p:nth-of-type(2){
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 78px;
+}
+
+.main_slider div:nth-child(1) p:nth-of-type(3){
+    margin-top: 10px;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.main_slider> div:nth-child(1) > a > div:nth-child(1){
+    width: 210px;
+    height: 48px;
+    border: 1px solid white;
+    font: 16px;
+    line-height: 48px;
+    margin: 48px auto;
+}
+
+.main_intro{
+    width: 100%;
+    height: 580px;
+    background-color: #F3F5F9;
+}
+
+.main_helper{
+    width: 100%;
+    height: 152px;
+    background-image: url('/greendae/images/bg-main-banner.gif');
+}
+
+.main_new{
+    width: 100%;
+    height: 337px;
+}
+
+.main_intro > div:nth-child(1){
+    box-sizing: border-box;
+    position: absolute;
+    top: 455px;
+    width: 100%;
+    height: 350px;
+}
+
+.main_intro > div:nth-child(1) > div{
+    margin: 0 auto; 
+    height: 350px;
+    width: 1200px;
+}
+
+.main_academic{
+    width: 600px;
+    height: 290px;
+    float: left;
+    background-color: white ;
+}
+
+.main_notice{
+    width: 600px;
+    height: 290px;
+    float: left;
+    background-color: #3F97F6;
+}
+
+.main_intro > div > div:nth-child(1) > div{
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.main_intro > div > div:nth-child(1) > div img{
+    float: right;
+}
+
+.main_intro > div > div:nth-child(1) > div > div> span{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.main_intro_title_left{
+    width: 520px;
+    height: 42px;
+    color: #3F97F6;
+    
+}
+
+.main_intro_title_right{
+    width: 520px;
+    height: 42px;
+    color: white;
+    
+}
+
+.main_intro_title_left{
+    border-bottom: 1px solid #3F97F6;
+}
+
+.main_intro_title_right{
+    border-bottom: 1px solid white;
+}
+
+
+.main_intro > div > div:nth-child(1) table tr td:nth-child(1){
+    width: 435px;
+    height: 31px;
+}
+
+.main_intro > div > div:nth-child(1) table tr td:nth-child(1) span{
+    float: left;
+}
+
+.main_intro > div > div:nth-child(1) table tr td:nth-child(1) img{
+    float: left;
+    margin-top: 4px;
+    margin-left: 5px;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+
+}
+
+
+.intro_left_table tr td:nth-child(2){
+    width: 80px;
+    height: 31px;
+    color: #888888;
+}
+
+.intro_right_table{
+    color: white;
+}
+
+.intro_right_table tr td:nth-child(2){
+    color: white;
+}
+
+.photo_gallery{
+    height: 300px;
+}
+
+.photo_gallery p{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #3F97F6;
+}
+
+.photo_gallery > div {
+    margin-top: 30px;
+    float: left;
+    width: 285px;
+    height: 220px;
+    
+}
+
+.photo_gallery > div:nth-of-type(1){
+    background-image: url('/greendae/images/gallary_sample1.jpg');
+    background-size: cover; 
+    position: relative;
+    margin-right: 20px;
+}
+
+.photo_gallery > div:nth-of-type(2){
+    background-image: url('/greendae/images/gallary_sample2.jpg');
+    background-size: cover; 
+    position: relative;
+    margin-right: 20px;
+}
+
+.photo_gallery > div:nth-of-type(3){
+    background-image: url('/greendae/images/gallary_sample3.jpg');
+    background-size: cover; 
+    position: relative;
+    margin-right: 20px;
+}
+
+.photo_gallery > div:nth-of-type(4){
+    background-image: url('/greendae/images/gallary_sample4.png');
+    background-size: cover; 
+    position: relative;
+}
+
+
+.photo_gallery > div > div{
+    position: absolute;
+    bottom: 0;
+    background: rgba(2, 130, 213, 0.75);
+    width: 285px;
+    height: 53px;
+    box-sizing: border-box;
+}
+
+.photo_gallery > div > div > p{
+    margin-top: 14px;
+    text-align: center;
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.helper{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.helper >  .helper_txt1{
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+
+.helper >  .helper_txt2{
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+    color: #FFFFFF;
+}
+
+.helper_btn{
+    width: 182px;
+    height: 42px;
+    border: 1px solid #FFFFFF;
+    position: absolute;
+    right: 0px;
+    top: 55px;
+    box-sizing: border-box;
+    padding-top: 8px;
+    text-align: center;
+    color: white;
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+
+.main_new > .left_new{
+    float: left;
+    background-color: #F3F5F9;
+    box-sizing: border-box;
+    width: 50%;
+    height: 337px;
+}
+
+.main_new > .left_new > div{
+    width: 600px;
+    height: 100%;
+    float: right;
+    box-sizing: border-box;
+    padding-right: 40px;
+}
+
+.main_new > .right_new{
+    float: left;
+    width: 50%;
+    height: 337px;
+}
+
+.main_new > .right_new > div{
+    width: 600px;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+.title{
+    margin-top: 60px;
+    border-bottom: 2px solid #3F97F6;
+    height: 42px;
+}
+
+.title > a > img{
+    float: right;
+}
+
+.title span:nth-of-type(1){
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.new_table tr td:nth-of-type(1){
+    width: 475px;
+    height: 31px;
+}
+
+.smart_link{
+    border-bottom: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    height: 170px;
+}
+
+.smart_link > div{
+    margin-top: 25px;
+    width: 100px;
+    float: left;
+    margin-right: 15px;
+}
+
+.smart_link > div:nth-last-child(1){
+    margin-right: 0px;
+}
+
+.smart_link > div > div{
+    width: 100px;
+}
+
+.smart_link > div > div > div{
+    width: 100px;
+    height: 100px;
+    background-color: #9ABEDF;
+    position: relative;
+    border-radius: 50%;
+}
+
+.smart_link > div > div > div img{
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.smart_link p{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    
+}

@@ -1,0 +1,322 @@
+/*
+    헤더, 메인, 푸터 기본 설정입니다.
+*/
+
+/* 폰트 설정*/
+@font-face {
+    font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
+    src: url('/greendae/font/NotoSansKR-Light.woff2') format('woff2'),
+         url('/greendae/font/NotoSansKR-Light.woff') format('woff'),
+         url('/greendae/font/NotoSansKR-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
+    src: url('/greendae/font/NotoSansKR-Regular.woff2') format('woff2'),
+         url('/greendae/font/NotoSansKR-Regular.woff') format('woff'),
+         url('/greendae/font/NotoSansKR-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR'; /* 원하는 폰트 이름 */
+    src: url('/greendae/font/NotoSansKR-Medium.woff2') format('woff2'),
+         url('/greendae/font/NotoSansKR-Medium.woff') format('woff'),
+         url('/greendae/font/NotoSansKR-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+*{
+    margin : 0px;
+    padding: 0px;
+    font : normal 16px 'Noto Sans KR', sans-serif;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration:  none;
+    color:  black;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+input, textarea{
+    outline: none;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+header > div:nth-child(1){
+    height: 27px;
+    background-color: #3F97F6;
+}
+
+header > div:nth-child(2){
+    height: 77px;
+}
+
+header > div > div{
+    width: 1200px;
+    height: 77px;
+    margin: 0 auto;
+}
+
+header > div > div > p{
+    float: right;
+    margin-top: 2px;
+} 
+
+header > div > div > p > a{
+    color: white;  
+    margin-left: 10px;
+}
+
+header > div:nth-child(2) img{
+    float: left;
+    margin-top: 10px;
+}
+
+header > div:nth-child(2) > div > nav{
+    float: right;
+    width: 660px;
+    height: 77px;
+}
+
+header > div:nth-child(2) > div > nav > ul > li{
+    float: right;
+    width: 16%;
+    height: 100%;
+}
+
+header > div:nth-child(2) > div > nav a{
+    margin-top: 25px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around; /* 항목 간 간격을 고르게 배분 */
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 77px; /* nav의 높이와 동일하게 설정 */
+}
+
+
+/*footer*/
+footer{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+footer > div:nth-child(1){
+    background-color: #1F2838;
+    height: 50px;
+}
+
+footer > div:nth-child(2){
+    background-color: #19202D;
+    height: 169px;
+}
+
+footer > div > div{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+footer li{
+    float: left;
+    width: 19.8%;
+    height: 100%;
+    box-sizing: border-box;
+}
+footer ul li a{
+    margin-top: 15px;
+    display: block;
+    color: white;
+    width: 100%;
+    text-align: center;
+    /*line-height: 50px;*/
+    height: 23px;
+    border-left: 1px solid #A7A7A9;
+}
+
+footer > div > div > ul > li:nth-child(5) > a{
+    border-right: 1px solid #A7A7A9;
+}
+
+footer > div:nth-child(2) > div{
+    height: 104px;
+    padding-top: 40px;
+}
+
+
+footer > div:nth-child(2) > div img{
+    float: left;
+}
+
+footer > div:nth-child(2) > div p{
+    color: #A8A9AC;
+    margin-left: 10px;
+    float: left;
+    font-size: 14px;
+}
+
+footer > div:nth-child(2) > div > div{
+    float: right;
+    background-color: #121721;
+    width: 200px;
+    height: 36px;
+    padding-top: 10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+footer > div:nth-child(2) > div > div > p{
+ 
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+
+
+/* 메인 */
+
+main{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.background{
+    width: 100%;
+    height: 42px;
+    background: #ECF2F6;
+    box-sizing: border-box;
+}
+
+.background > div:nth-child(1){
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.background span{
+    float: right;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.background img{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.content{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content > .sidebar{
+    width: 210px;
+    height: auto;
+    float: left;
+}
+
+.side_content{
+    margin-top: 62px;
+}
+
+.side_title p{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px; 
+}
+
+.side_title{
+    border-bottom: 1px solid black; 
+    height: 54px;
+}
+
+.side_content > a > div{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    padding: 20px;
+    font-weight: 350;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.choice{
+    background-color: #3F97F6;
+    color: white;
+}
+
+.main_content{
+    width: 990px;
+    height: auto;
+    box-sizing: border-box;
+    padding-top: 62px;
+    padding-left: 60px;
+    float: right;
+}
+
+.main_title{
+    border-bottom: 1px solid black; 
+    height: 56px;
+}
+
+.main_title p{
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 44px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.main_content_detail{
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+}
+
+
+
