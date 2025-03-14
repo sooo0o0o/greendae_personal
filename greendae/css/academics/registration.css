@@ -1,0 +1,137 @@
+        .green_txt{
+            color: blue;
+            font-weight: bold;
+        }
+        h5 {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            color: #145074;
+        }
+        .main_content > div > h5::before{
+        content: url('/greendae/images/bullet-h4.png');
+        }
+        .main_content > div:nth-child(2) {
+            margin-top: 40px;
+        }
+        .main_content > div:nth-child(3) {
+            margin-top: 30px;
+        }
+        .main_content > div:nth-child(4) {
+            margin-top: 30px;
+        }
+        .main_content > div:nth-child(5) {
+            margin-top: 30px;
+        }
+        .date p {
+            margin-top: 5px;
+            color: #666666;
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.5px;
+            vertical-align: middle;
+        }
+        .credit p{
+            margin-top: 5px;
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.5px;
+            vertical-align: middle;
+        }
+        .credit_classes table {
+            margin-top: 10px;
+            border-top: 2px solid #071F4B;
+            width: 930px;
+            height: 284px;
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.5px;
+            vertical-align: middle;
+            border-spacing: 0px;
+        }
+        .credit_classes th{
+            width: 926px;
+            height: 50px;
+            top: 4px;
+            left: 2px;
+            background-color: #F4f8fc;
+        }
+        .credit_classes th:nth-child(1){
+            width: 616.66px;
+            height: 50px;
+            border-bottom: 1px solid #dedede;
+            border-right: 1px solid #dedede;
+        }
+        .credit_classes th:nth-child(2){
+            width: 307.34px;
+            height: 50px;
+            border-bottom: 1px solid #dedede;
+        }
+        .credit_classes tr:nth-child(2) > td{
+            height: 60px;
+        }
+        .credit_classes tr:nth-child(3) > td{
+            height: 60px;
+        }
+        .credit_classes td{
+
+            height: 50px;
+            border-bottom: 1px solid #dedede;
+            text-align: center;
+            color: #333333;
+        }
+        .credit_classes td:nth-child(1){
+            width: 307.37px;
+            height: 122px;
+        }
+        .credit_classes td:nth-child(2){
+            width: 307.37px;
+            height: 122px;
+            border-right: 1px solid #dedede;
+            border-left: 1px solid #dedede;
+        }
+        .credit_classes td:nth-child(3){
+            padding-left: 15px;
+            padding-right: 20px;
+            width: 307.34px;
+            height: 122px;
+        }
+        .credit_classes p{
+            color: #333333;
+            font-weight: 350;
+            font-size: 16px;
+        }
+        .credit_classes p:nth-child(3){
+            margin-top: 10px;
+        }
+        .register p{
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.5px;
+            vertical-align: middle;
+        }
+        .register p:nth-child(2){
+            margin-top: 10px;
+        }
+        .register_btn{
+            width: 150.33px;
+            height: 47px;
+            top: 986px;
+            left: 60px;
+            text-align: center;
+            border: 1px solid #6d6d6d;
+        }
+        .register_btn p{
+            margin-top: 15px;
+            font-weight: 350;
+            size: 16px;
+            line-height: 100%;
+            letter-spacing: 0;
+            vertical-align: middle;
+        }

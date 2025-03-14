@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>샘플</title>
+    <link rel="stylesheet" href="/greendae/css/layout/layout.css">
+    <link rel="stylesheet" href="/greendae/css/support/register_list.css">
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <header>
+            <div>
+                <div>
+                    <p>
+                        <a href="#">HOME |</a>
+                        <a href="#">사이드맵 |</a>
+                        <a href="#">로그인 |</a>
+                        <a href="#">학생지원</a>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#">
+                        <img src="/greendae/images/header_logo.png" alt="그린대학교">
+                    </a>
+                    <nav> 
+                        <ul>
+                            <li><a href="#">대학소개</a></li>
+                            <li><a href="#">입학안내</a></li>
+                            <li><a href="#">대학·대학원</a></li>
+                            <li><a href="#">학사안내</a></li>
+                            <li><a href="#">대학생활</a></li>
+                            <li><a href="#">커뮤니티</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/greendae/images/ico-home.png" alt="HOME">
+                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        학생지원   
+                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">수강신청내역</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <aside class="sidebar">
+                    <article class="side_content">             
+                        <div class="side_title">
+                            <p>학생지원</p>
+                        </div>            
+                        <a href="#">
+                            <div>수강신청</div>
+                        </a>
+                        <a href="#">
+                            <div>수강신청내역</div>
+                        </a>
+                        <a href="#">
+                            <div>교과과정</div>
+                        </a>
+                        <a href="#">
+                            <div>성적조회</div>
+                        </a>
+                        <a href="#">
+                            <div>학적</div>
+                        </a>
+                    </article>
+                </aside>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>수강신청내역</p>
+                    </div>
+                    <div class="semester">
+                        <select name="semester_year" id="semester_year" onchange="updateSemester">
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                        <span style="color: #666666;">년</span>
+                        <select name="semester_quarter" id="semester_quarter" onchange="updateCourseList()">
+                            <script>
+                                const semesterData = {
+                                    "2025": ["1", "2"],
+                                    "2024": ["1", "2"],
+                                    "2023": ["1", "2"]
+                                };
+
+                                function updateSemester(){
+                                    let year = document.getElementById("semester_year").value;  //선택 년도
+                                    let semesterSelect = document.getElementById("semester_quarter"); //학기
+                                    semesterSelect.innerHTML = "";  //기존 옵션 삭제
+                                    
+                                    //새로운 학기 옵션
+                                    semesterData[year].forEach(semester => {
+                                        let option = document.createElement("option");
+                                        option.value = semester;
+                                        option.textContent = semester;
+                                        semesterSelect.appendChild(option);
+                                    });
+                                }
+                                window.onload = updateSemester;
+                            </script>
+                        </select>
+                        <span style="color: #666666;">학기</span>
+                    </div>
+                    <div class="total">
+                        <p>신청과목수 #과목, 총 신청 학점 ##학점</p>
+                    </div>
+                    <div class="register_list">
+                        <table class="list">
+                            <thead>
+                                <tr>
+                                    <th>교과목코드</th>
+                                    <th>과목명</th>
+                                    <th>대상학년</th>
+                                    <th>담당교수</th>
+                                    <th>학점</th>
+                                    <th>이수구분</th>
+                                    <th>강의시간</th>
+                                    <th>강의장</th>
+                                    <th>관리</th>
+                                </tr>
+                            </thead>
+                            <tbody id="course_list">
+                                <tr style="text-align: center;">
+                                    <td colspan="9">수강신청내역이 없습니다</td>
+                                </tr>
+                                <tr>
+                                    <td>830003</td>
+                                    <td>자바 프로그래밍</td>
+                                    <td>2학년</td>
+                                    <td>김자바</td>
+                                    <td>3</td>
+                                    <td>전공</td>
+                                    <td>화 1,2,3</td>
+                                    <td>컴퓨터실</td>
+                                    <td>
+                                        <input class="btn" type="submit" value="취소">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <footer>
+            <div>
+                <div>
+                    <ul>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">통합정보시스템</a></li>
+                        <li><a href="#">학사일정</a></li>
+                        <li><a href="#">주요인원 연락처</a></li>
+                        <li><a href="#">교내공지사항</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="/greendae/images/footer_logo.png" alt="그린대학교">
+                    <p>
+                        그린대학교 <br>
+                        [12345] 부산광역시 부산진구 부전대로 123 그린대학교 / 대표전화 : 051-123-1000 / <br>
+                        입학안내 : 051-123-1302 팩스 : 051-123-3333
+
+                        <br><br>
+                        copyright ©Green University All rights reserved.
+                    </p>
+                    <div>
+                        <p>주요사이트  
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▾</p>
+                    </div>              
+                </div>
+            </div>
+        </footer>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>
