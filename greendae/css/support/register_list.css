@@ -1,69 +1,78 @@
-        .semester {
-            margin-top: 30px;
-            float: left;
-        }
-        #semester_year {
-            width: 100px;
-            height: 40px;
-            font-size: 15px;
-            border: 1px solid #dedede;
-            color: #666666;
-        }
-        #semester_quarter {
-            width: 50px;
-            height: 40px;
-            font-size: 15px;
-            border: 1px solid #dedede;
-            color: #666666;
-        }
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        .total p {
-            float: right;
-            margin-top: 40px;
-            width: 300px;
-            height: 21px;
-            font-weight: 550;
-            font-size: 18px;
-        }
-        .register_list {
-            margin-top: 80px;
-        }
-        .register_list table {
-            width: 930px;
-            min-height: 151px;
-            border-spacing: 0;
-            border-top: 2px solid #000000;
-        }
-        .register_list th {
-            height: 85px;
-            width: 98.8px;
-            font-weight: 550;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0%;
-            border-bottom: 1px solid #a3a3a3;
-            background-color: #fafafa;
-        }
-        .register_list td {
-            text-align: center;
-            height: 66px;
-            color: #333333;
-            border-bottom: 1px solid #d8d8d8;
-        }
-        .register_list th:nth-child(2) {
-            width: 139.5px;
-            height: 66px;
-        }
-        .btn {
-            width: 37.8px;
-            height: 29px;
-            top: 18px;
-            left: 30.5px;
-            font-weight: 350;
-            font-size: 14px;
-            line-height: 100%;
-            letter-spacing: 0%;
-            background-color: #942626;
-            color: #ffffff;
-            border: none;
-        }
+.sidebar a:hover {
+    background-color: #3f97f6;
+    color: white;
+}
+.semester {
+    margin-top: 30px;
+    float: left;
+}
+#semester_year {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #dedede;
+    color: #666666;
+}
+#semester_quarter {
+    width: 50px;
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #dedede;
+    color: #666666;
+}
+.total p {
+    float: right;
+    margin-top: 40px;
+    width: 300px;
+    height: 21px;
+    font-weight: 550;
+    font-size: 18px;
+}
+.register_list {
+    margin-top: 80px;
+}
+.register_list table {
+    width: 930px;
+    min-height: 151px;
+    border-spacing: 0;
+    border-top: 2px solid #000000;
+}
+.register_list th {
+    height: 85px;
+    width: 98.8px;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    border-bottom: 1px solid #a3a3a3;
+    background-color: #fafafa;
+}
+.register_list td {
+    text-align: center;
+    height: 66px;
+    color: #333333;
+    border-bottom: 1px solid #d8d8d8;
+}
+.register_list th:nth-child(2) {
+    width: 139.5px;
+    height: 66px;
+}
+.btn {
+    width: 37.8px;
+    height: 29px;
+    top: 18px;
+    left: 30.5px;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    background-color: #942626;
+    color: #ffffff;
+    border: none;
+}

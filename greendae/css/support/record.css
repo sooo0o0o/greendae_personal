@@ -1,0 +1,82 @@
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #3f97f6;
+            color: white;
+        }
+
+        h5 {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            color: #145074;
+        }
+        .main_content > div > h5::before {
+            content: url('/greendae/images/bullet-h4.png');
+        }
+        h5:nth-child(1){
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        h5:nth-child(3){
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        h5:nth-last-child(2){
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        table{
+            border-top: 2px solid #071F4b;
+            width: 930px;
+            text-align: center;
+            border-spacing: 0;
+        }
+        table.information {
+            height: 202px;
+            top: 178px;
+            left: 60px;
+        }
+        .information td {
+            width: 186px;
+        }
+        .credit td {
+            width: 116.25;
+        }
+        .credit_total td {
+            width: 93px;
+        }
+        th {
+            width: 186px;
+            height: 50px;
+            border-left: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+            background-color: #f4f8fc;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.5px;
+            vertical-align: middle;
+        }
+        td:nth-child(1){
+            border-left: none;
+        }
+        th:nth-child(1){
+            border-left: none;
+        }
+        td {
+            height: 50px;
+            font-weight: 350;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.5px;
+            border-left: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+            color: #666666;
+        }
