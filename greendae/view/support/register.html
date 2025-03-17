@@ -6,8 +6,64 @@
     <title>샘플</title>
     <link rel="stylesheet" href="/greendae/css/layout/layout.css">
     <link rel="stylesheet" href="/greendae/css/support/register.css">
+    <style>
+                /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4); /* 배경색을 약간 투명하게 설정 */
+            padding-top: 60px;
+        }
 
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            height: 150px;
+        }
 
+        .modal-header {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 40px;
+        }
+
+        .modal-footer button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .cancel-btn {
+            background-color: #d8d8d8;
+        }
+
+        .confirm-btn {
+            background-color: #3f97f6;
+            color: white;
+        }
+
+        .confirm-btn:hover {
+            background-color: #092e71;
+        }
+    </style>
 </head>
 <body>
     <div id="wrapper">
@@ -124,11 +180,53 @@
                                 <td>12/30</td>
                                 <td> </td>
                                 <td>
-                                    <input class="submit" type="submit" value="신청">
+                                    <button class="submit">신청</button>
                                 </td>
                             </tr>
                         </table>
                     </div>
+                    <div id="confirmationModal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                수강신청 확인
+                            </div>
+                            <div class="modal-body">
+                                <p>해당 과목을 수강신청 하시겠습니까?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="cancel-btn" id="cancelBtn">취소</button>
+                                <button class="confirm-btn" id="confirmBtn">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        // 버튼 클릭 시 모달 열기
+                        document.querySelectorAll('.submit').forEach(button => {
+                            button.addEventListener('click', function() {
+                                document.getElementById('confirmationModal').style.display = "block"; // 모달 열기
+                            });
+                        });
+                
+                        // 취소 버튼 클릭 시 모달 닫기
+                        document.getElementById('cancelBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                        });
+                
+                        // 확인 버튼 클릭 시 알림 메시지
+                        document.getElementById('confirmBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                            alert("수강신청이 완료되었습니다.");
+                        });
+                
+                        // 모달 외부 클릭 시 모달 닫기
+                        window.addEventListener('click', function(event) {
+                            if (event.target == document.getElementById('confirmationModal')) {
+                                document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                            }
+                        });
+                    </script>
+                
                     <div class="page">
                         <a>1</a>
                     </div>
