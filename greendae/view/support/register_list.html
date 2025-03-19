@@ -148,12 +148,53 @@
                                     <td>화 1,2,3</td>
                                     <td>컴퓨터실</td>
                                     <td>
-                                        <input class="btn" type="submit" value="취소">
+                                        <button class="cancel">취소</button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <div id="confirmationModal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                수강 취소신청 확인
+                            </div>
+                            <div class="modal-body">
+                                <p>해당 과목을 취소 하시겠습니까?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="cancel-btn" id="cancelBtn">취소</button>
+                                <button class="confirm-btn" id="confirmBtn">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        // 버튼 클릭 시 모달 열기
+                        document.querySelectorAll('.cancel').forEach(button => {
+                            button.addEventListener('click', function() {
+                                document.getElementById('confirmationModal').style.display = "block"; // 모달 열기
+                            });
+                        });
+                
+                        // 취소 버튼 클릭 시 모달 닫기
+                        document.getElementById('cancelBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                        });
+                
+                        // 확인 버튼 클릭 시 알림 메시지
+                        document.getElementById('confirmBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                            alert("수강신청이 취소되었습니다.");
+                        });
+                
+                        // 모달 외부 클릭 시 모달 닫기
+                        window.addEventListener('click', function(event) {
+                            if (event.target == document.getElementById('confirmationModal')) {
+                                document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                            }
+                        });
+                    </script>
                 </article>
             </section>
         </main>
