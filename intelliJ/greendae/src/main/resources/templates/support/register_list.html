@@ -60,20 +60,20 @@
                     <article class="side_content">             
                         <div class="side_title">
                             <p>학생지원</p>
-                        </div>            
-                        <a href="#">
+                        </div>
+                        <a th:href="@{/support/register}">
                             <div>수강신청</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/register_list}">
                             <div>수강신청내역</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/classes}">
                             <div>교과과정</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/grade}">
                             <div>성적조회</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/record}">
                             <div>학적</div>
                         </a>
                     </article>
@@ -135,20 +135,20 @@
                                 </tr>
                             </thead>
                             <tbody id="course_list">
-                                <tr style="text-align: center;">
+                                <tr th:if="${#lists.isEmpty(registeredLectures)}" style="text-align: center;">
                                     <td colspan="9">수강신청내역이 없습니다</td>
                                 </tr>
-                                <tr>
-                                    <td>830003</td>
-                                    <td>자바 프로그래밍</td>
-                                    <td>2학년</td>
-                                    <td>김자바</td>
-                                    <td>3</td>
-                                    <td>전공</td>
-                                    <td>화 1,2,3</td>
-                                    <td>컴퓨터실</td>
+                                <tr th:each="lecture: ${registeredLectures}">
+                                    <td>[[${lecture.lecNo}]]</td>
+                                    <td>[[${lecture.lecName}]]</td>
+                                    <td>[[${lecture.lecGrade}]]</td>
+                                    <td>[[${lecture.lecProName}]]</td>
+                                    <td>[[${lecture.lecCredit}]]</td>
+                                    <td>[[${lecture.lecCate}]]</td>
+                                    <td>[[${lecture.lecTime}]]</td>
+                                    <td>[[${lecture.lecRoom}]]</td>
                                     <td>
-                                        <button class="cancel">취소</button>
+                                        <button class="cancel" th:data-lecNo="${lecture.lecNo}" onclick="cancelRegistration(this)" >취소</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -194,6 +194,36 @@
                                 document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
                             }
                         });
+                        function cancelRegistration(button) {
+                            const lecNo = button.getAttribute("data-lecNo"); // 강의 코드 가져오기
+                            console.log("취소할 강의 코드:", lecNo);
+
+                            if (!confirm("정말 수강을 취소하시겠습니까?")) {
+                                return;
+                            }
+
+                            fetch("/support/cancel", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({ lecNo: lecNo }),
+                            })
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error("수강 신청 취소 실패");
+                                    }
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    alert("수강 취소 완료: " + data.message);
+                                    location.reload(); // 새로고침하여 목록 업데이트
+                                })
+                                .catch(error => {
+                                    console.error("Error:", error);
+                                    alert("수강 취소 중 오류 발생");
+                                });
+                        }
                     </script>
                 </article>
             </section>

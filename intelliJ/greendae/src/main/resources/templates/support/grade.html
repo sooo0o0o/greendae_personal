@@ -60,20 +60,20 @@
                     <article class="side_content">             
                         <div class="side_title">
                             <p>학생지원</p>
-                        </div>            
-                        <a href="#">
+                        </div>
+                        <a th:href="@{/support/register}">
                             <div>수강신청</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/register_list}">
                             <div>수강신청내역</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/classes}">
                             <div>교과과정</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/grade}">
                             <div>성적조회</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/record}">
                             <div>학적</div>
                         </a>
                     </article>
@@ -113,18 +113,18 @@
                                 </tr>
                             </thead>
                             <tbody id="course_list">
-                                <tr style="text-align: center;">
+                                <tr th:if="${#lists.isEmpty(registeredLectures)}" style="text-align: center;">
                                     <td colspan="9">수강신청내역이 없습니다</td>
                                 </tr>
-                                <tr>
-                                    <td>830003</td>
-                                    <td>자바 프로그래밍</td>
-                                    <td>2학년</td>
-                                    <td>김자바</td>
-                                    <td>전공</td>
-                                    <td>99.0</td>
-                                    <td>A+</td>
-                                    <td>3</td>
+                                <tr th:each="lecture: ${registeredLectures}">
+                                    <td>[[${lecture.lecNo}]]</td>
+                                    <td>[[${lecture.lecName}]]</td>
+                                    <td>[[${lecture.lecGrade}]]</td>
+                                    <td>[[${lecture.lecProName}]]</td>
+                                    <td>[[${lecture.lecCate}]]</td>
+                                    <td>[[${lecture.regTotalScore}]]</td>
+                                    <td>[[${lecture.regGrade}]]</td>
+                                    <td>[[${lecture.regCredit}]]</td>
                                     <td>
                                         <button id="btn_details" class="details" >상세확인</button>
                                     </td>
@@ -175,7 +175,52 @@
                 </article>
             </section>
         </main>
-        <script src="script.js"></script>
+        <script>
+            // 모달 관련 스크립트
+            document.querySelectorAll('.btn_details').forEach(button => {
+                button.onclick = function() {
+                    document.getElementById('details').style.display = "block";
+                }
+            });
+
+            document.querySelectorAll('.close').forEach(closeBtn => {
+                closeBtn.onclick = function() {
+                    document.getElementById('details').style.display = "none";
+                }
+            });
+
+            window.onclick = function(event) {
+                if (event.target == document.getElementById('details')) {
+                    document.getElementById('details').style.display = "none";
+                }
+            };
+
+            // 학기 선택 변경 시 학기 목록 업데이트
+            const semesterData = {
+                "2025": ["1", "2"],
+                "2024": ["1", "2"],
+                "2023": ["1", "2"]
+            };
+
+            function updateSemester(event) {
+                let year = event.target.value;  // 선택된 년도
+                let semesterSelect = document.getElementById("semester_quarter"); // 학기 선택
+                semesterSelect.innerHTML = "";  // 기존 옵션 삭제
+
+                // 새로운 학기 옵션 추가
+                semesterData[year].forEach(semester => {
+                    let option = document.createElement("option");
+                    option.value = semester;
+                    option.textContent = semester;
+                    semesterSelect.appendChild(option);
+                });
+            }
+
+            // 페이지 로딩 시 학기 정보 업데이트
+            window.onload = function() {
+                updateSemester({ target: document.getElementById("semester_year") });
+            };
+        </script>
         <!-- 메인 끝-->
         <!-- 푸터 시작작-->
         <footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>샘플</title>
+    <title>수강신청</title>
     <link rel="stylesheet" href="/greendae/css/layout/layout.css">
     <link rel="stylesheet" href="/greendae/css/support/register.css">
 </head>
@@ -60,19 +60,19 @@
                         <div class="side_title">
                             <p>학생지원</p>
                         </div>            
-                        <a href="#">
+                        <a th:href="@{/support/register}">
                             <div>수강신청</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/register_list}">
                             <div>수강신청내역</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/classes}">
                             <div>교과과정</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/grade}">
                             <div>성적조회</div>
                         </a>
-                        <a href="#">
+                        <a th:href="@{/support/record}">
                             <div>학적</div>
                         </a>
                     </article>
@@ -90,7 +90,6 @@
                                 <option value="classification">구분</option>
                                 <option value="code">코드</option>
                                 <option value="class_name">과목명</option>
-                                <option value="credit">학점</option>
                                 <option value="professor">담당교수</option>
                             </select>
                             <input class="type" type="text" name="keyword" placeholder=" 검색어를 입력해주세요">
@@ -111,18 +110,18 @@
                                 <th>비고</th>
                                 <th>신청</th>
                             </tr>
-                            <tr>
-                                <td>컴퓨터공학</td>
-                                <td>전공</td>
-                                <td>1</td>
-                                <td>830001</td>
-                                <td>컴퓨터과학개론</td>
-                                <td>3</td>
-                                <td>김컴공</td>
-                                <td>12/30</td>
+                            <tr th:each="lecture : ${lectureDTOList} ">
+                                <td>[[${lecture.lecClass}]]</td>
+                                <td>[[${lecture.lecCate}]]</td>
+                                <td>[[${lecture.lecGrade}]]</td>
+                                <td>[[${lecture.lecNo}]]</td>
+                                <td>[[${lecture.lecName}]]</td>
+                                <td>[[${lecture.lecCredit}]]</td>
+                                <td>[[${lecture.lecProName}]]</td>
+                                <td>[[${lecture.lecStdNo}]]</td>
                                 <td> </td>
                                 <td>
-                                    <button class="submit">신청</button>
+                                    <button class="submit" th:data-lecNo="${lecture.lecNo}" onclick="registerLecture(this)">신청</button>
                                 </td>
                             </tr>
                         </table>
@@ -167,6 +166,32 @@
                                 document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
                             }
                         });
+
+                        function registerLecture(button) {
+                            const lecNo = button.getAttribute("data-lecNo");    //강의 코드 가져오기
+                            console.log("신청할 강의 코드 : ", lecNo);
+
+                            fetch("/support/register", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({ lecNo:lecNo }),
+                            })
+                                .then(response => {
+                                    if(!response.ok){
+                                        throw new Error("수강 신청 실패");
+                                    }
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    alert("수강 신청 완료: " + data.message);
+                                })
+                                .catch(error => {
+                                    console.errer("Error:", error);
+                                    alert("수강 신청 중 오류 발생");
+                                })
+                        }
                     </script>
                 
                     <div class="page">
