@@ -1,0 +1,682 @@
+2025-03-20T09:47:49.004+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:47:49.008+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:47:49.054+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-20T09:47:49.054+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-20T09:47:49.614+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:47:49.627+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:47:49.737+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:47:50.080+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:47:50.091+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:47:50.091+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:47:50.129+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:47:50.129+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1075 ms
+2025-03-20T09:47:50.252+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:47:50.292+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-20T09:47:50.327+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:47:50.564+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:47:50.589+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-20T09:47:50.798+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55042354
+2025-03-20T09:47:50.800+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-20T09:47:50.839+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:47:50.854+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:47:51.130+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:47:51.134+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:47:51.169+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:47:51.192+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:47:51.512+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c5e1f57f-4564-4dcb-a467-e7ec5bba73c8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:47:51.523+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:47:51.649+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:47:51.674+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:47:51.681+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 3.431 seconds (process running for 3.967)
+2025-03-20T09:48:15.596+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:48:15.596+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:48:15.597+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T09:51:58.507+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:51:58.511+09:00  INFO 2796 --- [greendae_personal] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:51:58.574+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:51:58.578+09:00  INFO 2796 --- [greendae_personal] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:51:58.581+09:00  INFO 2796 --- [greendae_personal] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-20T09:51:58.585+09:00  INFO 2796 --- [greendae_personal] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-20T09:51:58.656+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:51:58.656+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:51:58.844+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:51:58.846+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:51:58.888+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:51:58.937+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:51:58.938+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:51:58.938+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:51:58.954+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:51:58.955+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 295 ms
+2025-03-20T09:51:58.984+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:51:58.988+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:51:59.000+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:51:59.001+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-03-20T09:51:59.012+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44581dfd
+2025-03-20T09:51:59.012+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-03-20T09:51:59.013+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:51:59.013+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:51:59.030+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:51:59.031+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:51:59.046+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:51:59.056+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:51:59.148+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ab0afd87-36d5-4bb6-a0b3-e33089b49920
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:51:59.149+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:51:59.173+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:51:59.182+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:51:59.186+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.557 seconds (process running for 251.471)
+2025-03-20T09:51:59.187+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:51:59.383+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:51:59.383+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:51:59.384+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-20T09:52:12.956+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:52:12.957+09:00  INFO 2796 --- [greendae_personal] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:52:13.020+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:52:13.022+09:00  INFO 2796 --- [greendae_personal] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:13.023+09:00  INFO 2796 --- [greendae_personal] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-03-20T09:52:13.026+09:00  INFO 2796 --- [greendae_personal] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-03-20T09:52:13.083+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:52:13.084+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:52:13.238+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:52:13.239+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:52:13.273+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:52:13.306+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:52:13.306+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:52:13.306+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:52:13.322+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:52:13.322+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 237 ms
+2025-03-20T09:52:13.345+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:52:13.349+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:52:13.356+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:52:13.357+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-03-20T09:52:13.366+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66a2a24d
+2025-03-20T09:52:13.366+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-03-20T09:52:13.368+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:52:13.368+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:52:13.382+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:52:13.382+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:13.394+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:52:13.401+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:52:13.472+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 60dd3d72-78a0-41f2-b691-6fca70a85f55
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:52:13.473+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:52:13.491+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:52:13.499+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:52:13.503+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.441 seconds (process running for 265.788)
+2025-03-20T09:52:13.504+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:52:13.526+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:52:13.526+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:52:13.527+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T09:52:22.551+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:52:22.552+09:00  INFO 2796 --- [greendae_personal] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:52:22.614+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:52:22.616+09:00  INFO 2796 --- [greendae_personal] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:22.616+09:00  INFO 2796 --- [greendae_personal] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-03-20T09:52:22.618+09:00  INFO 2796 --- [greendae_personal] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-03-20T09:52:22.673+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:52:22.673+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:52:22.816+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:52:22.817+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:52:22.847+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:52:22.882+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:52:22.883+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:52:22.883+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:52:22.897+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:52:22.897+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 223 ms
+2025-03-20T09:52:22.919+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:52:22.922+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:52:22.929+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:52:22.930+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-03-20T09:52:22.940+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@167a63f1
+2025-03-20T09:52:22.940+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-03-20T09:52:22.941+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:52:22.941+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:52:22.961+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:52:22.961+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:22.975+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:52:22.982+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:52:23.052+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1de10293-bedc-44d1-a5e8-fead0a543fbe
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:52:23.053+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:52:23.070+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:52:23.077+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:52:23.081+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.427 seconds (process running for 275.365)
+2025-03-20T09:52:23.081+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:52:27.790+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:52:27.790+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:52:27.791+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T09:52:28.648+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:52:28.649+09:00  INFO 2796 --- [greendae_personal] [Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:52:28.709+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:52:28.711+09:00  INFO 2796 --- [greendae_personal] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:28.711+09:00  INFO 2796 --- [greendae_personal] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-03-20T09:52:28.713+09:00  INFO 2796 --- [greendae_personal] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-03-20T09:52:28.766+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:52:28.767+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:52:28.918+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:52:28.920+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:52:28.953+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:52:28.989+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:52:28.989+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:52:28.989+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:52:29.004+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:52:29.004+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 235 ms
+2025-03-20T09:52:29.027+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:52:29.030+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:52:29.037+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:52:29.038+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-03-20T09:52:29.047+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b7df6e4
+2025-03-20T09:52:29.047+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-03-20T09:52:29.048+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:52:29.048+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:52:29.061+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:52:29.062+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:29.073+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:52:29.079+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:52:29.148+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3c9eac79-0cb2-41cb-a1e9-caae14065f63
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:52:29.148+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:52:29.166+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:52:29.174+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:52:29.176+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:52:29.177+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:52:29.177+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-20T09:52:29.177+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.431 seconds (process running for 281.463)
+2025-03-20T09:52:29.178+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:52:51.220+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:52:51.221+09:00  INFO 2796 --- [greendae_personal] [Thread-19] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:52:51.297+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:52:51.313+09:00  INFO 2796 --- [greendae_personal] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:51.313+09:00  INFO 2796 --- [greendae_personal] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-03-20T09:52:51.315+09:00  INFO 2796 --- [greendae_personal] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-03-20T09:52:51.369+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:52:51.369+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:52:51.516+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:52:51.517+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:52:51.548+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:52:51.584+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:52:51.585+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:52:51.585+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:52:51.602+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:52:51.602+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 232 ms
+2025-03-20T09:52:51.625+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:52:51.628+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:52:51.636+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:52:51.637+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-03-20T09:52:51.646+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b51931
+2025-03-20T09:52:51.646+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-03-20T09:52:51.646+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:52:51.647+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:52:51.660+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:52:51.660+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:52:51.672+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:52:51.679+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:52:51.747+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a139723a-0e5e-4f99-b601-0b3d603f3f3b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:52:51.747+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:52:51.765+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:52:51.773+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:52:51.776+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.428 seconds (process running for 304.062)
+2025-03-20T09:52:51.777+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:52:51.969+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:52:51.969+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:52:51.970+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T09:56:34.955+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:56:34.956+09:00  INFO 2796 --- [greendae_personal] [Thread-23] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:56:35.020+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:56:35.022+09:00  INFO 2796 --- [greendae_personal] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:56:35.022+09:00  INFO 2796 --- [greendae_personal] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-03-20T09:56:35.025+09:00  INFO 2796 --- [greendae_personal] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2025-03-20T09:56:35.079+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:56:35.080+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:56:35.231+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:56:35.233+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:56:35.266+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:56:35.307+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:56:35.308+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:56:35.308+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:56:35.322+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:56:35.322+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 241 ms
+2025-03-20T09:56:35.347+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:56:35.351+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:56:35.358+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:56:35.359+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2025-03-20T09:56:35.368+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6770acd5
+2025-03-20T09:56:35.369+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2025-03-20T09:56:35.369+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:56:35.370+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-7)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:56:35.384+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:56:35.384+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:56:35.397+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:56:35.403+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:56:35.487+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f3ddd6d8-223d-4bd6-80fc-e3716be260a0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:56:35.488+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:56:35.509+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:56:35.516+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:56:35.520+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.462 seconds (process running for 527.805)
+2025-03-20T09:56:35.520+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:56:35.646+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:56:35.646+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:56:35.647+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T09:57:00.579+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:57:00.579+09:00  INFO 2796 --- [greendae_personal] [Thread-27] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:57:00.650+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:57:00.656+09:00  INFO 2796 --- [greendae_personal] [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:57:00.657+09:00  INFO 2796 --- [greendae_personal] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2025-03-20T09:57:00.661+09:00  INFO 2796 --- [greendae_personal] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2025-03-20T09:57:00.725+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:57:00.726+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:57:00.879+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:57:00.880+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:57:00.913+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:57:00.946+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:57:00.947+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:57:00.947+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:57:00.961+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:57:00.961+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 234 ms
+2025-03-20T09:57:00.984+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:57:00.987+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:57:00.995+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:57:00.996+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2025-03-20T09:57:01.004+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8555411
+2025-03-20T09:57:01.004+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2025-03-20T09:57:01.005+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:57:01.005+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-8)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:57:01.019+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:57:01.019+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:57:01.031+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:57:01.037+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:57:01.104+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 87085582-c3b9-4adf-b31b-92fb88f5740a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:57:01.105+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:57:01.122+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:57:01.130+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:57:01.133+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.431 seconds (process running for 553.418)
+2025-03-20T09:57:01.134+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:57:01.301+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:57:01.301+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:57:01.301+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-20T09:57:09.790+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:57:09.790+09:00  INFO 2796 --- [greendae_personal] [Thread-31] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:57:09.852+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:57:09.854+09:00  INFO 2796 --- [greendae_personal] [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:57:09.854+09:00  INFO 2796 --- [greendae_personal] [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2025-03-20T09:57:09.856+09:00  INFO 2796 --- [greendae_personal] [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2025-03-20T09:57:09.912+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:57:09.912+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:57:10.063+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:57:10.064+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:57:10.093+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:57:10.127+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:57:10.127+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:57:10.127+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:57:10.142+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:57:10.142+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 228 ms
+2025-03-20T09:57:10.164+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:57:10.168+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:57:10.175+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:57:10.176+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2025-03-20T09:57:10.184+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2da15bb2
+2025-03-20T09:57:10.184+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2025-03-20T09:57:10.185+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:57:10.185+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-9)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:57:10.198+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:57:10.198+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:57:10.209+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:57:10.214+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:57:10.288+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7f938135-2867-4e93-86fe-6821aeae8498
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:57:10.289+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:57:10.307+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:57:10.315+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:57:10.318+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.425 seconds (process running for 562.603)
+2025-03-20T09:57:10.319+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:57:11.468+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:57:11.468+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:57:11.469+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T09:59:28.066+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:59:28.066+09:00  INFO 2796 --- [greendae_personal] [Thread-35] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:59:28.153+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:59:28.155+09:00  INFO 2796 --- [greendae_personal] [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:59:28.155+09:00  INFO 2796 --- [greendae_personal] [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2025-03-20T09:59:28.157+09:00  INFO 2796 --- [greendae_personal] [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2025-03-20T09:59:28.209+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:59:28.209+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:59:28.355+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:59:28.357+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:59:28.391+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:59:28.435+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:59:28.436+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:59:28.436+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:59:28.450+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:59:28.450+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 239 ms
+2025-03-20T09:59:28.475+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:59:28.478+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:59:28.486+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:59:28.486+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2025-03-20T09:59:28.495+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection com.mysql.cj.jdbc.ConnectionImpl@145bb68c
+2025-03-20T09:59:28.495+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2025-03-20T09:59:28.496+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:59:28.496+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-10)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:59:28.509+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:59:28.509+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:59:28.522+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:59:28.528+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:59:28.617+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7115ce8d-ef8a-4f0f-b240-749863764312
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:59:28.617+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:59:28.638+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:59:28.647+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:59:28.650+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.462 seconds (process running for 700.935)
+2025-03-20T09:59:28.651+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:59:41.751+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:59:41.751+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:59:41.752+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T09:59:42.440+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T09:59:42.441+09:00  INFO 2796 --- [greendae_personal] [Thread-39] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T09:59:42.509+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T09:59:42.510+09:00  INFO 2796 --- [greendae_personal] [Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:59:42.511+09:00  INFO 2796 --- [greendae_personal] [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2025-03-20T09:59:42.513+09:00  INFO 2796 --- [greendae_personal] [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2025-03-20T09:59:42.569+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T09:59:42.569+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T09:59:42.719+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T09:59:42.721+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T09:59:42.751+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T09:59:42.783+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T09:59:42.784+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T09:59:42.784+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T09:59:42.798+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T09:59:42.798+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 228 ms
+2025-03-20T09:59:42.824+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T09:59:42.827+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T09:59:42.834+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T09:59:42.835+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2025-03-20T09:59:42.843+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection com.mysql.cj.jdbc.ConnectionImpl@615a6e04
+2025-03-20T09:59:42.843+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2025-03-20T09:59:42.844+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T09:59:42.844+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-11)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T09:59:42.858+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T09:59:42.858+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T09:59:42.870+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T09:59:42.876+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T09:59:42.942+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 416b447d-f13a-4486-8ff1-3fc288045098
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T09:59:42.943+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T09:59:42.962+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T09:59:42.969+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T09:59:42.972+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.424 seconds (process running for 715.257)
+2025-03-20T09:59:42.973+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T09:59:43.067+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T09:59:43.067+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T09:59:43.067+09:00  INFO 2796 --- [greendae_personal] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-20T10:00:58.779+09:00  INFO 2796 --- [greendae_personal] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T10:00:58.780+09:00  INFO 2796 --- [greendae_personal] [Thread-43] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T10:00:58.843+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T10:00:58.844+09:00  INFO 2796 --- [greendae_personal] [Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T10:00:58.845+09:00  INFO 2796 --- [greendae_personal] [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2025-03-20T10:00:58.847+09:00  INFO 2796 --- [greendae_personal] [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2025-03-20T10:00:58.901+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 2796 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T10:00:58.901+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T10:00:59.044+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T10:00:59.046+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T10:00:59.077+09:00  WARN 2796 --- [greendae_personal] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T10:00:59.110+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T10:00:59.111+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T10:00:59.111+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T10:00:59.126+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.a.c.c.C.[.[.[/greendae_personal]       : Initializing Spring embedded WebApplicationContext
+2025-03-20T10:00:59.126+09:00  INFO 2796 --- [greendae_personal] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 224 ms
+2025-03-20T10:00:59.150+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T10:00:59.153+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T10:00:59.160+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T10:00:59.161+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2025-03-20T10:00:59.169+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56f049c4
+2025-03-20T10:00:59.169+09:00  INFO 2796 --- [greendae_personal] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2025-03-20T10:00:59.170+09:00  WARN 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T10:00:59.170+09:00  INFO 2796 --- [greendae_personal] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-12)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T10:00:59.184+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T10:00:59.184+09:00  INFO 2796 --- [greendae_personal] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T10:00:59.195+09:00  WARN 2796 --- [greendae_personal] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T10:00:59.201+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T10:00:59.265+09:00  WARN 2796 --- [greendae_personal] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 29d93c9f-13b1-4b61-9fbb-594ee57c3354
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T10:00:59.265+09:00  INFO 2796 --- [greendae_personal] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T10:00:59.282+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T10:00:59.290+09:00  INFO 2796 --- [greendae_personal] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae_personal'
+2025-03-20T10:00:59.293+09:00  INFO 2796 --- [greendae_personal] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.41 seconds (process running for 791.578)
+2025-03-20T10:00:59.294+09:00  INFO 2796 --- [greendae_personal] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T10:01:47.906+09:00  INFO 2796 --- [greendae_personal] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T10:01:47.969+09:00  INFO 2796 --- [greendae_personal] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T10:01:47.971+09:00  INFO 2796 --- [greendae_personal] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T10:01:47.971+09:00  INFO 2796 --- [greendae_personal] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2025-03-20T10:01:47.973+09:00  INFO 2796 --- [greendae_personal] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2025-03-20T10:01:49.898+09:00  INFO 4348 --- [greendae] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 4348 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T10:01:49.899+09:00  INFO 4348 --- [greendae] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T10:01:49.935+09:00  INFO 4348 --- [greendae] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-20T10:01:49.935+09:00  INFO 4348 --- [greendae] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-20T10:01:50.460+09:00  INFO 4348 --- [greendae] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T10:01:50.474+09:00  INFO 4348 --- [greendae] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-03-20T10:01:50.584+09:00  WARN 4348 --- [greendae] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T10:01:50.922+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T10:01:50.932+09:00  INFO 4348 --- [greendae] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T10:01:50.932+09:00  INFO 4348 --- [greendae] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T10:01:50.968+09:00  INFO 4348 --- [greendae] [restartedMain] o.a.c.c.C.[.[localhost].[/greendae]      : Initializing Spring embedded WebApplicationContext
+2025-03-20T10:01:50.968+09:00  INFO 4348 --- [greendae] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1033 ms
+2025-03-20T10:01:51.108+09:00  INFO 4348 --- [greendae] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T10:01:51.154+09:00  INFO 4348 --- [greendae] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-20T10:01:51.185+09:00  INFO 4348 --- [greendae] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T10:01:51.447+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T10:01:51.473+09:00  INFO 4348 --- [greendae] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-20T10:01:51.694+09:00  INFO 4348 --- [greendae] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36f977a5
+2025-03-20T10:01:51.695+09:00  INFO 4348 --- [greendae] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-20T10:01:51.735+09:00  WARN 4348 --- [greendae] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T10:01:51.750+09:00  INFO 4348 --- [greendae] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T10:01:52.027+09:00  INFO 4348 --- [greendae] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T10:01:52.031+09:00  INFO 4348 --- [greendae] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T10:01:52.066+09:00  WARN 4348 --- [greendae] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T10:01:52.095+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T10:01:52.413+09:00  WARN 4348 --- [greendae] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3eb34eeb-2345-46cf-ad57-aa3fa880629a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T10:01:52.425+09:00  INFO 4348 --- [greendae] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T10:01:52.548+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T10:01:52.573+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae'
+2025-03-20T10:01:52.580+09:00  INFO 4348 --- [greendae] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 3.036 seconds (process running for 3.525)
+2025-03-20T10:01:59.832+09:00  INFO 4348 --- [greendae] [http-nio-8080-exec-8] o.a.c.c.C.[.[localhost].[/greendae]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-20T10:01:59.832+09:00  INFO 4348 --- [greendae] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-20T10:01:59.833+09:00  INFO 4348 --- [greendae] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-20T10:02:21.706+09:00  INFO 4348 --- [greendae] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 98 class path changes (0 additions, 0 deletions, 98 modifications)
+2025-03-20T10:02:21.708+09:00  INFO 4348 --- [greendae] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T10:02:21.768+09:00  INFO 4348 --- [greendae] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T10:02:21.772+09:00  INFO 4348 --- [greendae] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T10:02:21.774+09:00  INFO 4348 --- [greendae] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-20T10:02:21.779+09:00  INFO 4348 --- [greendae] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-20T10:02:21.843+09:00  INFO 4348 --- [greendae] [restartedMain] k.c.g.GreendaePersonalApplication        : Starting GreendaePersonalApplication using Java 17.0.12 with PID 4348 (C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae\build\classes\java\main started by lotte6_SpringProject in C:\Users\lotte6_SpringProject\Desktop\Workspace\greendae_personal\intelliJ\greendae)
+2025-03-20T10:02:21.843+09:00  INFO 4348 --- [greendae] [restartedMain] k.c.g.GreendaePersonalApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-03-20T10:02:22.023+09:00  INFO 4348 --- [greendae] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-20T10:02:22.025+09:00  INFO 4348 --- [greendae] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-03-20T10:02:22.064+09:00  WARN 4348 --- [greendae] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.greendae_personal]' package. Please check your configuration.
+2025-03-20T10:02:22.108+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-20T10:02:22.109+09:00  INFO 4348 --- [greendae] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-20T10:02:22.109+09:00  INFO 4348 --- [greendae] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-20T10:02:22.130+09:00  INFO 4348 --- [greendae] [restartedMain] o.a.c.c.C.[.[localhost].[/greendae]      : Initializing Spring embedded WebApplicationContext
+2025-03-20T10:02:22.130+09:00  INFO 4348 --- [greendae] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 285 ms
+2025-03-20T10:02:22.159+09:00  INFO 4348 --- [greendae] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-20T10:02:22.163+09:00  INFO 4348 --- [greendae] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-20T10:02:22.174+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-20T10:02:22.175+09:00  INFO 4348 --- [greendae] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-03-20T10:02:22.186+09:00  INFO 4348 --- [greendae] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68a9c869
+2025-03-20T10:02:22.186+09:00  INFO 4348 --- [greendae] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-03-20T10:02:22.188+09:00  WARN 4348 --- [greendae] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-20T10:02:22.188+09:00  INFO 4348 --- [greendae] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.4.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-20T10:02:22.206+09:00  INFO 4348 --- [greendae] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-20T10:02:22.207+09:00  INFO 4348 --- [greendae] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T10:02:22.221+09:00  WARN 4348 --- [greendae] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-20T10:02:22.228+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-20T10:02:22.324+09:00  WARN 4348 --- [greendae] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6fe31e4b-1599-4a5f-8911-abc2515a2db8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-20T10:02:22.325+09:00  INFO 4348 --- [greendae] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-20T10:02:22.361+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-20T10:02:22.373+09:00  INFO 4348 --- [greendae] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/greendae'
+2025-03-20T10:02:22.379+09:00  INFO 4348 --- [greendae] [restartedMain] k.c.g.GreendaePersonalApplication        : Started GreendaePersonalApplication in 0.559 seconds (process running for 33.323)
+2025-03-20T10:02:22.381+09:00  INFO 4348 --- [greendae] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-20T10:02:35.431+09:00  INFO 4348 --- [greendae] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-20T10:02:35.493+09:00  INFO 4348 --- [greendae] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-20T10:02:35.495+09:00  INFO 4348 --- [greendae] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-20T10:02:35.495+09:00  INFO 4348 --- [greendae] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-03-20T10:02:35.497+09:00  INFO 4348 --- [greendae] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

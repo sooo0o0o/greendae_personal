@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>샘플</title>
+    <link rel="stylesheet" href="/greendae/css/layout/layout.css">
+    <link rel="stylesheet" href="/greendae/css/support/register.css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <header>
+            <div>
+                <div>
+                    <p>
+                        <a href="#">HOME |</a>
+                        <a href="#">사이드맵 |</a>
+                        <a href="#">로그인 |</a>
+                        <a href="#">학생지원</a>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#">
+                        <img src="/greendae/images/header_logo.png" alt="그린대학교">
+                    </a>
+                    <nav> 
+                        <ul>
+                            <li><a href="#">대학소개</a></li>
+                            <li><a href="#">입학안내</a></li>
+                            <li><a href="#">대학·대학원</a></li>
+                            <li><a href="#">학사안내</a></li>
+                            <li><a href="#">대학생활</a></li>
+                            <li><a href="#">커뮤니티</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/greendae/images/ico-home.png" alt="HOME">
+                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        학생지원   
+                        <img src="/greendae/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">수강신청</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <aside class="sidebar">
+                    <article class="side_content">             
+                        <div class="side_title">
+                            <p>학생지원</p>
+                        </div>            
+                        <a href="#">
+                            <div>수강신청</div>
+                        </a>
+                        <a href="#">
+                            <div>수강신청내역</div>
+                        </a>
+                        <a href="#">
+                            <div>교과과정</div>
+                        </a>
+                        <a href="#">
+                            <div>성적조회</div>
+                        </a>
+                        <a href="#">
+                            <div>학적</div>
+                        </a>
+                    </article>
+                </aside>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>수강신청</p>
+                    </div>
+                    <div class="search">
+                        <form>
+                            <select name="searchType">
+                                <option value="choice">선택</option>
+                                <option value="class">개설학과</option>
+                                <option value="classification">구분</option>
+                                <option value="code">코드</option>
+                                <option value="class_name">과목명</option>
+                                <option value="credit">학점</option>
+                                <option value="professor">담당교수</option>
+                            </select>
+                            <input class="type" type="text" name="keyword" placeholder=" 검색어를 입력해주세요">
+                            <input class="submit_search" type="submit" value="검색">
+                        </form>
+                    </div>
+                    <div class="register_table">
+                        <table class="register">
+                            <tr>
+                                <th>개설학과</th>
+                                <th>구분</th>
+                                <th>학년</th>
+                                <th>코드</th>
+                                <th>과목명</th>
+                                <th>학점</th>
+                                <th>담당교수</th>
+                                <th>수강인원</th>
+                                <th>비고</th>
+                                <th>신청</th>
+                            </tr>
+                            <tr>
+                                <td>컴퓨터공학</td>
+                                <td>전공</td>
+                                <td>1</td>
+                                <td>830001</td>
+                                <td>컴퓨터과학개론</td>
+                                <td>3</td>
+                                <td>김컴공</td>
+                                <td>12/30</td>
+                                <td> </td>
+                                <td>
+                                    <button class="submit">신청</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="confirmationModal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                수강신청 확인
+                            </div>
+                            <div class="modal-body">
+                                <p>해당 과목을 수강신청 하시겠습니까?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="cancel-btn" id="cancelBtn">취소</button>
+                                <button class="confirm-btn" id="confirmBtn">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        // 버튼 클릭 시 모달 열기
+                        document.querySelectorAll('.submit').forEach(button => {
+                            button.addEventListener('click', function() {
+                                document.getElementById('confirmationModal').style.display = "block"; // 모달 열기
+                            });
+                        });
+                
+                        // 취소 버튼 클릭 시 모달 닫기
+                        document.getElementById('cancelBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                        });
+                
+                        // 확인 버튼 클릭 시 알림 메시지
+                        document.getElementById('confirmBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                            alert("수강신청이 완료되었습니다.");
+                        });
+                
+                        // 모달 외부 클릭 시 모달 닫기
+                        window.addEventListener('click', function(event) {
+                            if (event.target == document.getElementById('confirmationModal')) {
+                                document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                            }
+                        });
+                    </script>
+                
+                    <div class="page">
+                        <a>1</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <footer>
+            <div>
+                <div>
+                    <ul>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">통합정보시스템</a></li>
+                        <li><a href="#">학사일정</a></li>
+                        <li><a href="#">주요인원 연락처</a></li>
+                        <li><a href="#">교내공지사항</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="/greendae/images/footer_logo.png" alt="그린대학교">
+                    <p>
+                        그린대학교 <br>
+                        [12345] 부산광역시 부산진구 부전대로 123 그린대학교 / 대표전화 : 051-123-1000 / <br>
+                        입학안내 : 051-123-1302 팩스 : 051-123-3333
+
+                        <br><br>
+                        copyright ©Green University All rights reserved.
+                    </p>
+                    <div>
+                        <p>주요사이트  
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▾</p>
+                    </div>              
+                </div>
+            </div>
+        </footer>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>
