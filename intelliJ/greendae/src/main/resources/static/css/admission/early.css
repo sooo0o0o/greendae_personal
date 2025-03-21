@@ -1,0 +1,27 @@
+.green_txt{
+    color: blue;
+    font-weight: bold;
+}
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #3f97f6;
+    color: white;
+}
+
+.pdf {
+    margin: 20px auto;
+}
+
+.pdf h1 {
+    width: 880px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 4px solid #071F4B;
+}

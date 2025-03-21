@@ -12,6 +12,34 @@ import lombok.NoArgsConstructor;
 @Builder
 public class LectureDTO {
 
+    private String lecNo;
+
+    private String lecName;
+    private String lecCate;
+    private int lecGrade;   //학년
+    private String lecProName;
+    private int lecCredit;
+    private int lecStdCount;
+    private String lecClass;
+    private String lecRoom;
+    private String lecTime;
+
+    public Lecture toLectureEntity(){
+        return Lecture.builder()
+                .lecNo(lecNo)
+                .lecName(lecName)
+                .lecCate(lecCate)
+                .lecGrade(lecGrade)
+                .lecProName(lecProName)
+                .lecCredit(lecCredit)
+                .lecStdCount(lecStdCount)
+                .lecClass(lecClass)
+                .lecRoom(lecRoom)
+                .lecTime(lecTime)
+                .build();
+    }
+
+    /*
     private int lecNo;      // 과목코드
     private String lecName; // 과목명
     private String lecCate; // 구분(전공/교양)
@@ -37,5 +65,6 @@ public class LectureDTO {
                 .lecTime(lecTime)
                 .build();
     }
+         */
 
 }

@@ -1,8 +1,10 @@
 package kr.co.greendae_personal.controller;
 
 import kr.co.greendae_personal.dto.support.LectureDTO;
+import kr.co.greendae_personal.dto.support.RegisterDTO;
 import kr.co.greendae_personal.service.SupportService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 // 학생 지원
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/support")
@@ -26,6 +29,20 @@ public class SupportController {
         return "/support/classes";
     }
 
+    @GetMapping("/register")
+    public String register(Model model){
+
+        List<LectureDTO> lectureDTOList = supportService.findAll();
+        model.addAttribute("lectureDTOList", lectureDTOList);
+
+        return "/support/register";
+    }
+
+    @GetMapping("/register_list")
+    public String register_list(){
+        return "/support/register_list";
+    }
+
     @GetMapping("/grade")
     public String grade(){
         return "/support/grade";
@@ -36,14 +53,74 @@ public class SupportController {
         return "/support/record";
     }
 
-    @GetMapping("/register")
-    public String register(Model model){
+    @GetMapping("/register_list/{stdNo}")
+    public String registerListByStdNo(@PathVariable String stdNo, Model model){
+        log.info("stdNo: " + stdNo);
 
-        List<LectureDTO> lectureDTOList = supportService.findAll();
-        model.addAttribute("lectureDTOList", lectureDTOList);
+        List<RegisterDTO> registerList = supportService.findRegisterByStdNo(stdNo);
 
-        return "/support/register";
+        log.info("registerList : {}", registerList);
+
+        model.addAttribute("registerList", registerList);
+
+        return "/support/register_list";
     }
+
+    @GetMapping("/grade/{stdNo}")
+    public String gradeListByStdNo(@PathVariable String stdNo, Model model){
+        log.info("stdNo: " + stdNo);
+
+        List<RegisterDTO> gradeList = supportService.findGradeByStdNo(stdNo);
+
+        log.info("gradeList : {}", gradeList);
+
+        model.addAttribute("gradeList", gradeList);
+
+        return "/support/grade";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+
+
 
     @PostMapping("/register")
     @ResponseBody
@@ -58,15 +135,42 @@ public class SupportController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/register_list")
-    public String register_list(Model model){
-        List<LectureDTO> registeredLectures = supportService.getRegisteredLectures();
+    @GetMapping("/register_list/{stdNo}")
+    public String getRegisteredLecturesByStudent(@PathVariable String stdNo, Model model) {
+        // SupportService에서 학생의 수강 과목 조회
+        List<LectureDTO> registeredLectures = supportService.getRegisteredLecturesByStudent(stdNo);
+
+        // 조회한 수강 과목 리스트를 모델에 추가
         model.addAttribute("registeredLectures", registeredLectures);
+
+        // 수강 과목 정보를 보여줄 뷰로 이동
+        return "/support/register_list";
+    }
+
+     */
+
+    /*
+    @GetMapping("/register_list/{stdNo}")
+    public String registerListByStdNo(String stdNo, Model model){
+        RegisterDTO registerDTO = supportService.findById(stdNo);
+        model.addAttribute("registerDTO", registerDTO);
 
         return "/support/register_list";
     }
 
-    @PostMapping("/cancel")
+
+    @GetMapping("/grade/{stdNo}")
+    public String grade(@PathVariable String stdNo, Model model){
+        List<LectureDTO> gradeList = supportService.getGradeByStudent(stdNo);
+        model.addAttribute("gradeList", gradeList);
+
+        return "/support/grade";
+    }
+
+     */
+
+    /*
+        @PostMapping("/cancel")
     @ResponseBody
     public ResponseEntity<Map<String, String>> cancelLecture(@RequestBody Map<String, String> requestData) {
         String lecNo = requestData.get("lecNo");
@@ -84,24 +188,5 @@ public class SupportController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
     }
-
-    @GetMapping("/grade/{stdNo}")
-    public String grade(@PathVariable String stdNo, Model model){
-        List<LectureDTO> gradeList = supportService.getGradeByStudent(stdNo);
-        model.addAttribute("gradeList", gradeList);
-
-        return "/support/grade";
-    }
-
-    @GetMapping("/register_list/{stdNo}")
-    public String getRegisteredLecturesByStudent(@PathVariable String stdNo, Model model) {
-        // SupportService에서 학생의 수강 과목 조회
-        List<LectureDTO> registeredLectures = supportService.getRegisteredLecturesByStudent(stdNo);
-
-        // 조회한 수강 과목 리스트를 모델에 추가
-        model.addAttribute("registeredLectures", registeredLectures);
-
-        // 수강 과목 정보를 보여줄 뷰로 이동
-        return "/support/register_list";
-    }
+    */
 }

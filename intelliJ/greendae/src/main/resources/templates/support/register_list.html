@@ -135,20 +135,20 @@
                                 </tr>
                             </thead>
                             <tbody id="course_list">
-                                <tr th:if="${#lists.isEmpty(registeredLectures)}" style="text-align: center;">
+                                <tr th:if="${#lists.isEmpty(registerList)}" style="text-align: center;">
                                     <td colspan="9">수강신청내역이 없습니다</td>
                                 </tr>
-                                <tr th:each="lecture: ${registeredLectures}">
-                                    <td>[[${lecture.lecNo}]]</td>
+                                <tr th:each="lecture: ${registerList}">
+                                    <td>[[${lecture.regLecNo}]]</td>
                                     <td>[[${lecture.lecName}]]</td>
                                     <td>[[${lecture.lecGrade}]]</td>
                                     <td>[[${lecture.lecProName}]]</td>
-                                    <td>[[${lecture.lecCredit}]]</td>
+                                    <td>[[${lecture.regCredit}]]</td>
                                     <td>[[${lecture.lecCate}]]</td>
                                     <td>[[${lecture.lecTime}]]</td>
                                     <td>[[${lecture.lecRoom}]]</td>
                                     <td>
-                                        <button class="cancel" th:data-lecNo="${lecture.lecNo}" onclick="cancelRegistration(this)" >취소</button>
+                                        <button class="cancel" th:data-lecNo="${lecture.regLecNo}" onclick="cancelRegistration(this)" >취소</button>
                                     </td>
                                 </tr>
                             </tbody>

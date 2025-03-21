@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -17,6 +18,7 @@ import java.util.List;
 @Table(name = "Student")
 public class Student {
     @Id
+    @Column(name = "stdNo")
     private String stdNo;
 
     private String stdName;
@@ -30,7 +32,7 @@ public class Student {
     private String stdStatus;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Register> registers;
+    private List<Register> registers = new ArrayList<>();
 
     public StudentDTO toDTO(){
         return StudentDTO.builder()
