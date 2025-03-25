@@ -10,35 +10,7 @@
 <body>
     <div id="wrapper">
         <!-- 헤더 시작작-->
-        <header>
-            <div>
-                <div>
-                    <p>
-                        <a href="#">HOME |</a>
-                        <a href="#">사이드맵 |</a>
-                        <a href="#">로그인 |</a>
-                        <a href="#">학생지원</a>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <a href="#">
-                        <img src="/greendae/images/header_logo.png" alt="그린대학교">
-                    </a>
-                    <nav> 
-                        <ul>
-                            <li><a href="#">대학소개</a></li>
-                            <li><a href="#">입학안내</a></li>
-                            <li><a href="#">대학·대학원</a></li>
-                            <li><a href="#">학사안내</a></li>
-                            <li><a href="#">대학생활</a></li>
-                            <li><a href="#">커뮤니티</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        <th:block th:include="/academic/_header"/>
         <!-- 헤더 끝-->
         <!-- 메인 시작작-->
         <main>
@@ -224,37 +196,7 @@
         </main>
         <!-- 메인 끝-->
         <!-- 푸터 시작작-->
-        <footer>
-            <div>
-                <div>
-                    <ul>
-                        <li><a href="#">개인정보처리방침</a></li>
-                        <li><a href="#">통합정보시스템</a></li>
-                        <li><a href="#">학사일정</a></li>
-                        <li><a href="#">주요인원 연락처</a></li>
-                        <li><a href="#">교내공지사항</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <img src="/greendae/images/footer_logo.png" alt="그린대학교">
-                    <p>
-                        그린대학교 <br>
-                        [12345] 부산광역시 부산진구 부전대로 123 그린대학교 / 대표전화 : 051-123-1000 / <br>
-                        입학안내 : 051-123-1302 팩스 : 051-123-3333
-
-                        <br><br>
-                        copyright ©Green University All rights reserved.
-                    </p>
-                    <div>
-                        <p>주요사이트  
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▾</p>
-                    </div>              
-                </div>
-            </div>
-        </footer>
+        <th:block th:include="/academic/_footer"/>
         <!-- 푸터 끝-->
     </div>
 </body>
