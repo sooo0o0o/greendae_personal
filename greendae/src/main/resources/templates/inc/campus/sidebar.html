@@ -1,0 +1,52 @@
+<aside class="sidebar">
+  <article class="side_content">
+    <div class="side_title">
+      <p>대학생활</p>
+    </div>
+    <a th:href="@{/campus/introduce}">  <!-- 각자 주소 넣기 -->
+      <div id="introduce">학생회 소개</div>
+    </a>
+    <a th:href="@{/campus/club_study}">
+      <div id="club">동아리/스터디</div>
+    </a>
+    <a th:href="@{/campus/menu}">      <!-- 각자 주소 넣기 -->
+      <div id="menu">식단안내</div>
+    </a>
+    <a th:href="@{/campus/gallery}">   <!-- 각자 주소 넣기 -->
+      <div id="gallery">갤러리</div>
+    </a>
+  </article>
+</aside>
+
+<!-- 위에 손서대로
+  학생회, 동아리, 식단 , 갤러리 순서
+  넣어야되는 데이터는 2개
+
+  1. path.includes -> 주소의 마지막 단어 적기
+    예) /campus/introduce -> introduce
+  2. document.getElementById("club") -> 아이디 값 적기
+
+ -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = location.pathname;
+
+    if (path.includes("introduce")) {
+      document.getElementById("introduce").classList.add("active");
+    }else if (path.includes("club_study")) {
+      document.getElementById("club").classList.add("active");
+    }else if (path.includes("menu")) {
+      document.getElementById("menu").classList.add("active");
+    }else if (path.includes("gallery")) {
+      document.getElementById("gallery").classList.add("active");
+    }
+  });
+</script>
+
+<style>
+  .active {
+    background-color: #3F97F6; /* 선택된 메뉴 스타일 */
+    color: white;
+  }
+</style>

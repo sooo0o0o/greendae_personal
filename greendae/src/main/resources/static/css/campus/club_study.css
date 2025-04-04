@@ -1,0 +1,23 @@
+.club_card{
+    width: 50%;
+    padding: 20px;
+    border: 1px dashed #ddd;
+    box-sizing: border-box;
+    float: left;
+}
+
+.club_card img{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.club_txt1{
+    color: #0091ea;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.club_txt2{
+    margin-top: 10px;
+}

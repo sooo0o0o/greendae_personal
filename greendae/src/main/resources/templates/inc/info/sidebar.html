@@ -1,0 +1,48 @@
+<aside class="sidebar">
+  <article class="side_content">
+    <div class="side_title">
+      <p>대학·대학원</p>
+    </div>
+    <a th:href="@{/info/social}">
+      <div id="social">인문사회대학</div>
+    </a>
+    <a th:href="@{/info/natural}">
+      <div id="natural">자연과학대학</div>
+    </a>
+    <a th:href="@{/info/engineering}">
+      <div id="engineering">공과대학</div>
+    </a>
+    <a th:href="@{/info/education}">
+      <div id="education">사범대학</div>
+    </a>
+    <a th:href="@{/info/graduate}">
+      <div id="graduate">대학원</div>
+    </a>
+  </article>
+</aside>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = location.pathname;
+
+    if (path.includes("social")) {
+      document.getElementById("social").classList.add("active");
+    }else if (path.includes("natural")) {
+      document.getElementById("natural").classList.add("active");
+    }else if (path.includes("engineering")) {
+      document.getElementById("engineering").classList.add("active");
+    }else if (path.includes("education")) {
+      document.getElementById("education").classList.add("active");
+    }else if (path.includes("graduate")) {
+      document.getElementById("graduate").classList.add("active");
+    }
+
+  });
+</script>
+
+<style>
+  .active {
+    background-color: #3F97F6; /* 선택된 메뉴 스타일 */
+    color: white;
+  }
+</style>

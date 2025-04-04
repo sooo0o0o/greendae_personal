@@ -1,0 +1,42 @@
+.main_content_detail img{
+    width: 800px;
+    height: auto;
+    object-fit: contain; /* 또는 cover */
+    margin-left: 65px;
+}
+
+.organization_div {
+    background: ; /* 파란 계열 그라데이션 */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    width: 250px;
+    /* 추가: 가로 중앙 정렬 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.organization_div p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.organization_div span {
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.organization_div span::before {
+    content: "📞"; /* 전화기 아이콘 */
+    font-size: 26px;
+}

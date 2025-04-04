@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생지원 > 학적</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/support/record.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        학생지원   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">학적</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/support/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>학적</p>
+                    </div>
+                    <div>
+                        <h5> 기본정보</h5>
+                        <table class="information">
+                            <tr>
+                                <td rowspan="5" style="border-right: 1px solid #dedede;">
+                                    <img src="/images/icon-avatar.png" alt="프로필">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>학번</th><td th:text="${student.stdNo}"></td>
+                                <th>학과</th><td th:text="${student.stdClass}"></td>
+                            </tr>
+                            <tr>
+                                <th>이름</th><td th:text="${student.name}"></td>
+                                <th>주민번호</th><td th:text="${student.ssn}"></td>
+                            </tr>
+                            <tr>
+                                <th>휴대폰</th><td th:text="${student.hp}"></td>
+                                <th>EMAIL</th><td th:text="${student.email}"></td>
+                            </tr>
+                            <tr>
+                                <th>학년/학기</th><td th:text="${student.stdYear} + '학년/' + ${student.stdSemester}"></td>
+                                <th>상태</th><td style="color: #198515;" th:text="${student.stdStatus}"></td>
+                            </tr>
+                        </table>
+
+                        <h5> 취득학점현황</h5>
+                        <table class="credit">
+                            <tr>
+                                <th>구분</th>
+                                <th>전공([[${creditSummary.majorC}]])</th>
+                                <th>교양([[${creditSummary.liberalArtsC}]])</th>
+                                <th>선택([[${creditSummary.electiveC}]])</th>
+                                <th>사회봉사</th>
+                                <th>기타</th>
+                                <th>총취득학점</th>
+                                <th>졸업요건학점</th>
+                            </tr>
+                            <tr>
+                                <td>취득학점</td>
+                                <td th:text="${creditSummary.major}">21</td>
+                                <td th:text="${creditSummary.liberalArts}">21</td>
+                                <td th:text="${creditSummary.elective}">21</td>
+                                <td th:text="${creditSummary.volunteer}">21</td>
+                                <td th:text="${creditSummary.other}">21</td>
+                                <td th:text="${creditSummary.total}">21</td>
+                                <td>130</td>
+                            </tr>
+                        </table>
+                        <p style="color: #666666; margin-top: 5px;">
+                            - 각 괄호안의 숫자는 이수 과목수
+                        </p>
+                        <h5> 년도/학기별 취득학점현황</h5>
+                        <table class="credit_total">
+                            <tr>
+                                <th>년도</th>
+                                <th>학년</th>
+                                <th>학기</th>
+                                <th>신청학점</th>
+                                <th>전공학점</th>
+                                <th>선택학점</th>
+                                <th>기타학점</th>
+                                <th>총취득학점</th>
+                                <th>평점평균</th>
+                                <th>기타</th>
+                            </tr>
+                            <tr th:each="record : ${recordDTOS}">
+                                <td th:text="${record.year}">학년</td>
+                                <td th:text="${record.grade}">학년</td>
+                                <td th:text="${record.semester}">학년</td>
+                                <td th:text="${record.register}">학년</td>
+                                <td th:text="${record.major}">학년</td>
+                                <td th:text="${record.elective}">학년</td>
+                                <td th:text="${record.etc}">학년</td>
+                                <td th:text="${record.total}">학년</td>
+                                <td th:text="${record.average}">학년</td>
+                                <td></td>
+                            </tr>
+
+                        </table>
+                    </div>    
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <th:block th:include="/inc/_footer.html"/>
+    </div>
+</body>
+</html>

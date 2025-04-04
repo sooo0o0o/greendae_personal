@@ -1,0 +1,167 @@
+.green_txt {
+    color: blue;
+    font-weight: bold;
+}
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #3f97f6;
+    color: white;
+}
+.search {
+    float: right;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+input {
+    height: 40px;
+    width: 237px;
+    border: 1px solid #dedede;
+}
+select {
+    height: 40px;
+    width: 150.5px;
+    color: #666666;
+    border: 1px solid #dedede;
+}
+.submit_search {
+    width: 70px;
+    height: 40px;
+    left: 850px;
+    background-color: #3f97f6;
+    color: #ffffff;
+    border: none;
+}
+.register {
+    width: 930px;
+    min-height: 130px;
+    text-align: center;
+    border-top: 2px solid #000000;
+    border-spacing: 0;
+}
+.register th {
+    height: 61px;
+    top: 2px;
+    border-bottom: 1px solid #a3a3a3;
+    background-color: #fafafa;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+.register td {
+    font-weight: 350;
+    font-size: 16px;
+    color: #333333;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    border-bottom: 1px solid #d8d8d8;
+}
+.register td:nth-child(1){
+    width: 139.5px;
+    height: 66px;
+}
+.register td:nth-child(2){
+    width: 85px;
+    height: 66px;
+}
+.register td:nth-child(3){
+    width: 55.8px;
+    height: 66px;
+}
+.register td:nth-child(4){
+    width: 85px;
+    height: 66px;
+}
+.register td:nth-child(5){
+    width: 139.5px;
+    height: 66px;
+}
+.register td:nth-child(6){
+    width: 85px;
+    height: 66px;
+}
+.submit {
+    font-size: 14px;
+    font-weight: 350;
+    line-height: 100%;
+    letter-spacing: 0%;
+    width: 37.77px;
+    height: 29px;
+    background-color: #092e71;
+    color: #FFFFFF;
+}
+.page {
+    margin-top: 30px;
+    vertical-align: middle;
+    text-align: center;
+
+}
+.page > a {
+    width: 15px;
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #d7d7d7;
+}
+.page a {
+    font-weight: 350;
+    font-size: 15px;
+    line-height: 100%;
+    color: #888888;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); /* 배경색을 약간 투명하게 설정 */
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    height: 150px;
+}
+.modal-header {
+    font-size: 18px;
+    font-weight: bold;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+.modal-footer button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.cancel-btn {
+    background-color: #d8d8d8;
+}
+.confirm-btn {
+    background-color: #3f97f6;
+    color: white;
+}
+.confirm-btn:hover {
+    background-color: #092e71;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대학생활 > 동아리/스터디</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/campus/club_study.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        대학소개   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">동아리/스터디</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/campus/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>동아리/스터디</p>
+                    </div>
+                    <div class="main_content_detail">
+                        <div class="club_card">
+                            <p class="club_txt1">맛나다미방</p>
+                            <img src="/images/club1.jpg" alt="맛나다미방">
+
+                            <p class="club_txt2">지도교수 : 박기오</p>
+                            <p class="club_txt2">맛나디미방은 외식경영학과의 재학생 업소 방문을 시작으로 부산에 숨어 있는
+                                맛집 탐방을 위하여 구성됐습니다.  <br>
+                                동아리는 설립 초기부터 국내에서 두 번째로 오래된 한글조리서 음식디미방에서
+                                의미를 착안하여 부산만의 외식경영학과 재학생들의 현장경력까지 살려서
+                                진정한 부산 대표 맛집 가이드로 거듭나기 위한 친목도모를 하고 있습니다.
+                        </div>
+                        <div class="club_card">
+                            <p class="club_txt1">해피쿡</p>
+                            <img src="/images/club2.jpg" alt="해피쿡">
+
+                            <p class="club_txt2">지도교수 : 박기오</p>
+                            <p class="club_txt2">
+                                해피쿡 스터디는 외식경영학과 학과 특성을 살릴 수 있는 조리 스터디입니다.
+                                1, 2학기 국 1종, 밑반찬 2종을 배우고 함께 만들어보는 시간을 가짐으로써 
+                                조리능력을 향상 시킬 수 있습니다. <br>
+                                더 나아가 관내 기초생활수급자와 차상위 계층의 
+                                홀로 지내시는 어르신들에게 직접 만든 밑반찬을 배달해드리면서 독거 어르신들의 삶의 질 
+                                향상에도 앞장서고 있습니다
+                            </p>
+                        </div>
+                        <div class="club_card">
+                            <p class="club_txt1">오르리</p>
+                            <img src="/images/club3.jpg" alt="오르리">
+
+                            <p class="club_txt2">지도교수 : 박기오</p>
+                            <p class="club_txt2">
+                                산행동아리 오르리는 내려가기 위해 올라가는 동아리입니다. 
+                                함께 땀흘리고 내려온 후 함께 하는 식사시간. 
+                                외식경영학과 졸업생 및 재학생들과 함께 산행을 하며 건강을 지키고 우의를 돈독히 하려는
+                                산행 동아리입니다. 학기 중 2회, 주말을 이용하여 산행을 하며, 여름방학 중에는 온가족이
+                                함께하는 가족캠프도 있답니다.
+                            </p>
+                        </div>
+                        <div class="club_card">
+                            <p class="club_txt1">푸드스터디뱅크</p>
+                            <img src="/images/club4.jpg" alt="맛나다미방">
+
+                            <p class="club_txt2">지도교수 : 박기오</p>
+                            <p class="club_txt2">
+                                푸드스터디뱅크는 외식경영학과 학생들이 모여 외식업계에 대한 깊이 있는 이해와 실무 경험을
+                                쌓기 위해 운영되는 스터디 모임입니다. 우리는 외식산업의 최신 트렌드,경영 전략, 마케팅 
+                                기법 등을 연구하고 이를 토대로 실제 산업에 적용할 수 있는 실용적인 지식과 능력을 배양하는
+                                것을 목표로 합니다.
+                            </p>
+                        </div>
+                    </div>  
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <th:block th:include="/inc/_footer.html"/>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>

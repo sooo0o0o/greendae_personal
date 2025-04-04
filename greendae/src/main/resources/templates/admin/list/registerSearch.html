@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 학사관리시스템</title>
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+    <th:block th:include="/inc/admin/_header"/>
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <main>
+
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/admin/sidebar"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>수강 현항<span class="title_span">수강 현황</span> <span>학사운영 > &nbsp; </span></p>
+                </div>
+                <div class="main_content_detail">
+                    <div class="Operations_main">
+
+                        <!-- 교육 운영 현황-->
+
+
+                        <!--검색-->
+                        <div style="width: 100%; height: 50px;">
+                            <div style="float: right;">
+                                <form th:action="@{/admin/operation/search}">
+                                    <select class="search_select" name="searchType">
+                                        <option value="lecClass">개설학과</option>
+                                        <option value="lecCate">구분</option>
+                                        <option value="lecNo">코드</option>
+                                        <option value="lecName">강의명</option>
+                                        <option value="professor">담당교수</option>
+                                    </select>
+                                    <input type="text" name="keyword" class="search_text" placeholder="검색 키워드 입력">
+                                    <input type="submit" class="search_btn" value="검색">
+                                </form>
+                            </div>
+                        </div>
+                        <!--검색-->
+
+                        <table class="Education_Operations">
+                            <thead>
+                            <th style="width: 76px;">년도</th>
+                            <th style="width: 54px;">학기</th>
+                            <th style="width: 109px;">학번</th>
+                            <th style="width: 87px;">이름</th>
+                            <th style="width: 54px;">학년</th>
+                            <th style="width: 109px;">학과</th>
+                            <th style="width: 87px;">과목코드</th>
+                            <th style="width: 174px;">과목명</th>
+                            <th style="width: 87px;">구분</th>
+                            <th style="width: 87px;">교수</th>
+                            <th style="width: 54px;">학점</th>
+                            <th style="width: 109px;">수강 신청일</th>
+                            </thead>
+
+                            <tbody>
+
+                            <tr th:each="register :${pageResponseDTO.dtoList}">
+                                <td>[[${register.regYear}]]</td>
+                                <td>[[${register.regSemester}]]</td>
+                                <td>[[${register.student.user.uid}]]</td>
+                                <td>[[${register.student.user.name}]]</td>
+                                <td>[[${register.lecture.lecGrade}]]</td>
+                                <td>[[${register.lecture.lecClass}]]</td>
+                                <td>[[${register.lecture.lecNo}]]</td>
+                                <td>[[${register.lecture.lecName}]]</td>
+                                <td>[[${register.lecture.lecCate}]]</td>
+                                <td>[[${register.lecture.professor.user.name}]]</td>
+                                <td>[[${register.lecture.lecCredit}]]</td>
+                                <td>2025-04-04</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!-- 교육 운영 현황 끝-->
+
+                        <div class="page">
+                            <th:block th:if="${pageResponseDTO.prev}">
+                                <a th:href="@{/admin/operation/search(pg=${pageResponseDTO.start-1}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="prev"> ◀ </a>
+                            </th:block>
+
+                            <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+                                <a th:href="@{/admin/operation/search(pg=${num}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'"> [[${num}]] </a>
+                            </th:block>
+
+                            <th:block th:if="${pageResponseDTO.next}">
+                                <a th:href="@{/admin/operation/search(pg=${pageResponseDTO.end+1}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="next"> ▶ </a>
+                            </th:block>
+                        </div>
+
+
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <th:block th:include="/inc/admin/_footer"/>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

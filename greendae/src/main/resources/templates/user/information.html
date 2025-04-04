@@ -1,0 +1,104 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 회원정보</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/user/information.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        회원   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">회원정보</span>
+                    </span>
+                </div>
+            </div>
+            <form>
+                <div class="form-section">
+                    <h2>회원정보 수정</h2>
+                    <table>
+                        <tr>
+                            <th colspan="2"></th>
+                        </tr>
+                        <tr>
+                            <td>아이디</td>
+                            <td><input type="text" name="id" value="user1234" readonly></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">비밀번호 변경</th>
+                        </tr>
+                        <tr>
+                            <td>현재 비밀번호</td>
+                            <td><input type="password" name="current_password" placeholder="현재 비밀번호를 입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <td>새로운 비밀번호</td>
+                            <td><input type="password" name="new_password" placeholder="변경할 비밀번호를 입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <td>새로운 비밀번호 확인</td>
+                            <td><input type="password" name="confirm_password" placeholder="변경할 비밀번호를 재입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit">비밀번호 변경</button></td>
+                        </tr>
+                        <tr>
+                            <td>가입날짜</td>
+                            <td><input type="date" id="joinDate" value="2025-03-20" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            
+                <div class="form-section">
+                    <h2>기본정보 수정</h2>
+                    <table>
+                        <tr>
+                            <td>이름</td>
+                            <td><input type="text" name="name" placeholder="이름을 입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td><input type="email" name="email" placeholder="이메일을 입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <td>휴대폰번호</td>
+                            <td><input type="tel" name="phone" placeholder="휴대폰번호를 입력하세요"></td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td>
+                                <input type="text" name="zip" id="zip" readonly placeholder="우편번호 선택"/> <br>
+                                <input class="inputs" type="text" name="addr1" id="addr1" readonly placeholder="기본주소 선택"/> <br>
+                                <input class="inputs"type="text" name="addr2" id="addr2" placeholder="상세주소 입력"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            
+                <div class="button-container">
+                    <button type="submit">회원정보 수정</button>
+                    <button type="button" class="delete-btn">탈퇴하기</button>
+                    <button type="button" class="cancel-btn">취소</button>
+                </div>
+            </form>
+            
+        </main>
+        <th:block th:include="/inc/_footer.html"/>
+            <!-- 푸터 끝-->
+        </div>
+        </body>
+        </html>

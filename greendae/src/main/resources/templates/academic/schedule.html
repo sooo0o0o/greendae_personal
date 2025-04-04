@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.1/index.global.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.1/locales/ko.global.js"></script>
+    <title>학사안내 > 학사일정</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.min.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: "ko",
+                // weekends: false,
+                headerToolbar: {
+                    start: "dayGridMonth,multiMonthYear",
+                    center: "title",
+                    end: "prevYear,prev,next,nextYear",
+                    },
+
+                // 🔹 FullCalendar가 API 데이터를 불러오는 부분
+                events: function (fetchInfo, successCallback, failureCallback) {
+                    fetch('/calendar/schedule')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log("받은 데이터:", data); // 🔹 디버깅용 로그
+                            successCallback(data); // FullCalendar에 데이터 전달
+                        })
+                        .catch(error => {
+                            console.error("이벤트 로드 오류:", error);
+                            failureCallback(error);
+                        });
+                },
+
+                dayCellContent: function (arg) {
+                    const { date } = arg;
+
+
+
+                    return date.getDate();
+                },
+            });
+            calendar.render();
+
+            
+        });
+
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        대학소개   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">학사일정</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/academic/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>학사일정</p>
+                    </div>
+                    <div class="main_content_detail">
+                        <!-- 캘릭더 시작-->
+                        <div id='calendar' style="width: 800px; height: 800px;"></div>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <th:block th:include="/inc/_footer.html"/>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>

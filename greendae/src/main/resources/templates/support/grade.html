@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생지원 > 성적조회</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/support/grade.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        학생지원   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">성적조회</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/support/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>성적조회</p>
+                    </div>
+                    <div class="semester">
+                        <select name="semester_year" id="semester_year" onchange="updateSemester()">
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                        <span style="color: #666666;">년</span>
+                        <select name="semester_quarter" id="semester_quarter" onchange="updateCourseList()">
+                            <script>
+                                const semesterData = {
+                                    "2025": ["1", "2"],
+                                    "2024": ["1", "2"],
+                                    "2023": ["1", "2"]
+                                };
+
+                                function updateSemester(){
+                                    let year = document.getElementById("semester_year").value;  //선택 년도
+                                    let semesterSelect = document.getElementById("semester_quarter"); //학기
+                                    semesterSelect.innerHTML = "";  //기존 옵션 삭제
+
+                                    //새로운 학기 옵션
+                                    semesterData[year].forEach(semester => {
+                                        let option = document.createElement("option");
+                                        option.value = semester;
+                                        option.textContent = semester;
+                                        semesterSelect.appendChild(option);
+                                    });
+                                }
+                                window.onload = updateSemester;
+                            </script>
+                        </select>
+                        <span style="color: #666666;">학기</span>
+                    </div>
+                    <div class="total">
+                        <p>신청과목수 [[${pageResponseDTO.total}]]과목, 총 신청 학점 [[${total}]]학점</p>
+                    </div>
+                    <div class="register_list">
+                        <table class="list">
+                            <thead>
+                                <tr>
+                                    <th>교과목코드</th>
+                                    <th>과목명</th>
+                                    <th>대상학년</th>
+                                    <th>담당교수</th>
+                                    <th>이수구분</th>
+                                    <th>점수</th>
+                                    <th>등급</th>
+                                    <th>취득학점</th>
+                                    <th>기타</th>
+                                </tr>
+                            </thead>
+                            <tbody id="course_list">
+                                <tr th:if="${#lists.isEmpty(gradeDTOList)}" style="text-align: center;">
+                                    <td colspan="9">수강신청내역이 없습니다</td>
+                                </tr>
+                                <tr th:each="grade: ${gradeDTOList}">
+                                    <td th:text="${grade.regLecNo}"></td>
+                                    <td th:text="${grade.lecName}"></td>
+                                    <td th:text="${grade.lecGrade}"></td>
+                                    <td th:text="${grade.lecProName}"></td>
+                                    <td th:text="${grade.lecCate}"></td>
+                                    <td th:text="${grade.regTotalScore}"></td>
+                                    <td>A+</td>
+                                    <td th:text="${grade.lecCredit}"></td>
+                                    <td>
+                                        <button id="btn_details" class="details">상세확인</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="margin-top: 5px; color: #666666; font-weight: 350; font-size: 16px;">※ 점수 이의신청은 학생지원실에 문의하시기 바랍니다.</p>
+                    </div>
+
+                    <div class="page">
+                        <th:block th:if="${pageResponseDTO.prev}">
+                            <a th:href="@{/support/grade(pg=${pageResponseDTO.start-1})}" class="prev">◀</a>
+                        </th:block>
+
+                        <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+                            <a th:href="@{/support/grade(pg=${num})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
+                        </th:block>
+
+                        <th:block th:if="${pageResponseDTO.next}">
+                            <a th:href="@{/support/grade(pg=${pageResponseDTO.end+1})}" class="next">▶</a>
+                        </th:block>
+                    </div>
+
+                    <div id="details" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>상세확인</h2>
+                            <table class="detail_table">
+                                <tr>
+                                    <th>교과목코드</th>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <th>과목명</th>
+                                    <td>자바 프로그래밍</td>
+                                </tr>
+                                <tr>
+                                    <th>대상학년</th>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th>담당교수</th>
+                                    <td>김자바</td>
+                                </tr>
+                                <tr>
+                                    <th>이수구분</th>
+                                    <td>전공</td>
+                                </tr>
+                                <tr>
+                                    <th>점수</th>
+                                    <td>99.0</td>
+                                </tr>
+                                <tr>
+                                    <th>등급</th>
+                                    <td>A</td>
+                                </tr>
+                                    <th>취득학점</th>
+                                    <td>3</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <script>
+            document.querySelector("#course_list").addEventListener("click", function(e) {
+                if (e.target && e.target.classList.contains('details')) {
+                    //const gradeData = event.target.dataset.grade;
+
+                    //alert('dfdfdf');
+                    const button = e.target;
+                    const tr = button.closest('tr');
+
+                    console.log(tr);
+                    const regLecNo = tr.querySelector('td:nth-child(1)').innerText;
+                    const lecName = tr.querySelector('td:nth-child(2)').innerText;
+                    const lecGrade = tr.querySelector('td:nth-child(3)').innerText;
+                    const lecProName = tr.querySelector('td:nth-child(4)').innerText;
+                    const lecCate = tr.querySelector('td:nth-child(5)').innerText;
+                    const regTotalScore = tr.querySelector('td:nth-child(6)').innerText;
+                    const regGradeScore = tr.querySelector('td:nth-child(7)').innerText;
+                    const regCredit = tr.querySelector('td:nth-child(8)').innerText;
+                    console.log(regLecNo);
+                    console.log(lecName);
+                    console.log(lecGrade);
+                    console.log(lecProName);
+                    console.log(lecCate);
+                    console.log(regTotalScore);
+                    console.log(regGradeScore);
+                    console.log(regCredit);
+
+
+
+                    // 모달 띄우기
+                    const modal = document.getElementById('details');
+                    modal.style.display = "block";
+
+                    const modalTable = modal.querySelector('.detail_table');
+
+                    // 각 td에 값을 채우기
+                    modalTable.querySelector('tr:nth-child(1) td:nth-child(2)').innerText = regLecNo;
+                    modalTable.querySelector('tr:nth-child(2) td:nth-child(2)').innerText = lecName;
+                    modalTable.querySelector('tr:nth-child(3) td:nth-child(2)').innerText = lecGrade;
+                    modalTable.querySelector('tr:nth-child(4) td:nth-child(2)').innerText = lecProName;
+                    modalTable.querySelector('tr:nth-child(5) td:nth-child(2)').innerText = lecCate;
+                    modalTable.querySelector('tr:nth-child(6) td:nth-child(2)').innerText = regTotalScore;
+                    modalTable.querySelector('tr:nth-child(7) td:nth-child(2)').innerText = regGradeScore;
+                    modalTable.querySelector('tr:nth-child(8) td:nth-child(2)').innerText = regCredit;
+                }
+
+            });
+
+
+            // 모달 닫기
+            document.querySelectorAll('.close').forEach(closeBtn => {
+                closeBtn.onclick = function() {
+                    document.getElementById('details').style.display = "none";
+                }
+            });
+
+            // 배경 클릭 시 모달 닫기
+            window.onclick = function(event) {
+                if (event.target == document.getElementById('details')) {
+                    document.getElementById('details').style.display = "none";
+                }
+            };
+        </script>
+
+        <!-- 메인 끝-->
+        <th:block th:include="/inc/_footer.html"/>
+    </div>
+</body>
+</html>

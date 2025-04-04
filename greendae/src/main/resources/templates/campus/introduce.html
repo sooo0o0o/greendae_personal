@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대학생활 > 학생회 소개</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/campus/introduce.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        학생지원   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">학생회 소개</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/campus/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>학생회 소개</p>
+                    </div>
+
+                    <div class="demo_list">
+                        <ul>
+                            <li class="active">
+                                <a href="#human">인문사회대학</a>
+                            </li>
+                            <li>
+                                <a href="#nature">자연과학대학</a>
+                            </li>
+                            <li>
+                                <a href="#computer">공과대학</a>
+                            </li>
+                            <li>
+                                <a href="#education">사범대학</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div id="content">
+                        <p>그린대학교 학생회입니다.</p>
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script th:src="@{/js/introduce.js}"></script>
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <th:block th:include="/inc/_footer.html"/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 학사관리시스템 교육윤영현황</title>
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+
+    <th:block th:include="/inc/admin/_header"/>
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <main>
+
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/admin/sidebar"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>대학 및 학과 등록<span class="title_span">대학 및 학과</span> <span>대학 및 학과 등록 > &nbsp; </span></p>
+                </div>
+                <div class="main_content_detail">
+                    <div class="Colleage_main">
+
+                        <!-- 대학정보입력-->
+                        <p class="Operations_title">
+                            <img src="/images/bullet-h4.png" alt="기호">
+                            대학 정보 입력
+                        </p>
+                        <div class="collage_div1">
+                            <form th:action="@{/admin/college/register}" method="post" enctype="multipart/form-data">
+                                <table class="collage_info">
+                                    <tr>
+                                        <td>대학명</td>
+                                        <td><input type="text" name="name" class="ipt1" placeholder="예) 인문사회대학"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>대학 영문명</td>
+                                        <td><input type="text" name="engName" class="ipt1" placeholder="예) Humanites And Social Sciences"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>대학소개</td>
+                                        <td>
+                                            <input type="text" name="title" class="ipt2" placeholder="대학 소개 제목입력"> <br><br>
+                                            <textarea name="content" dirname="content" class="tarea" placeholder="대학 소개 내용입력"></textarea><br>
+                                            <br><br><br><br><br>
+
+                                            <input type="file" name="image" class="file1">
+                                            <span>대학·대학원 소개 페이지 출력 이미지(320 x 240) 첨부</span>
+
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <button type="submit" class="btn_b">등록</button>
+                            </form>
+                        </div>
+
+
+                        <!-- 대학정보입력 끝-->
+                        <!-- 학과 정보 입력-->
+
+                        <p class="Operations_title">
+                            <img src="/images/bullet-h4.png" alt="기호">
+                            학과 정보 입력
+                        </p>
+                        <form th:action="@{/admin/department/register}" method="post">
+                            <table class="department_info">
+                                <tr>
+                                    <td>학과번호</td>
+                                    <td> <span class="info_red_txt">고유 2자리 숫자 자동 생성</span></td>
+                                    <td>단과대학</td>
+                                    <td>
+                                        <select name="college">
+                                            <option th:each="college : ${collegeDTOS}" th:value="${college.name}">[[${college.name}]]</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>학과명</td>
+                                    <td> <input type="text" name="deptName" class="ipt1" placeholder="학과명 입력" required> </td>
+                                    <td>영문명</td>
+                                    <td>
+                                        <input type="text" name="deptEname" class="ipt1" placeholder="학과 공식 영문 이름" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>설립연도</td>
+                                    <td> <input type="date" name="date" style="float: left;" required></td>
+                                    <td>학과장</td>
+                                    <td>
+                                        <select name="deptChair" >
+                                            <option th:each="chairPersonDTO : ${chairPersonDTOS}" th:value="${chairPersonDTO.name}">[[${chairPersonDTO.name}]]</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>학과연락처</td>
+                                    <td>
+                                        <input type="text" name="deptHp" class="ipt1" placeholder="학과 연락처 입력" required>
+                                    </td>
+                                    <td>학과 사무실</td>
+                                    <td>
+                                        <input type="text" name="deptOffice" class="ipt1" placeholder="인문관 3층 306호" required>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <button type="submit" class="btn_b">등록</button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <th:block th:include="/inc/admin/_footer"/>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

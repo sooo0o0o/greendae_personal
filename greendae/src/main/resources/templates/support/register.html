@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생지원 > 수강신청</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/support/register.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        학생지원   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">수강신청</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/support/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>수강신청</p>
+                    </div>
+                    <div class="search">
+                        <form th:action="@{/support/search_register}">
+                            <select name="searchType">
+                                <option value="choice">선택</option>
+                                <option value="lecClass">개설학과</option>
+                                <option value="lecCate">구분</option>
+                                <option value="lecNo">코드</option>
+                                <option value="lecName">과목명</option>
+                                <option value="professor">담당교수</option>
+                            </select>
+                            <input class="type" type="text" name="keyword" placeholder=" 검색어를 입력해주세요">
+                            <input class="submit_search" type="submit" value="검색">
+                        </form>
+                    </div>
+                    <div class="register_table">
+                        <table class="register">
+                            <tr>
+                                <th>개설학과</th>
+                                <th>구분</th>
+                                <th>학년</th>
+                                <th>코드</th>
+                                <th>과목명</th>
+                                <th>학점</th>
+                                <th>담당교수</th>
+                                <th>수강인원</th>
+                                <th>비고</th>
+                                <th>신청</th>
+                            </tr>
+                                <tbody>
+                                    <tr th:if="${#lists.isEmpty(lectureDTOList)}" style="text-align: center;">
+                                        <td colspan="10">수강 가능한 과목이 없습니다.</td>
+                                    </tr>
+                                    <tr th:each="lecture : ${lectureDTOList} ">
+                                        <td th:text="${lecture.lecClass}"></td>
+                                        <td th:text="${lecture.lecCate}"></td>
+                                        <td th:text="${lecture.lecGrade}"></td>
+                                        <td th:text="${lecture.lecNo}"></td>
+                                        <td th:text="${lecture.lecName}"></td>
+                                        <td th:text="${lecture.lecCredit}"></td>
+                                        <td th:text="${lecture.professor.user.name}"></td>
+                                        <td>[[${lecture.lecStdCount}]]/[[${lecture.lecStdTotal}]]</td>
+                                        <td> </td>
+                                        <td>
+                                            <button class="submit" th:data-lecNo="${lecture.lecNo}" onclick="registerLecture(this)">신청</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        </table>
+
+                        <div class="page">
+                            <th:block th:if="${pageResponseDTO.prev}">
+                                <a th:href="@{/support/register(pg=${pageResponseDTO.start-1})}" class="prev"> ◀ </a>
+                            </th:block>
+
+                            <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+                                <a th:href="@{/support/register(pg=${num})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
+                            </th:block>
+
+                            <th:block th:if="${pageResponseDTO.next}">
+                                <a th:href="@{/support/register(pg=${pageResponseDTO.end+1})}" class="next"> ▶ </a>
+                            </th:block>
+                        </div>
+                    </div>
+
+                    <div id="confirmationModal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                수강신청 확인
+                            </div>
+                            <div class="modal-body">
+                                <p>해당 과목을 수강신청 하시겠습니까?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="cancel-btn" id="cancelBtn">취소</button>
+                                <button class="confirm-btn" id="confirmBtn">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        // 버튼 클릭 시 모달 열기
+                        document.querySelectorAll('.submit').forEach(button => {
+                            button.addEventListener('click', function() {
+                                document.getElementById('confirmationModal').style.display = "block"; // 모달 열기
+                            });
+                        });
+                
+                        // 취소 버튼 클릭 시 모달 닫기
+                        document.getElementById('cancelBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                        });
+                
+                        // 확인 버튼 클릭 시 알림 메시지
+                        document.getElementById('confirmBtn').addEventListener('click', function() {
+                            document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                        });
+                
+                        // 모달 외부 클릭 시 모달 닫기
+                        window.addEventListener('click', function(event) {
+                            if (event.target === document.getElementById('confirmationModal')) {
+                                document.getElementById('confirmationModal').style.display = "none"; // 모달 닫기
+                            }
+                        });
+
+                        //기능구현
+                        function registerLecture(button) {
+                            let lecNo = button.getAttribute("data-lecNo"); //수강할 과목 코드 가져오기
+
+                            //모달 표시
+                            document.getElementById('confirmationModal').style.display = "block";
+
+                            //확인 버튼 클릭 시 Ajax 요청
+                            document.getElementById('confirmBtn').onclick = function(){
+                                fetch('/support/register', {
+                                    method: 'POST',
+                                    headers: {'Content-Type' : 'application/json'},
+                                    body: JSON.stringify({
+                                        regLecNo: lecNo
+                                    })
+                                })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        if(data.success){
+                                            alert("수강신청이 완료되었습니다.");
+                                            location.reload(); //새로고침
+                                        }else{
+                                            if (data.error === "capacity_exceeded") {
+                                                alert("해당 과목의 수강 가능 인원이 초과되었습니다.");
+                                            } else if (data.error === "duplicate_registration") {
+                                                alert("이미 신청한 과목입니다.");
+                                            } else {
+                                                alert("수강신청에 실패했습니다. 다시 시도해 주세요.");
+                                            }
+                                            //alert("수강신청에 실패했습니다.");
+                                        }
+                                    })
+                                    .catch(error => console.error('Error:', error));
+
+                                document.getElementById('confirmationModal').style.display = "none"; //모달 닫기
+                            };
+                        }
+                    </script>
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <th:block th:include="/inc/_footer.html"/>
+    </div>
+</body>
+</html>

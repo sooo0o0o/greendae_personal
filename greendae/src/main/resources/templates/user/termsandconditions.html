@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 약관동의</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/user/termsandconditions.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function(){
+
+            const btnNext = document.getElementsByClassName('btnNext')[0];
+            const check1 = document.getElementsByTagName('input')[0];
+
+            btnNext.onclick = function(e){
+
+                if(check1.checked){
+                    return true;
+                }else{
+                    alert('약관 동의체크를 해야합니다.');
+                    return false;
+                }
+
+            }
+        });
+
+    </script>
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작-->
+        <th:block th:include="/inc/_header.html"/>
+
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        회원   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">약관안내</span>
+                    </span>
+                </div>
+            </div>
+
+            <article class="login_content">
+                <div class="divall">
+                    <p style="font-size: 20px; font-weight: 500; color: #3f97f6; margin-top: 50px;">약관동의</p>
+                    <p style="font-size: 15px; font-weight: 350; color: #3f97f6;">※ 대학구성원(학생, 교직원)은 회원가입 없이 학번, 교번(사번) 아이디를 사용하여 로그인할 수 있습니다. <br>
+                       ※ 만 14세 미만 아동의 경우 홈페이지 회원가입에 제한이 있습니다.
+                    </p>
+                    <div class="container" style="margin-top: 15px;">
+                        <table style="border-collapse: collapse; border-top: 2px solid black;">
+                            <tr>
+                                <td style="width: 198px; height: 226px; text-align: center; border-right: 1px solid #DEDEDE; border-bottom: 1px solid #DEDEDE; background: #F4F8FC;"> 이용약관</td>
+                                <td style="width: 792px; height: 226px; padding: 10px; box-sizing: border-box;">
+                                    <div style="width: 100%; height: 200px; margin: 0 auto; border: 1px solid #DDDDDD; padding: 10px; box-sizing: border-box; overflow: auto;">
+                                        <p>[[${termsDTO.terms}]]</p>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 198px; height: 226px; text-align: center; border-right: 1px solid #DEDEDE; border-bottom: 1px solid #DEDEDE; background: #F4F8FC;"> 개인정보 수집안내</td>
+                                <td style="width: 792px; height: 226px; padding: 10px; box-sizing: border-box;">
+                                    <div style="width: 100%; height: 200px; margin: 0 auto; border: 1px solid #DDDDDD; padding: 10px; box-sizing: border-box; overflow: auto;">
+                                        <p>[[${termsDTO.privacy}]]</p>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                        <div>
+                            <input type="checkbox" id="agree" class="agree"/>
+                            <label for="agree">위의 홈페이지 이용에 따른 회원가입 약관 및 개인정보 수집·이용에 모두 동의합니다.</label>
+                        </div>
+                        <div class="btn">
+                            <button style="width: 56px; height: 48px; background: #8B8B8B; border: none;"><a href="#"><span style="color: #FFFFFF; font-size: 18px; font-weight: 300;">취소</span></a></button>
+                            <button style="width: 56px; height: 48px; background: #3F97F6; border: none;"><a href="/user/accession"><span style="color: #FFFFFF; font-size: 18px; font-weight: 300;" class="btnNext">다음</span></a></button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <th:block th:include="/inc/_footer.html"/>
+    </div>
+</body>
+</html>

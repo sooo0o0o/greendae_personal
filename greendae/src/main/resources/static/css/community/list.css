@@ -1,0 +1,113 @@
+/* 메인 내용 부분*/
+
+
+
+.main_content_detail > div > nav > form {
+    float: right;
+    margin-bottom: 20px;
+}
+
+.main_content_detail > div > nav > form > select {
+    width: 150.5px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #dedede;
+    color:#666666;
+}
+
+.main_content_detail > div > nav > form > input[name=keyword]{
+    width: 237px;
+    height: 38px;
+    text-indent: 6px;
+    border: 1px solid #dedede;
+}
+.main_content_detail > div > nav >form > input[type=submit]{
+    width: 70px;
+    height: 40px;
+    border: 1px solid #d7d7d7;
+    background: #3497f6;
+    color: #ffffff;
+}
+
+.main_content_detail > div > table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 2px solid #000000;
+}
+
+.main_content_detail > div > table tr {}
+.main_content_detail > div > table > caption {
+    text-align: left;
+    margin-bottom: 6px;
+}
+.main_content_detail > div > table tr > th {
+    width: auto;
+    height: 61px;
+    background: #FAFAFA;
+    border-bottom: 1px solid #a3a3a3;
+    font-weight: 700;
+}
+.main_content_detail > div > table tr > th:nth-of-type(1) {width: 80px;}
+.main_content_detail > div > table tr > th:nth-of-type(2) {width: 490px;}
+.main_content_detail > div > table tr > th:nth-of-type(3) {width: 170px;}
+.main_content_detail > div > table tr > th:nth-of-type(4) {width: 120px;}
+.main_content_detail > div > table tr > th:nth-of-type(5) {width: 70px;}
+
+
+.main_content_detail > div > table tr > td {
+    width: auto;
+    height: 58px;
+    border-bottom: 1px solid #d8d8d8;
+    text-align: center;
+}
+
+
+.main_content_detail > div > table tr > td:nth-child(2) {text-align: left}
+
+
+.main_content_detail > div > .page {
+    text-align: center;
+    margin-top: 30px;
+}
+.main_content_detail > div > .page > a {
+
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #dedede;
+    color: #888888;
+    width: 18px;
+
+}
+.main_content_detail > div > .page > .prev {margin-right: 20px;}
+.main_content_detail > div > .page > .next {margin-left: 20px;}
+.main_content_detail > div > .page > .num {
+
+}
+.main_content_detail > div > .page > .current {
+    border: 1px solid #3F97F6;
+    background: #3F97F6;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #bebebe;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btnWrite {
+    float: right;
+    border: 1px solid #3b3c3f;
+    background: #4b545e;
+    color: #fff;
+}
+
+
+
+
+
+

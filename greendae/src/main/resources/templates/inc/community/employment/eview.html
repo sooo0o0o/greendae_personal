@@ -1,0 +1,235 @@
+<link rel="stylesheet" href="/css/community/view.css">
+<link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+<script>
+
+    document.addEventListener('DOMContentLoaded', function(){
+
+        const formComment = document.formComment;
+        const commentList = document.getElementsByClassName('commentList')[0];
+        const empty = document.getElementsByClassName('empty')[0];
+
+        // 댓글 목록 출력
+        const parent = formComment.parent.value;
+        console.log("parent : " + parent);
+
+        fetch(`/comment/list?parent=${parent}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+
+                empty.remove();
+
+                data.forEach(comment => {
+                    // 동적 태그 생성
+                    const article = `<article data-cno="${comment.cno}">
+                                    <span class="nick">${comment.user.name}</span>
+                                    <span class="date">${comment.wdate}</span>
+                                    <p class="content">${comment.content}</p>
+                                    <div>
+                                        <a href="#" class="remove">삭제</a>
+                                        <a href="#" class="modify">수정</a>
+                                    </div>
+                                </article>`;
+                    commentList.insertAdjacentHTML('beforeend', article);
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            });
+
+        // 댓글 등록
+        formComment.onsubmit = async function(e){
+            e.preventDefault();
+
+            const jsonData = {
+                "parent": this.parent.value,
+                "writer": this.writer.value,
+                "content": this.comment.value
+            };
+
+            const response = await fetch('/comment/write', {
+                method: 'POST',
+                headers: {"Content-type": "application/json"},
+                body: JSON.stringify(jsonData)
+            });
+
+            const data = await response.json();
+            console.log(data);
+
+            // 동적 태그 생성
+            const article = `<article data-cno="${data.cno}">
+                                    <span class="name">${data.user.name}</span>
+                                    <span class="date">${data.wdate}</span>
+                                    <p class="content">${data.content}</p>
+                                    <div>
+                                        <a href="#" class="remove">삭제</a>
+                                        <a href="#" class="modify">수정</a>
+                                    </div>
+                                </article>`;
+
+            this.comment.value = '';
+            empty.remove();
+            commentList.insertAdjacentHTML('beforeend', article);
+        }
+
+        // 댓글 삭제 및 수정
+        commentList.addEventListener('click', async function(e){
+            e.preventDefault();
+
+            const article = e.target.closest('article');
+            const cno = article.dataset.cno;
+
+            // 삭제 기능
+            if (e.target.classList.contains('remove')) {
+                if (!confirm("정말 삭제하시겠습니까?")) return;
+
+                const response = await fetch(`/comment/delete?cno=${cno}`, {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ cno: cno })
+                });
+
+                const result = await response.text();
+                if (result === "success") {
+                    article.remove();
+                } else {
+                    alert("삭제 실패");
+                }
+            }
+
+            // 수정 기능
+            if (e.target.classList.contains('modify')) {
+                const contentElem = article.querySelector('.content');
+                const oldContent = contentElem.innerText;
+
+                // 기존 댓글을 textarea로 변경
+                contentElem.innerHTML = `<textarea class="editContent">${oldContent}</textarea>`;
+
+                // 기존 버튼 숨기고, 수정 완료 버튼 추가
+                article.querySelector('.modify').style.display = 'none';
+                article.querySelector('.remove').style.display = 'none';
+
+                const saveBtn = document.createElement('a');
+                saveBtn.href = "#";
+                saveBtn.className = "save";
+                saveBtn.innerText = "저장";
+
+                const cancelBtn = document.createElement('a');
+                cancelBtn.href = "#";
+                cancelBtn.className = "cancel";
+                cancelBtn.innerText = "취소";
+
+                article.querySelector('div').appendChild(saveBtn);
+                article.querySelector('div').appendChild(cancelBtn);
+
+                // 수정 완료 버튼 클릭 이벤트
+                saveBtn.addEventListener('click', async function(){
+                    const newContent = article.querySelector('.editContent').value;
+
+                    const response = await fetch(`/comment/update`, {
+                        method: 'POST',
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ cno: cno, content: newContent })
+                    });
+
+                    const result = await response.text();
+                    if (result === "success") {
+                        contentElem.innerHTML = newContent; // UI 업데이트
+                        restoreButtons(article);
+                    } else {
+                        alert("수정 실패");
+                    }
+                });
+
+                // 취소 버튼 클릭 이벤트
+                cancelBtn.addEventListener('click', function(){
+                    contentElem.innerHTML = oldContent;
+                    restoreButtons(article);
+                });
+            }
+        });
+
+        // 버튼 복구 함수
+        function restoreButtons(article) {
+            article.querySelector('.modify').style.display = 'inline';
+            article.querySelector('.remove').style.display = 'inline';
+            article.querySelector('.save').remove();
+            article.querySelector('.cancel').remove();
+        }
+
+
+    });
+</script>
+
+<div id="employmentSection">
+    <table border="0">
+        <tr>
+            <th>제목</th>
+            <td><input type="text" name="title" th:value="${articleDTO.title}" readonly/></td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td><input type="text" name="writer" th:value="${articleDTO.user.name}" readonly/></td>
+        </tr>
+        <tr>
+            <th>마감일</th>
+            <td><input type="text" name="edate" th:value="${articleDTO.edate}" readonly/></td>
+        </tr>
+        <tr th:if="${articleDTO.file > 0}">
+            <th>파일</th>
+            <td>
+                <th:block th:each="file:${articleDTO.files}">
+                    <p><a th:href="@{/file/download(fno=${file.fno})}">[[${file.oName}]]</a>&nbsp;<span>[[${file.download}]]</span>회 다운로드</p>
+                </th:block>
+            </td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td>
+                <textarea name="content" readonly>[[${articleDTO.content}]]</textarea>
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        <!-- 로그인한 사용자만 삭제 버튼 표시 -->
+        <a th:if="${#authorization.expression('isAuthenticated()') and #authentication.principal.user.uid == articleDTO.user.uid}"
+           th:href="@{/community/employment/delete(no=${articleDTO.no})}" class="btn btnRemove">삭제</a>
+        <a th:if="${#authorization.expression('isAuthenticated()') and #authentication.principal.user.uid == articleDTO.user.uid}"
+           th:href="@{/community/employment/modify(no=${articleDTO.no})}" class="btn btnModify">수정</a>
+        <a th:href="@{/community/employment}" class="btn btnList">목록</a>
+    </div>
+
+    <!-- 댓글목록 -->
+    <section class="commentList">
+        <h3>댓글목록</h3>
+        <p class="empty">등록된 댓글이 없습니다.</p>
+    </section>
+
+    <!-- 댓글 쓰기-->
+    <section class="commentForm">
+        <h3>댓글쓰기</h3>
+
+        <!-- 로그인하지 않은 경우 안내 메시지 -->
+        <div th:if="${not #authorization.expression('isAuthenticated()')}">
+            <p>댓글을 작성하려면 <a th:href="@{/user/login}">로그인</a>하세요.</p>
+        </div>
+
+
+        <form name="formComment" method="post">
+            <input type="hidden" name="writer" th:value="${#authorization.expression('isAuthenticated()') ? #authentication.principal.user.uid : ''}">
+            <input type="hidden" name="parent" th:value="${articleDTO.no}">
+            <textarea name="comment" placeholder="댓글내용 입력"></textarea>
+            <div>
+                <a href="#" class="btn btnCancel">취소</a>
+                <input type="submit" value="작성완료" class="btn btnComplete"/>
+            </div>
+        </form>
+    </section>
+</div>
+
+
+</div>
+</article>
+</section>
+</main>

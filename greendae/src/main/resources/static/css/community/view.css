@@ -1,0 +1,149 @@
+/* 글보기 */
+.main_content_detail > div {
+    width: 100%;
+    height: auto;            
+    margin: 60px auto;
+    overflow: hidden;
+}
+.main_content_detail > div table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 2px solid #111;
+}
+.main_content_detail > div table caption{
+    text-align: left;
+    margin-bottom: 6px;
+}
+.main_content_detail > div table th {
+    width: 112px;
+    height: 50px;
+    background: #f5f8f9;
+    border-bottom: 1px solid #e9e9e9;
+}
+.main_content_detail > div table td {
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e9e9e9;
+}
+.main_content_detail > div table td > p {
+    line-height: 20px;
+}
+.main_content_detail > div table td > input {
+    width: 400px;
+    height: 24px;
+    border: none;
+}
+.main_content_detail > div table td > textarea {
+    width: 100%;
+    height: 280px;
+    resize: none;
+    border: none;
+}
+
+.main_content_detail > div > div {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.main_content_detail > div > section {
+    width: 100%;
+    height: auto;
+    border: 1px solid #e3e3e3;
+    background: #f9f9f9;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 16px;
+}
+    
+.main_content_detail > div > section > h3 {
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px dotted #111;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.main_content_detail > div > .commentList {}
+.main_content_detail > div > .commentList > article {overflow: hidden;}        
+.main_content_detail > div > .commentList .nick {}
+.main_content_detail > div > .commentList .date {}
+.main_content_detail > div > .commentList .content {padding: 10px;}
+.main_content_detail > div > .commentList > article > div {float: right;}
+.main_content_detail > div > .commentList > article .remove {}
+.main_content_detail > div > .commentList > article .modify {}
+.main_content_detail > div > .commentList > .empty {
+    margin: 20px;
+    text-align: center;
+}
+
+.main_content_detail > div > .commentForm {
+    overflow: hidden;
+}
+.main_content_detail > div > .commentForm textarea {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #e4eaec;
+    padding: 6px;
+    box-sizing: border-box;
+    resize: none;
+}
+.main_content_detail > div > .commentForm div {
+    float: right;
+    margin-top: 10px;
+}
+
+/* 버튼 공통 */
+.btn {
+    display: inline-block;
+    padding: 8px;    
+    border: 1px solid #bebebe; 
+    text-align: center;    
+    cursor: pointer;
+}
+
+.btnRegister {}
+.btnWrite {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #3b3c3f; 
+    background: #4b545e; 
+    color: #fff;
+}
+
+.btnComplete {
+    border: 1px solid #3b3c3f; 
+    background: #4b545e; 
+    color: #fff;
+}
+
+.btnAuth, .btnConfirm {
+    display: inline-block;
+    padding: 4px;    
+    border: 1px solid #bebebe; 
+    text-align: center;
+}
+
+
+.btnUpdatePass {
+    padding: 5px; background: #2e658a; color:#fff; border: 1px solid #bebebe; 
+}
+.btnWithdraw {
+    padding: 5px; background: #ed2f2f; color:#fff;
+}
+
+.editContent{
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    resize: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(228, 234, 236);
+    border-image: initial;
+    padding: 6px;
+}
+

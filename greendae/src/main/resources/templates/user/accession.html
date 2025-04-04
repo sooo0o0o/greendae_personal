@@ -1,0 +1,115 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>그린대학교 로그인</title>
+        <link rel="stylesheet" href="/css/layout/layout.css">
+        <link rel="stylesheet" href="/css/user/accession.css">
+        <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+        <script src="/js/validation.js"></script>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="/js/postcode.js"></script>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- 헤더 시작작-->
+            <th:block th:include="/inc/_header.html"/>
+
+            <!-- 헤더 끝-->
+            <!-- 메인 시작작-->
+            <main>
+                <div class="background">
+                    <div>
+                        <span style="margin-top: 10px;">
+                            <img src="/images/ico-home.png" alt="HOME">
+                            <img src="/images/bg-path-arrow.png" alt=">">
+                            회원   
+                            <img src="/images/bg-path-arrow.png" alt=">">
+                            <span style="color: #071F4B;">회원가입</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="user_acc">
+                    <div class="user_accession">
+                        <p style="color: #3f97f6; font-size: 20px; margin-top: 60px;">회원가입</p>
+                        <p style="color: #3f97f6; font-size: 15px; margin-bottom: 25px;">반갑습니다 그린대학교 입니다. 회원가입 후 더 많은 정보를 이용하세요.<br>
+                            대학구성원(학생, 교직원)은 회원가입 없이 학번, 교번(사번) 아이디를 사용하여 로그인할 수 있습니다.
+                        </p>
+                        <form name="formRegister" th:action="@{/user/accession}" method="post">
+                            <table style="border-collapse: collapse;">
+                                <tr>
+                                    <th>아이디<span style="color: red;">*</span></th>
+                                    <td>
+                                        <input type="text" name="uid" placeholder="아이디 입력" maxlength="10">
+                                        <button id="btnCheckUid" type="button">중복체크</button>
+                                        <span class="uidResult" style="margin-left: 10px; color: #333333;">영문·숫자 조합 4~10자 이내</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>비밀번호<span style="color: red;">*</span></th>
+                                    <td><input type="password" name="pass" placeholder="비밀번호 입력" maxlength="16">
+                                    <span class="passResult" style="margin-left: 10px; color: #333333;">비밀번호는 8-16자리 이내, 영문ㆍ숫자ㆍ특수문자 조합</span>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>비밀번호 확인<span style="color: red;">*</span></th>
+                                    <td><input type="password" name="pass2" placeholder="비밀번호 확인입력" maxlength="16"></td>
+                                </tr>
+                                <tr>
+                                    <th>이름<span style="color: red;">*</span></th>
+                                    <td>
+                                        <input type="text" name="name" placeholder="이름 입력">
+                                        <span class="nameResult"></span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>휴대폰<span style="color: red;">*</span></th>
+                                    <td>
+                                        <input type="text" name="hp" placeholder="휴대폰 입력" maxlength="13">
+                                        <span class="hpResult"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이메일<span style="color: red;">*</span></th>
+                                    <td>
+                                        <input type="email" name="email" placeholder="이메일 입력"/>
+                                        <button id="btnSendEmail" type="button">인증코드 전송</button>
+                                        <span class="emailResult"></span>
+                                        <div class="auth" style="display: none">
+                                            <input type="text" name="auth" placeholder="인증번호 입력"/>
+                                            <button id="btnAuthEmail" type="button">확인</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주소</th>
+                                    <td>
+                                        <input type="text" id="zip" name="zip" placeholder="우편번호"/>
+                                        <button type="button" onclick="postcode()">우편번호 찾기</button><br>
+                                        <input type="text" id="addr1" name="addr1" placeholder="주소 검색"/><br>
+                                        <input type="text" id="addr2" name="addr2" placeholder="상세주소 입력"/>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            <p style="margin-top: 10px; color: #666666;"><span style="color: red;">*</span>필수입력</p>
+        
+                            <div style="text-align: right; float: right;">
+                                <button style="width: 56px; height: 48px; background-color: #8B8B8B; border: none;"><a href="#"><span style="color: #ffffff;">취소</span></a></button>
+                                <button type="submit" style="width: 92px; height: 48px; background-color: #3f97f6; border: none;">회원가입</button>
+                            </div>
+                        </form>
+                    </div>                
+                </div> 
+            </main>
+        
+        <!-- 푸터끝-->
+        <th:block th:include="/inc/_footer.html"/>
+        <!-- 푸터 끝-->
+    </div>
+    </body>
+    </html>

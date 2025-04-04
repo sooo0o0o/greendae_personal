@@ -1,0 +1,73 @@
+.custom-checkbox {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border-radius: 50%; /* 완전한 원형 */
+    background: #DFDFDF; /* 기본 배경 색상 */
+    appearance: none; /* 기본 체크박스 스타일 제거 */
+    border: 2px solid #A9A9A9; /* 테두리 */
+    position: relative; /* 체크 표시를 위한 위치 설정 */
+    display: inline-block; /* 블록 형태로 보여주기 */
+}
+
+/* 체크박스가 체크된 상태 */
+.custom-checkbox:checked {
+    background: #3fe87f; /* 배경색을 변화시킬 수도 있음 */
+    border-color: #3fe87f;
+}
+
+/* 체크 표시 만들기 */
+.custom-checkbox:checked::before {
+    content: '✔'; /* 체크 표시 문자 */
+    font-size: 16px; /* 체크 표시 크기 */
+    color: white; /* 체크 표시 색상 */
+    position: absolute;
+    top: 50%; /* 세로 중앙 정렬 */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+}
+
+.logins {
+    display: flex;
+    width: 495px;
+    height: 47px;
+    padding-left: 15px;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.btn1 {
+    width: 495px;
+    height: 47px;
+    background: #3F97F6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.text1 p {
+    margin-bottom: 8px;
+    color: #666666;
+
+}
+
+
+.user_content {
+    width: 650px;
+    height: auto;
+    box-sizing: border-box;
+    margin-top: 60px;
+    margin-left: 360px;
+
+}
+
+.user-type-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 라디오 버튼과 라벨 사이 간격 조절 */
+}
+

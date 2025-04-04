@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입학안내 > 수시모집</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/admission/early.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        입학안내
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">수시모집</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/admission/_sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>수시모집</p>
+                    </div>
+                    <div class="pdf">
+                        <h1> 수시모집.pdf</h1>
+
+                        <!-- 페이지 전환 버튼 -->
+                        <button id="next" onclick="goToPage(currentPage + 1)"> NEXT </button>
+                        <button id="prev" onclick="goToPage(currentPage - 1)"> PREV </button>
+
+                        <!--PDF-->
+                        <div id="pdf-container"></div>
+
+                        <script>
+                            var url = 'http://13.209.74.140:8080/pdf/early.pdf';  // PDF 파일 경로
+                            var pdf = null; // PDF 문서
+                            var currentPage = 1; // 현재 페이지 번호
+                            var totalPages = 0;  // 총 페이지 수
+
+                            pdfjsLib.getDocument(url).promise.then(function(pdfDoc) {
+                                pdf = pdfDoc;
+                                totalPages = pdf.numPages;
+                                renderPage(currentPage);
+                            });
+
+                            function renderPage(pageNumber) {
+                                pdf.getPage(pageNumber).then(function(page) {
+                                    var scale = 1.5;
+                                    var viewport = page.getViewport({ scale: scale });
+                                    var canvas = document.createElement('canvas');
+                                    var context = canvas.getContext('2d');
+
+                                    canvas.height = viewport.height;
+                                    canvas.width = viewport.width;
+
+                                    page.render({
+                                        canvasContext: context,
+                                        viewport: viewport
+                                    });
+
+                                    document.getElementById('pdf-container').innerHTML = '';  // 이전 페이지 삭제
+                                    document.getElementById('pdf-container').appendChild(canvas);  // 새로운 페이지 추가
+                                });
+                            }
+
+                            function goToPage(pageNum) {
+                                if (pageNum < 1 || pageNum > totalPages) return;
+                                currentPage = pageNum;
+                                renderPage(currentPage);
+                            }
+                        </script>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <th:block th:include="/inc/_footer.html"/>
+    </div>
+</body>
+</html>

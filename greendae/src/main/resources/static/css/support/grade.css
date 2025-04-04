@@ -1,0 +1,152 @@
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #3f97f6;
+    color: white;
+}
+.semester {
+    margin-top: 30px;
+    float: left;
+}
+#semester_year {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #dedede;
+    color: #666666;
+}
+#semester_quarter {
+    width: 50px;
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #dedede;
+    color: #666666;
+}
+
+.total p {
+    float: right;
+    margin-top: 40px;
+    width: 300px;
+    height: 21px;
+    font-weight: 550;
+    font-size: 18px;
+}
+.register_list {
+    margin-top: 80px;
+}
+.register_list table {
+    width: 930px;
+    min-height: 151px;
+    border-spacing: 0;
+    border-top: 2px solid #000000;
+}
+.register_list th {
+    height: 85px;
+    width: 98.8px;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    border-bottom: 1px solid #a3a3a3;
+    background-color: #fafafa;
+}
+.register_list td {
+    text-align: center;
+    height: 66px;
+    color: #333333;
+    border-bottom: 1px solid #d8d8d8;
+}
+.register_list th:nth-child(2) {
+    width: 139.5px;
+    height: 66px;
+}
+.page {
+    margin-top: 30px;
+    vertical-align: middle;
+    text-align: center;
+
+}
+.page > a {
+    width: 15px;
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #d7d7d7;
+}
+.page a {
+    font-weight: 350;
+    font-size: 15px;
+    line-height: 100%;
+    color: #888888;
+}
+.details {
+    width: 63.5px;
+    height: 29px;
+    top: 18px;
+    left: 30.5px;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    background-color: #092E71;
+    color: #ffffff;
+    border: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    height: 800px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content h2{
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.detail_table{
+    border-top: 3px solid #092E71;
+    width: 600px;
+    height: 700px;
+    text-align: center;
+    border-spacing: 0;
+}
+.detail_table th {
+    border-right: 2px solid #dedede;
+    border-bottom: 2px solid #dedede;
+    background-color: #f4f8fc;
+
+}
+.detail_table td {
+    border-bottom: 2px solid #dedede;
+}

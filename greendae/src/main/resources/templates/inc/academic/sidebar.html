@@ -1,0 +1,63 @@
+<aside class="sidebar">
+  <article class="side_content">
+    <div class="side_title">
+      <p>학사안내</p>
+    </div>
+    <a th:href="@{/academic/acanotice}">        <!-- 각자 주소 넣기 -->
+      <div id="acanotice">공지사항</div>
+    </a>
+    <a th:href="@{/academic/schedule}">
+      <div id="schedule">학사일정</div>
+    </a>
+    <a th:href="@{/academic/registration}">
+      <div id="registration">수강신청</div>
+    </a>
+    <a th:href="@{/academic/grade}">
+      <div id="grade">성적</div>
+    </a>
+    <a th:href="@{/academic/graduation}">
+      <div id="graduation">수료 및 졸업</div>
+    </a>
+    <a th:href="@{/academic/faq}">    <!-- 각자 주소 넣기 -->
+      <div id="FAQ">자주하는 질문</div>
+    </a>
+
+  </article>
+</aside>
+
+<!-- 위에 손서대로
+  공지사항, 학사일정, 수강신청 , 성적, 수료 및 졸업, 자주하는 질문 순서
+  넣어야되는 데이터는 2개
+
+  1. path.includes -> 주소의 마지막 단어 적기
+    예) /campus/introduce -> introduce
+  2. document.getElementById("club") -> 아이디 값 적기
+
+ -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = location.pathname;
+
+    if (path.includes("acanotice")) {
+      document.getElementById("acanotice").classList.add("active");
+    }else if (path.includes("schedule")) {
+      document.getElementById("schedule").classList.add("active");
+    }else if (path.includes("registration")) {
+      document.getElementById("registration").classList.add("active");
+    }else if (path.includes("grade")) {
+      document.getElementById("grade").classList.add("active");
+    }else if (path.includes("graduation")) {
+      document.getElementById("graduation").classList.add("active");
+    }else if (path.includes("faq")) {
+      document.getElementById("FAQ").classList.add("active");
+    }
+  });
+</script>
+
+<style>
+  .active {
+    background-color: #3F97F6; /* 선택된 메뉴 스타일 */
+    color: white;
+  }
+</style>

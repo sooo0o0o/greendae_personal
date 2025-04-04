@@ -1,0 +1,31 @@
+#pdf-container {
+    margin-top: 50px;
+    border: 1px solid #888888;
+    width:900px;
+}
+h1 {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #145074;
+}
+h1::before {
+    content: url('/images/bullet-h4.png');
+}
+
+.pdf button {
+    float: right;
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+    background: none;
+    font-size: 20px;
+    border:1px solid #888888;
+    border-radius: 20px;
+    color: #145074;
+}
+
+#pref{}
+#next{
+    margin-right: 30px;
+}

@@ -1,0 +1,39 @@
+.login_content{
+    width: 1200px;
+    height: 763px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+.divall{
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+td {
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.btn{
+    text-align: right;
+    float: right;
+}
+
+label{
+    font-size: 16px; 
+    color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 200px; /* 텍스트 영역의 최소 높이를 지정 */
+    height: 200px; /* 고정된 높이로 설정 */
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid gray;
+}

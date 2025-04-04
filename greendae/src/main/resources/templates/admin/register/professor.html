@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 학사관리시스템 교육윤영현황</title>
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/js/postcode.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectC = document.querySelector("select[name='departmentC']");
+            const selectD = document.querySelector("select[name='departmentD']");
+            if (selectC) {
+                selectC.addEventListener("change", function() {
+
+                    let college = this.value;
+
+                    // 기존 학과 옵션 초기화
+                    selectD.innerHTML =  '<option value="">학과 선택</option>';
+
+                    fetch(`/admin/department/list?college=`+encodeURIComponent(college))
+                        .then(response => response.json())
+                        .then(data => {
+
+                            data.forEach(dept => {
+                                let option = document.createElement("option");
+                                option.value = dept.deptNo;
+                                option.textContent = dept.deptName;
+                                selectD.appendChild(option);
+                            })
+
+                            console.log(data);
+                        }).catch(err => {
+                            console.log(err);
+                    })
+
+
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+    <th:block th:include="/inc/admin/_header"/>
+
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <main>
+
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/admin/sidebar"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>교수 등록<span class="title_span">교수 등록</span> <span>인사관리> &nbsp; </span></p>
+                </div>
+                <div class="main_content_detail">
+                    <div class="Colleage_main">
+                        <form th:action="@{/admin/professor/register}" method="post">
+
+                            <!-- 기본정보 입력-->
+                            <p class="Operations_title">
+                                <img src="/images/bullet-h4.png" alt="기호">
+                                기본정보 입력
+                            </p>
+                            <div class="professor_div1">
+                                <table class="professor_basic_info">
+                                    <tr>
+                                        <td rowspan="4">
+                                            <img src="/images/icon-avatar.png" alt="사진">
+
+                                        </td>
+                                        <td class="td1">교수번호</td>
+                                        <td class="td2"><span class="info_red_txt"> 연도 + 학과 코드 + 순번 조합 자동생성</span></td>
+                                        <td class="td1">주민등록번호</td>
+                                        <td class="td2"><input type="text" name="ssn" placeholder="- 포함 14자리 입력" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">이름</td>
+                                        <td class="td2"><input type="text" name="name" class="ipt1" placeholder="교수 이름 입력" required></td>
+                                        <td class="td1">영문명</td>
+                                        <td class="td2"><input type="text" name="ename" placeholder="여권 등과 동일한 영문 이름" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">성별</td>
+                                        <td class="td2" style="text-align: left;">
+                                            <div style="float: left;;">
+                                                <label><input type="radio" class="iptc1" name="gender" value="남" required> 남</label>
+                                            </div>
+                                            <div style="float: left;">
+                                                <label><input type="radio" class="iptc1" name="gender" value="여" required> 여</label>
+                                            </div>
+
+                                        </td>
+                                        <td class="td1">국적</td>
+                                        <td class="td2">
+                                            <select name="nationality" required>
+                                                <option value="대한민국">대한민국</option>
+                                                <option value="미국">미국</option>
+                                                <option value="일본">일본</option>
+                                                <option value="중국">중국</option>
+                                                <option value="영국">영국</option>
+                                                <option value="프랑스">프랑스</option>
+                                                <option value="독일">독일</option>
+                                                <option value="러시아">러시아</option>
+                                                <option value="캐나다">캐나다</option>
+                                                <option value="호주">호주</option>
+                                                <option value="브라질">브라질</option>
+                                                <option value="인도">인도</option>
+                                                <option value="멕시코">멕시코</option>
+                                                <option value="이탈리아">이탈리아</option>
+                                                <option value="스페인">스페인</option>
+                                                <option value="네덜란드">네덜란드</option>
+                                                <option value="스웨덴">스웨덴</option>
+                                                <option value="스위스">스위스</option>
+                                                <option value="태국">태국</option>
+                                                <option value="베트남">베트남</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td1">휴대폰</td>
+                                        <td class="td2"><input type="text" name="hp" class="ipt1" placeholder="휴대폰 번호 입력" required></td>
+                                        <td class="td1">이메일</td>
+                                        <td class="td2"><input type="text" name="email" class="ipt1" placeholder="이메일 입력" required></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3"></td>
+                                        <td>주소</td>
+                                        <td colspan="3">
+                                            <div style="height: 40px; width: 300px">
+                                                <input type="text" id="zip" name="zip" class="ipt1"  placeholder="우편번호 선택" required/>
+                                                <button type="button" class="btn_a" onclick="postcode()">우편번호 찾기</button><br>
+                                            </div>
+                                            <input type="text" id="addr1" name="addr1" placeholder="기본주소 선택" required/>
+                                            <input type="text" id="addr2" name="addr2" placeholder="상세주소 입력" required/>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+
+                            <!-- 기본정보 입력 끝-->
+                            <!-- 학과 정보 입력-->
+
+                            <p class="Operations_title">
+                                <img src="/images/bullet-h4.png" alt="기호">
+                                학적정보 입력
+                            </p>
+                            <table class="professor_info">
+                                <tr>
+                                    <td>졸업대학</td>
+                                    <td><input type="text" name="graduationSchool" class="ipt1" placeholder="대학교 이름 입력"></td>
+                                    <td>학문 분야(전공)</td>
+                                    <td>
+                                        <input type="text" name="fieldOfStudy" class="ipt1" placeholder="전공 입력">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>졸업일</td>
+                                    <td><input type="date" name="graduationDate" style="float: left;"></td>
+                                    <td>학위</td>
+                                    <td>
+                                        <select name="degree">
+                                            <option value="박사">박사</option>
+                                            <option value="학사">학사</option>
+                                            <option value="전문학사">전문학사</option>
+                                            <option value="석사">석사</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>담당학과</td>
+                                    <td>
+                                        <select name="departmentC">
+                                            <option th:each="collegeDTO : ${collegeDTOS}" th:value="${collegeDTO.name}">[[${collegeDTO.name}]]</option>
+                                        </select>
+                                        <select name="departmentD">
+                                            <option th:each="departmentDTO : ${departmentDTOS}" th:value="${departmentDTO.deptNo}">[[${departmentDTO.deptName}]]</option>
+                                        </select>
+                                    </td>
+                                    <td>임용일</td>
+                                    <td><input type="date" name="appointmentDate" style="float: left;"></td>
+                                </tr>
+
+
+                            </table>
+                            <button type="submit" class="btn_b">등록</button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <th:block th:include="/inc/admin/_footer"/>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

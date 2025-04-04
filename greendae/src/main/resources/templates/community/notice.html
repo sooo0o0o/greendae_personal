@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 > 공지사항</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        커뮤니티   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">공지사항</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/community/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>공지사항</p>
+                    </div>
+                    <div class="main_content_detail">
+                        <!-- 작성할 내용 시작-->
+                        <th:block th:if="${isWriting}">
+                            <th:block th:include="/inc/community/write.html"/>
+                        </th:block>
+                        <th:block th:if="${isListing}">
+                            <th:block th:include="/inc/community/list.html"/>
+                        </th:block>
+                        <th:block th:if="${isSearching}">
+                            <th:block th:include="/inc/community/searchList.html"/>
+                        </th:block>
+                        <th:block th:if="${isViewing}">
+                            <th:block th:include="/inc/community/view.html"/>
+                        </th:block>
+                        <th:block th:if="${isModifying}">
+                            <th:block th:include="/inc/community/modify.html"/>
+                        </th:block>
+
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <th:block th:include="/inc/_footer.html"/>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>

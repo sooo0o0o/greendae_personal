@@ -1,0 +1,118 @@
+.green_txt{
+    color: blue;
+    font-weight: bold;
+}
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #3f97f6;
+    color: white;
+}
+
+th {
+    background: #F4F8FC;
+    border-bottom: 1px solid #DEDEDE;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    vertical-align: middle;
+}
+th:nth-child(1){
+    width: 139.5px;
+    height: 50px;
+    border-right: 1px solid #DEDEDE;
+}
+th:nth-child(2){
+    width: 139.5px;
+    height: 50px;
+    border-right: 1px solid #DEDEDE;
+}
+th:nth-child(3){
+    width: 139.5px;
+    height: 50px;
+    border-right: 1px solid #DEDEDE;
+}
+th:nth-child(4){
+    width: 372px;
+    height: 50px;
+    border-right: 1px solid #DEDEDE;
+}
+th:nth-child(5){
+    width: 139.5px;
+    height: 50px;
+}
+td {
+    height: 50px;
+    border-bottom: 1px solid #DEDEDE;
+}
+td:nth-child(1){
+    border-right: 1px solid #DEDEDE;
+}
+td:nth-child(2){
+    border-right: 1px solid #DEDEDE;
+}
+td:nth-child(3){
+    border-right: 1px solid #DEDEDE;
+}
+td:nth-child(4){
+    border-right: 1px solid #DEDEDE;
+}
+
+td:nth-last-child(1){
+    border-right: none;
+}
+
+table.common {
+    position: relative;
+    width: 930px;
+    height: auto;
+    top: 26px;
+    text-align: center;
+    border-top: 2px solid #071F4B;
+    border-spacing: 0;
+}
+
+table.option {
+    position: relative;
+    width: 930px;
+    height: auto;
+    margin-top: 50px;
+    text-align: center;
+    border-top: 2px solid #071F4B;
+    border-spacing: 0;
+}
+.main_content > div:nth-child(2) {
+    margin-top: 40px;
+}
+.main_content >  div > h5:nth-child(1){
+    margin-bottom: -20px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #145074;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+.main_content >  div > h5:nth-child(3){
+    margin-top: 70px;
+    margin-bottom: -45px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #145074;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+.main_content > div > h5:nth-child(1)::before{
+    content: url('/images/bullet-h4.png');
+
+}
+.main_content > div > h5:nth-child(3)::before{
+    content: url('/images/bullet-h4.png');
+}

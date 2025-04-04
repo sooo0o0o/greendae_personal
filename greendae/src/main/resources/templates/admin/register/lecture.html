@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그린대학교 학사관리시스템 교육윤영현황</title>
+  <link rel="stylesheet" href="/css/admin/admin.css">
+  <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const selectC = document.querySelector("select[name='lecMajor']");
+      const selectD = document.querySelector("select[name='lecClass']");
+      if (selectC) {
+        selectC.addEventListener("change", function() {
+
+          let college = this.value;
+
+          // 기존 학과 옵션 초기화
+          selectD.innerHTML =  '<option value="">학과 선택</option>';
+
+          fetch(`/admin/department/list?college=`+encodeURIComponent(college))
+                  .then(response => response.json())
+                  .then(data => {
+
+                    data.forEach(dept => {
+                      let option = document.createElement("option");
+                      option.value = dept.deptNo;
+                      option.textContent = dept.deptName;
+                      selectD.appendChild(option);
+                    })
+
+                    console.log(data);
+                  }).catch(err => {
+            console.log(err);
+          })
+
+
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+<div id="wrapper">
+  <!-- 헤더 시작작-->
+  <th:block th:include="/inc/admin/_header"/>
+  <!-- 헤더 끝-->
+  <!-- 메인 시작작-->
+  <main>
+
+    <section class="content">
+      <!-- 왼쪽 사이드바 -->
+      <th:block th:include="/inc/admin/sidebar"/>
+      <!-- 오른쪽 글 -->
+      <article class="main_content">
+        <div class="main_title">
+          <p>강의등록<span class="title_span">강의 등록</span> <span>학사운영 > &nbsp; </span></p>
+        </div>
+        <div class="main_content_detail">
+          <div class="Operations_main">
+
+            <!-- 기본정보입력-->
+            <p class="Operations_title">
+              <img src="/images/bullet-h4.png" alt="기호">
+              기본정보 입력
+            </p>
+            <form th:action="@{/admin/lecture/register}" method="post">
+              <table class="basic_info">
+                <tr>
+                  <td>과목코드</td>
+                  <td>학과코드 + 연도 + 학기 + 순번 조합 자동생성</td>
+                  <td>개설학과</td>
+                  <td>
+                    <select name="lecMajor">
+                      <option th:each="collegeDTO : ${collegeDTOS}" th:value="${collegeDTO.name}">[[${collegeDTO.name}]]</option>
+                    </select>
+                    <select name="lecClass">
+                      <option th:each="departmentDTO : ${departmentDTOS}" th:value="${departmentDTO.deptNo}">[[${departmentDTO.deptName}]]</option>
+                    </select>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>개설학년</td>
+                  <td>
+                    <select name="lecGrade">
+                      <option value="1" required>1학년</option>
+                      <option value="2" required>2학년</option>
+                      <option value="3" required>3학년</option>
+                      <option value="4" required>4학년</option>
+                    </select>
+
+                  </td>
+                  <td>학점</td>
+                  <td>
+                    <select name="lecCredit">
+                      <option value="1" required>1학점</option>
+                      <option value="2" required>2학점</option>
+                      <option value="3" required>3학점</option>
+                      <option value="4" required>4학점</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>이수구분</td>
+                  <td>
+                    <select name="lecCate">
+                      <option value="전공필수" required>전공필수</option>
+                      <option value="전공선택" required>전공선택</option>
+                      <option value="교양" required>교양</option>
+                    </select>
+                  </td>
+                  <td>담당교수</td>
+                  <td><input type="text" name="proNo" placeholder="교수 이름 입력" required></td>
+                </tr>
+                <tr>
+                  <td>강의수준</td>
+                  <td colspan="3">
+                    <div style="width: 600px; float: left;">
+                      <div class="lec_div">
+                        <input type="radio" name="lecLevel" class="iptr" value="1" required><span>1레벨</span>
+                      </div>
+                      <div class="lec_div">
+                        <input type="radio" name="lecLevel" class="iptr" value="2" required><span>2레벨</span>
+                      </div>
+                      <div class="lec_div">
+                        <input type="radio" name="lecLevel" class="iptr" value="3" required><span>3레벨</span>
+                      </div>
+                      <div class="lec_div">
+                        <input type="radio" name="lecLevel" class="iptr" value="4" required><span>4레벨</span>
+                      </div>
+
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>강의명</td>
+                  <td colspan="3">
+                    <input type="text" name="lecName" class="ipt2" placeholder="강좌명 입력" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td>강의 설명</td>
+                  <td colspan="3">
+                    <textarea name="lecContent" placeholder="강의 개요 및 목표, 학습 내용 등" required></textarea>
+                  </td>
+                </tr>
+              </table>
+
+
+              <!-- 기본정보입력 끝-->
+              <!-- 수업정보입력 끝-->
+              <p class="Operations_title">
+                <img src="/images/bullet-h4.png" alt="기호">
+                수업정보 입력
+              </p>
+
+              <table class="lec_info">
+                <tr>
+                  <td>수업기간</td>
+                  <td colspan="3">
+                    <div class="lec_div1">
+                      <input type="date" name="lecScheduleStart" class="lecdate" required> ~ <input type="date" name="lecScheduleEnd" class="lecdate" required>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>수업 시간</td>
+                  <td colspan="3">
+                    <div class="lec_div1">
+                      <input type="time" name="lecTimeStart" class="lecdate" value="10:00" step="3600" required/>
+                      ~
+                      <input type="time" name="lecTimeEnd" class="lecdate" value="12:00" step="3600" required/>
+                    </div>
+                    <div class="lec_div2">
+                      <input type="checkbox" name="lecWeekday" value="월" class="r1" >월
+                      <input type="checkbox" name="lecWeekday" value="화" class="r1" >화
+                      <input type="checkbox" name="lecWeekday" value="수" class="r1" >수
+                      <input type="checkbox" name="lecWeekday" value="목" class="r1" >목
+                      <input type="checkbox" name="lecWeekday" value="금" class="r1" >금
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>평가방식</td>
+                  <td colspan="3">
+                    <input type="text" class="ipt2" name="lecEvaluation" placeholder="출석 10%, 과제 30%, 시험 60%" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td>교재</td>
+                  <td colspan="3">
+                    <input type="text" name="book" class="ipt2" placeholder="출판사 - 도서명 - 저자 입력" required>
+                  </td>
+                </tr>
+                <tr>
+                  <td>강의실</td>
+                  <td>
+                    <input type="text" name="lecRoom" class="ipt3" placeholder="강의실 입력" required>
+                  </td>
+                  <td>최대 수강인원</td>
+                  <td>
+                    <input type="text" name="lecStdTotal" class="ipt3" required>
+                  </td>
+
+                </tr>
+
+              </table>
+
+              <button type="submit" class="btn_b">등록</button>
+            </form>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <!-- 메인 끝-->
+  <!-- 푸터 시작작-->
+  <th:block th:include="/inc/admin/_footer"/>
+  <!-- 푸터 끝-->
+</div>
+</body>
+</html>

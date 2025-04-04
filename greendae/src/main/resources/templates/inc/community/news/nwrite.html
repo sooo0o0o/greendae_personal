@@ -1,0 +1,54 @@
+ <link rel="stylesheet" href="/css/community/news/newswrite.css">
+ <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+<section class="right_section">
+    <article>
+
+        <form th:action="@{/community/news/write}" method="post" enctype="multipart/form-data" id="newsWriteForm">
+            <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}"/>
+            <table border="0" class="write_table">
+                <tbody>
+                <tr>
+                    <th>제목</th>
+                    <td>
+                        <input type="text" name="title" placeholder="제목을 입력하세요.">
+                    </td>
+                </tr>
+                <tr>
+                    <th>구분</th>
+                    <td>
+                        <select name="cate">
+                            <option value="news" th:selected="${articleDTO != null and articleDTO.cate == 'news'}">뉴스</option>
+                            <option value="column" th:selected="${articleDTO != null and articleDTO.cate == 'column'}">칼럼</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td>
+                        <textarea name="content"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>파일</th>
+                    <td>
+                        <p style="margin-bottom: 6px;">
+                            최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능
+                        </p>
+                        <input type="file" name="file1">
+                        <input type="file" name="file2">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div style="float: right; margin-top: 10px;">
+                <input type="submit" value="작성완료" class="btn btnComplete" style=" border: 1px solid #3b3c3f; background-color:#4b545e ; color: #ffffff;">
+                <a th:href="@{/community/news}" class="btn btnCancel" >취소</a>
+            </div>
+        </form>
+
+        </div>
+    </article>
+</section>
+</section>
+</main>

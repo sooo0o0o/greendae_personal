@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생지원 > 나의교육과정</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/support/classes.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+    <div id="wrapper">
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        학생지원   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">교과과정</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/support/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>교과과정</p>
+                    </div>
+                    <div>
+                        <h5> 공통과목(전공)</h5>
+                        <table class="common">
+                            <tr>
+                                <th>학년</th>
+                                <th>코드번호</th>
+                                <th>이수구분</th>
+                                <th>교과목명</th>
+                                <th>학점</th>
+                            </tr>
+                            <tr th:each="grade1, stat : ${majorListLevel1}">
+                                <td th:if="${stat.first}" th:rowspan="${#lists.size(majorListLevel1)}">1</td>
+                                <td th:text="${grade1.lecNo}"></td>
+                                <td th:text="${grade1.lecCate}"></td>
+                                <td th:text="${grade1.lecName}"></td>
+                                <td th:text="${grade1.lecCredit}"></td>
+                            </tr>
+                            <tr th:each="grade2, stat : ${majorListLevel2}">
+                                <td th:if="${stat.first}" th:rowspan="${#lists.size(majorListLevel2)}">2</td>
+                                <td th:text="${grade2.lecNo}"></td>
+                                <td th:text="${grade2.lecCate}"></td>
+                                <td th:text="${grade2.lecName}"></td>
+                                <td th:text="${grade2.lecCredit}"></td>
+                            </tr>
+                            <tr th:each="grade3, stat : ${majorListLevel3}">
+                                <td th:if="${stat.first}" th:rowspan="${#lists.size(majorListLevel3)}">3</td>
+                                <td th:text="${grade3.lecNo}"></td>
+                                <td th:text="${grade3.lecCate}"></td>
+                                <td th:text="${grade3.lecName}"></td>
+                                <td th:text="${grade3.lecCredit}"></td>
+                            </tr>
+                            <tr th:each="grade4, stat : ${majorListLevel4}">
+                                <td th:if="${stat.first}" th:rowspan="${#lists.size(majorListLevel4)}">4</td>
+                                <td th:text="${grade4.lecNo}"></td>
+                                <td th:text="${grade4.lecCate}"></td>
+                                <td th:text="${grade4.lecName}"></td>
+                                <td th:text="${grade4.lecCredit}"></td>
+                            </tr>
+                        </table>
+
+
+                        <h5> 선택과목(교양)</h5>
+                        <table class="option">
+                            <tr>
+                                <th>학년</th>
+                                <th>코드번호</th>
+                                <th>이수구분</th>
+                                <th>교과목명</th>
+                                <th>학점</th>
+                            </tr>
+                            <tr th:each="List, stat : ${generalList}">
+                                <td th:if="${stat.first}" th:rowspan="${#lists.size(generalList)}">1</td>
+                                <td th:text="${List.lecNo}"></td>
+                                <td th:text="${List.lecCate}"></td>
+                                <td th:text="${List.lecName}"></td>
+                                <td th:text="${List.lecCredit}"></td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+
+
+
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <th:block th:include="/inc/_footer.html"/>
+    </div>
+</body>
+</html>

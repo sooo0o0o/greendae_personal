@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 아이디찾기결과</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/user/lookupresult.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        회원
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">아이디 찾기결과</span>
+                    </span>
+                </div>
+            </div>
+
+            <div id="find-id-result">
+                <h2>아이디 찾기 결과</h2>
+                <p>입력하신 정보와 일치하는 아이디입니다.</p>
+
+                <!-- 테이블로 정보 표시 -->
+                <table>
+                    <tr>
+                        <td>이름</td>
+                        <td th:text="${userDTO.name}">홍길동</td>
+                    </tr>
+                    <tr>
+                        <td>아이디</td>
+                        <td th:text="${userDTO.uid}">user1234</td>
+                    </tr>
+                    <tr>
+                        <td>이메일</td>
+                        <td th:text="${userDTO.email}">honggildong@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>가입일</td>
+                        <td th:text="${#temporals.format(userDTO.regDate, 'yyyy-MM-dd')}">2025-03-17</td>
+                    </tr>
+                </table>
+
+                <div class="btn-container">
+                    <button type="button" class="btn login-btn"  onclick="location.href='/user/login'">로그인</button>
+                    <button type="button" class="btn find-pw-btn" onclick="location.href='/user/findpassword'">비밀번호 찾기</button>
+                </div>
+            </div>
+        </main>
+        <th:block th:include="/inc/_footer.html"/>
+            <!-- 푸터 끝-->
+        </div>
+        </body>
+        </html>

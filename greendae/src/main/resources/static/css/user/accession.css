@@ -1,0 +1,57 @@
+.user_accession{
+    width: 990px;
+    height: 100%;
+    flex-shrink: 0;
+   
+
+}
+
+.user_acc{
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    width: 1200px; /* 전체 너비 */
+    align-items: center;
+    box-sizing: border-box;
+    height: 861px;
+    margin: 0 auto;
+}
+
+table th, td{
+    border-bottom: 1px solid #DEDEDE; /* 밑에 보더를 추가 */
+    padding: 10px; 
+    
+}
+
+table th{
+    border-right: 1px solid #DEDEDE;
+    background-color: #F4F8FC;
+    width: 198px;
+    box-sizing: border-box;
+}
+
+table{
+    width: 990px;
+    height: 547px;
+    border-top: 2px solid #071F4B;
+    justify-content: center;
+    
+
+}
+
+table td {
+    width: 792px;
+    box-sizing: border-box;
+}
+
+input {
+    width: 308px;
+    height: 39px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+.inputs{
+    width: 463px;
+    margin-top: 5px;
+}

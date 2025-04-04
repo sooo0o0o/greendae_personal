@@ -1,0 +1,83 @@
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #3f97f6;
+    color: white;
+}
+.title p{
+    font-size: 50px; 
+    text-align: center; 
+    font-weight: 700;
+    border-bottom: 4px solid #071F4B; 
+    width: 450px; 
+    margin: 30px auto;
+}
+.demo_list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.demo_list li {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;  /* 가로로 배치 */
+    margin-right: 10px; 
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.demo_list li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.demo_list li a:hover {            
+    border-bottom: 2px solid #071F4B;
+    text-align: center;
+    margin-right: 10px; 
+    margin-left: 10px;
+}
+.demo_list li.active {
+    background: none;
+}
+#content {
+    margin-top: 20px;
+}
+#content h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+}
+#content p {
+    color: #666666;
+    font-weight: 350;
+}
+#content table {
+    border-spacing: 0;
+    border-top: 2px solid #071f4b;
+}
+#content th {
+    background-color: #f4f8fc;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    width: 180px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+#content td {
+    padding: 5px;
+    border-bottom: 1px solid #dedede;
+    color: #666666;
+}

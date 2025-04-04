@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/intro/organizationchart.css">
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+    <title>대학소개 > 조직도</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 총장 박스를 클릭하면 하위 조직이 보이게
+            const presidentBox = document.querySelector(".org_box.top"); // 총장 div
+            const subordinateSection = document.querySelector(".middle_row"); // 부총장
+            const bottomRow = document.querySelector(".bottom_row"); // 하위 조직
+            const orgTables = document.querySelectorAll(".org_table"); // 모든 테이블
+            const connectors = document.querySelectorAll(".connector"); // 연결선
+
+            // 초기에 숨기기
+
+            bottomRow.classList.add("hidden");
+            orgTables.forEach(table => table.classList.add("hidden"));
+            connectors.forEach(connector => connector.classList.add("hidden"));
+
+            presidentBox.addEventListener("click", function () {
+                subordinateSection.classList.toggle("hidden");
+                bottomRow.classList.toggle("hidden");
+                orgTables.forEach(table => table.classList.toggle("hidden"));
+                connectors.forEach(connector => connector.classList.toggle("hidden"));
+
+             */
+            });
+
+             */
+        });
+    </script>
+
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 -->
+    <th:block th:include="/inc/_header.html"/>
+
+    <!-- 메인 -->
+    <main>
+        <div class="background">
+            <div>
+                <span style="margin-top: 10px;">
+                    <img src="/images/ico-home.png" alt="HOME">
+                    <img src="/images/bg-path-arrow.png" alt=">">
+                    대학소개
+                    <img src="/images/bg-path-arrow.png" alt=">">
+                    <span style="color: #071F4B;">조직도</span>
+                </span>
+            </div>
+        </div>
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/intro/sidebar.html"/>
+            <!-- 오른쪽 내용 -->
+            <div class="mains">
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>그린대학교 조직도</p>
+                    </div>
+                    <div class="main_content_detail">
+                        <div class="organization">
+                        </div>
+                        <!-- 총장 -->
+                        <div class="middle_row">
+                            <div class="org_box top" style="font-size: 30px; cursor: pointer;">
+                                <p class="title">총장</p>
+                                <p class="name">홍길동</p>
+                            </div>
+                        </div>
+                        <div class="connector "></div>
+
+                        <!-- 하위 조직 (초기에는 숨김) -->
+                        <div class="middle_row ">
+                            <div class="org_box">
+                                <p class="title">부총장</p>
+                                <p class="name">이<br>순<br>신</p>
+                            </div>
+                        </div>
+                        <div class="connector "></div>
+
+                        <div class="bottom_row ">
+                            <div class="org_box">
+                                <p class="title">학장</p>
+                                <p class="name"><br>강<br>감<br>찬</p>
+                            </div>
+                            <div class="org_box">
+                                <p class="title">행정팀</p>
+                                <p class="name">김<br>유<br>신</p>
+                            </div>
+                            <div class="org_box">
+                                <p class="title">인사팀</p>
+                                <p class="name">장<br>보<br>고</p>
+                            </div>
+                            <div class="org_box">
+                                <p class="title">전산팀</p>
+                                <p class="name">정<br>약<br>용</p>
+                            </div>
+                            <div class="org_box">
+                                <p class="title">재무팀</p>
+                                <p class="name">신<br>사<br>임<br>당</p>
+                            </div>
+                            <div class="org_box">
+                                <p class="title">마케팅팀</p>
+                                <p class="name">윤<br>봉<br>길</p>
+                            </div>
+                        </div>
+
+                        <!-- 부서 및 담당자 테이블 (초기에는 숨김) -->
+                        <div class="org_table ">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>부서</th>
+                                    <th>담당자</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>학장</td>
+                                    <td>안중근</td>
+                                </tr>
+                                <tr>
+                                    <td>행정팀</td>
+                                    <td>이성계</td>
+                                </tr>
+                                <tr>
+                                    <td>인사팀</td>
+                                    <td>유관순</td>
+                                </tr>
+                                <tr>
+                                    <td>IT팀</td>
+                                    <td>박정희</td>
+                                </tr>
+                                <tr>
+                                    <td>재무팀</td>
+                                    <td>김홍도</td>
+                                </tr>
+                                <tr>
+                                    <td>마케팅팀</td>
+                                    <td>장영실</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="org_table ">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>부서</th>
+                                    <th>담당자</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>디자인팀</td>
+                                    <td>안창호</td>
+                                </tr>
+                                <tr>
+                                    <td>영업팀</td>
+                                    <td>허균</td>
+                                </tr>
+                                <tr>
+                                    <td>HR팀</td>
+                                    <td>김성수</td>
+                                </tr>
+                                <tr>
+                                    <td>교육팀</td>
+                                    <td>정주영</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <th:block th:include="/inc/_footer.html"/>
+</div>
+</body>
+</html>

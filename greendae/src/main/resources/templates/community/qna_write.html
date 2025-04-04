@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 > 자유게시판 글쓰기</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/community/freeboard_write.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+    <th:block th:include="/inc/_header.html"/>
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <main>
+        <div class="background">
+            <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        커뮤니티
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">질문과 답변</span>
+                    </span>
+            </div>
+        </div>
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/community/sidebar.html"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>질문과 답변</p>
+                </div>
+                <div class="main_content_detail">
+                    <!-- 작성할 내용 시작-->
+
+                    <section class="right_section">
+                        <article>
+
+
+
+                            <form th:action="@{/community/qna/write}" method="post">
+                                <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}"/>
+                                <table border="0" class="write_table">
+                                    <tbody>
+                                    <tr>
+                                        <th>제목</th>
+                                        <td>
+                                            <input type="text" name="title" placeholder="제목을 입력하세요.">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>내용</th>
+                                        <td>
+                                            <textarea name="content"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>비밀번호</th>
+                                        <td>
+                                            <input type="text" name="pass" placeholder="암호화를 위한 비밀번호를 적어주세요.(미작성 시 공개 질문.)">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div style="float: right; margin-top: 10px;">
+                                    <input type="submit" value="작성완료" class="btn btnComplete" style=" border: 1px solid #3b3c3f; background-color:#4b545e ; color: #ffffff;">
+                                    <a th:href="@{/community/qna}" class="btn btnCancel" >취소</a>
+                                </div>
+                            </form>
+
+
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <th:block th:include="/inc/_footer.html"/>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 갤러리</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/campus/galleryview.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<div id="wrapper">
+    <th:block th:include="/inc/_header.html"/>
+    <main>
+        <section class="gallery-detail">
+            <h2>갤러리 상세 페이지</h2>
+            <div class="gallery-image">
+                <img id="gallery-image" src="" alt="갤러리 이미지">
+            </div>
+            <div class="gallery-info">
+                <h3 id="gallery-title"></h3>
+                <p class="date">
+                    등록일: <span id="gallery-date"></span> |
+                    조회수: <span id="gallery-hit"></span>
+                </p>
+                <p class="description" id="gallery-content"></p>
+            </div>
+        </section>
+        <section class="comments">
+            <h3 class="comment-title">
+                댓글
+                <span class="gallery-buttons">
+        <button id="go-back" style="background: #9ABEDF">뒤로 가기</button>
+                 </span>
+            </h3>
+
+            <div id="comment-list"></div>
+            <div class="gallery-buttons">
+            </div>
+            <div class="comment-form">
+                <textarea id="comment-input" placeholder="댓글을 입력하세요"></textarea>
+                <button id="submit-comment">댓글 작성</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <div>
+                <ul>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="#">학사일정</a></li>
+                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="#">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="/images/footer_logo.png" alt="그린대학교">
+                <p>
+                    그린대학교 <br>
+                    [12345] 부산광역시 부산진구 부전대로 123 그린대학교 / 대표전화 : 051-123-1000 / <br>
+                    입학안내 : 051-123-1302 팩스 : 051-123-3333
+                    <br><br>
+                    copyright ©Green University All rights reserved.
+                </p>
+                <div>
+                    <p>주요사이트 ▾</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const galleryNo = params.get("no") || "1";
+        const galleryDataList = {
+            "1": { title: "제40회 1995학년도 학위수여식", date: "25.02.20", hit: "23", content: "졸업을 축하드립니다!", image: "/images/gallary_sample1.jpg" },
+            "2": { title: "캠퍼스 축제", date: "25.03.15", hit: "55", content: "캠퍼스 축제가 열렸습니다!", image: "/images/gallary_sample2.jpg" },
+            "3": { title: "스포츠 행사", date: "25.04.10", hit: "37", content: "스포츠 행사가 진행되었습니다.", image: "/images/gallary_sample3.jpg" },
+            "4": { title: "새로운 강의실 오픈", date: "25.05.05", hit: "20", content: "새로운 강의실이 개설되었습니다.", image: "/images/gallary_sample4.png" },
+            "5": { title: "우수훈련기관 인증패", date: "23.11.20", hit: "42", content: "우수훈련기관 인증패 사진입니다.", image: "/images/gallary_sample5.jpg" }
+        };
+
+        const galleryData = galleryDataList[galleryNo] || galleryDataList["1"];
+        document.getElementById("gallery-title").innerText = galleryData.title;
+        document.getElementById("gallery-date").innerText = galleryData.date;
+        document.getElementById("gallery-hit").innerText = galleryData.hit;
+        document.getElementById("gallery-content").innerText = galleryData.content;
+        document.getElementById("gallery-image").src = galleryData.image;
+
+        document.getElementById("go-back").addEventListener("click", function () {
+            window.history.back();
+        });
+
+        let editingIndex = -1;
+
+        document.getElementById("submit-comment").addEventListener("click", function () {
+            const input = document.getElementById("comment-input");
+            if (input.value.trim()) {
+                saveComment(input.value.trim());
+                input.value = "";
+            }
+        });
+
+        document.getElementById("comment-input").addEventListener("keydown", function (event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                document.getElementById("submit-comment").click();
+            }
+        });
+
+        function saveComment(comment) {
+            const comments = JSON.parse(localStorage.getItem(`comments-${galleryNo}`)) || [];
+            comments.push(comment);
+            localStorage.setItem(`comments-${galleryNo}`, JSON.stringify(comments));
+            loadComments();
+        }
+
+        function loadComments() {
+            const comments = JSON.parse(localStorage.getItem(`comments-${galleryNo}`)) || [];
+            const commentList = document.getElementById("comment-list");
+            commentList.innerHTML = "";
+
+            comments.forEach((comment, index) => {
+                const commentDiv = document.createElement("div");
+                commentDiv.className = "comment";
+
+                const commentText = document.createElement("p");
+                commentText.textContent = comment;
+
+                const buttonContainer = document.createElement("div");
+                buttonContainer.style.display = "inline-block";
+
+                const editButton = document.createElement("button");
+                editButton.textContent = "수정";
+                editButton.dataset.index = index;
+                editButton.addEventListener("click", function () {
+                    editComment(index, comment);
+                });
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "삭제";
+                deleteButton.dataset.index = index;
+                deleteButton.addEventListener("click", function () {
+                    deleteComment(this.dataset.index);
+                });
+
+                buttonContainer.appendChild(editButton);
+                buttonContainer.appendChild(deleteButton);
+
+                commentDiv.appendChild(commentText);
+                commentDiv.appendChild(buttonContainer);
+                commentList.appendChild(commentDiv);
+            });
+        }
+
+        function editComment(index, oldComment) {
+            if (editingIndex !== -1) {
+                loadComments();
+            }
+
+            editingIndex = index;
+
+            const commentList = document.getElementById("comment-list");
+            const commentDiv = commentList.children[index];
+
+            const inputField = document.createElement("input");
+            inputField.type = "text";
+            inputField.value = oldComment;
+
+            const saveButton = document.createElement("button");
+            saveButton.textContent = "저장";
+            saveButton.addEventListener("click", function () {
+                updateComment(index, inputField.value);
+            });
+
+            inputField.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    updateComment(index, inputField.value);
+                }
+            });
+
+            commentDiv.innerHTML = "";
+            commentDiv.appendChild(inputField);
+            commentDiv.appendChild(saveButton);
+        }
+
+        function updateComment(index, newComment) {
+            const comments = JSON.parse(localStorage.getItem(`comments-${galleryNo}`)) || [];
+            if (newComment.trim()) {
+                comments[index] = newComment;
+            }
+            localStorage.setItem(`comments-${galleryNo}`, JSON.stringify(comments));
+            editingIndex = -1;
+            loadComments();
+        }
+
+        function deleteComment(index) {
+            const comments = JSON.parse(localStorage.getItem(`comments-${galleryNo}`)) || [];
+            comments.splice(index, 1);
+            localStorage.setItem(`comments-${galleryNo}`, JSON.stringify(comments));
+            loadComments();
+        }
+
+        loadComments();
+    });
+</script>
+</body>
+</html>

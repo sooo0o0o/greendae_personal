@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대학소개 > 오시는길</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+    <style>
+        .green_txt{
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        대학소개   
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">오시는길</span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/intro/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>오시는길</p>
+                    </div>
+                    <div class="main_content_detail">
+                        <!-- 작성할 내용 시작-->
+                        <p class="green_txt">그린대학교</p>
+                        <p>주소: 경기도 이천시 잘한다구 신난다동 123</p>
+                        <p>전화: 01-234-5678</p>
+                        <br>
+                        <p class="green_txt">찾아오시는길</p>
+
+                        <div id="map" style="width:800px;height:600px;"></div>
+
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=99828fbd38ed0830172c055185342b85"></script>
+                        <script>
+                        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                            mapOption = { 
+                                center: new kakao.maps.LatLng(35.159411, 129.060129), // 지도의 중심좌표
+                                level: 5 // 지도의 확대 레벨
+                            };
+
+                        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                            var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
+                            imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+                            imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+                            
+                        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+                        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                            markerPosition = new kakao.maps.LatLng(35.159411, 129.060129); // 마커가 표시될 위치입니다
+
+                        // 마커를 생성합니다
+                        var marker = new kakao.maps.Marker({
+                            position: markerPosition, 
+                            image: markerImage // 마커이미지 설정 
+                        });
+
+                        // 마커가 지도 위에 표시되도록 설정합니다
+                        marker.setMap(map);  
+                        </script>
+                    </div>  
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <th:block th:include="/inc/_footer.html"/>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>

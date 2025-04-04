@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 학사관리시스템</title>
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+    <th:block th:include="/inc/admin/_header"/>
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <main>
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/admin/sidebar"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>학생 목록<span class="title_span">학생 목록</span> <span>인사관리 > &nbsp; </span></p>
+                </div>
+                <div class="main_content_detail">
+                    <div class="Operations_main">
+
+                        <!--검색-->
+                        <div style="width: 100%; height: 50px;">
+                            <div style="float: right;">
+                                <form th:action="@{/admin/student/search}">
+                                    <select class="search_select" name="searchType">
+                                        <option value="department">학과</option>
+                                        <option value="stdYear">학년</option>
+                                        <option value="name">이름</option>
+                                    </select>
+                                    <input type="text" name="keyword" class="search_text" placeholder="검색 키워드 입력">
+                                    <input type="submit" class="search_btn" value="검색">
+                                </form>
+                            </div>
+                        </div>
+                        <!--검색-->
+
+                        <!-- 학생목록 시작-->
+                        <table class="Education_Operations">
+                            <thead>
+                                <th style="width: 130px;">학번</th>
+                                <th style="width: 109px;">이름</th>
+                                <th style="width: 141px;">주민번호</th>
+                                <th style="width: 141px;">휴대폰</th>
+                                <th style="width: 261px;">이메일</th>
+                                <th style="width: 109px;">학과</th>
+                                <th style="width: 54px;">학년</th>
+                                <th style="width: 54px;">학기</th>
+                                <th style="width: 87px;">상태</th>
+                                </thead>
+                            <tbody>
+                            <tbody>
+                                <tr th:each="student :${pageResponseDTO.dtoList}">
+                                    <td>[[${student.stdNo}]]</td>
+                                    <td>[[${student.user.name}]]</td>
+                                    <td>[[${student.user.ssn}]]</td>
+                                    <td>[[${student.user.hp}]]</td>
+                                    <td>[[${student.user.email}]]</td>
+                                    <td>[[${student.stdClass}]]</td>
+                                    <td>[[${student.stdYear}]]</td>
+                                    <td>[[${student.stdSemester}]]</td>
+                                    <td>[[${student.stdStatus}]]</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <!-- 학생 목록 끝-->
+                        <div class="page">
+                            <th:block th:if="${pageResponseDTO.prev}">
+                                <a th:href="@{/admin/student/list(pg=${pageResponseDTO.start-1})}" class="prev">이전</a>
+                            </th:block>
+
+                            <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+                                <a th:href="@{/admin/student/list(pg=${num})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
+                            </th:block>
+
+                            <th:block th:if="${pageResponseDTO.next}">
+                                <a th:href="@{/admin/student/list(pg=${pageResponseDTO.end+1})}" class="next">다음</a>
+                            </th:block>
+
+                            <a class="register_btn_b" th:href="@{/admin/student/register}">등록</a>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <th:block th:include="/inc/admin/_footer"/>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

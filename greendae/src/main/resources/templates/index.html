@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2조-그린대학교</title>
+    <link rel="stylesheet" th:href="@{/css/layout/index.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Swiper('.swiper', {
+                loop: true, // 무한 루프
+                autoplay: {
+                    delay: 3000, // 3초마다 자동 슬라이드
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+    <style>
+        .custom-pagination {
+            position: absolute;
+            top: 25% !important; /* 위쪽 배치 */
+            height: auto !important;
+        }
+        .swiper-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            bottom: unset; /* 또는 initial */
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <section class="main_slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <p style="margin-top: 107px; font-size: 24px;">IT 기술로 세상을 변화시키는 인재를 양성</p><br>
+                            <p>그린대학교 컴퓨터 과학과</p><br>
+                            <p>급변하는 컴퓨터 기술의 발전에 선도적으로 참여하고 컴퓨터의 활용을 통하여 미래를 만들어 나갈 수 있는 인력을 배양</p>
+                            <a th:href="@{/info/engineering}">
+                                <div>
+                                    <p style="font-size: 16px;">학과소개 바로가기</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <p style="margin-top: 107px; font-size: 24px;">미래 비즈니스를 이끌어갈 혁신적인 리더 양성</p><br>
+                            <p>그린대학교 경영학과</p><br>
+                            <p>경영 전략과 데이터 분석을 기반으로 창의적 사고와 리더십을 갖춘 글로벌 인재 육성</p>
+                            <a th:href="@{/info/social}">
+                                <div>
+                                    <p style="font-size: 16px;">학과소개 바로가기</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <p style="margin-top: 107px; font-size: 24px;">첨단 기술로 세상을 변화시키는 전자공학 전문가 양성</p><br>
+                            <p>그린대학교 전자공학과</p><br>
+                            <p>최신 반도체, 임베디드 시스템, 통신기술을 연구하여 미래 산업을 선도할 인재 양성</p>
+                            <a th:href="@{/info/engineering}">
+                                <div>
+                                    <p style="font-size: 16px;">학과소개 바로가기</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <p style="margin-top: 107px; font-size: 24px;">창의적 감각과 혁신적인 아이디어를 현실로</p><br>
+                            <p>그린대학교 디자인학과</p><br>
+                            <p>UI/UX, 그래픽, 브랜드 디자인 등 다양한 분야에서 예술과 기술을 접목한 창조적 인재 육성</p>
+                            <a th:href="@{/info/social}">
+                                <div>
+                                    <p style="font-size: 16px;">학과소개 바로가기</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <p style="margin-top: 107px; font-size: 24px;">생명과학과 기술의 융합으로 건강한 미래를 설계하다</p><br>
+                            <p>그린대학교 바이오공학과</p><br>
+                            <p>의약, 환경, 식품 등 다양한 바이오 산업에서 혁신적인 연구를 주도할 전문가 양성</p>
+                            <a th:href="@{/info/natural}">
+                                <div>
+                                    <p style="font-size: 16px;">학과소개 바로가기</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <p style="margin-top: 107px; font-size: 24px;">사람의 마음을 이해하고 더 나은 사회를 만들다</p><br>
+                            <p>그린대학교 심리학과</p><br>
+                            <p>과학적 연구와 상담 실무를 통해 인간 행동을 분석하고, 심리적 문제 해결을 돕는 전문가 육성</p>
+                            <a th:href="@{/info/social}">
+                                <div>
+                                    <p style="font-size: 16px;">학과소개 바로가기</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <p style="margin-top: 107px; font-size: 24px;">미래의 교육을 설계하고 학생들의 꿈을 키우다</p><br>
+                            <p>그린대학교 교육학과</p><br>
+                            <p>창의적 교수법과 교육 연구를 통해 미래 사회에 필요한 교사와 교육 전문가를 양성</p>
+                            <a th:href="@{/info/education}">
+                                <div>
+                                    <p style="font-size: 16px;">학과소개 바로가기</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 페이지네이션 -->
+                    <div class="swiper-pagination custom-pagination"></div>
+                </div>
+            </section>
+            <section class="main_intro">
+                <div> <!-- 이동시킨 intro내용 시작 div-->
+                    <div>
+                        <div class="main_academic">
+                            <div class="main_intro_title_left">
+                                <span>학사안내</span>
+                                <a th:href="@{/academic/acanotice}">
+                                    <img th:src="@{/images/bg-viewmore01.png}" alt="추가버튼">
+                                </a>
+                            </div>
+                            <div>
+                                <table style="margin-top: 10px;" class="intro_left_table">
+                                    <tr th:each="notice, i : ${acanotices}">
+                                        <td>
+                                            <a th:href="@{/academic/acanotice/view(no=${notice.getNo()})}"><span>[[${notice.title}]]</span></a>
+                                            <img th:if="${i.index < 2}" th:src="@{/images/ico-new01.gif}" alt="아이콘">
+                                        </td>
+                                        <td>[[${notice.wdate}]]</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="main_notice">
+                            <div class="main_intro_title_right">
+                                <span>공지사항</span>
+                                <a th:href="@{/community/notice}">
+                                    <img th:src="@{/images/bg-viewmore01.png}" alt="추가버튼">
+                                </a>
+                            </div>
+                            <div>
+                                <table style="margin-top: 10px;" class="intro_right_table">
+                                    <tr th:each="notice, i : ${notices}">
+                                        <td>
+                                            <a th:href="@{/community/notice/view(no=${notice.getNo()})}"><span>[[${notice.title}]]</span></a>
+                                            <img th:if="${i.index < 2}" th:src="@{/images/ico-new01.gif}" alt="아이콘">
+                                        </td>
+                                        <td width="100px">[[${notice.wdate}]]</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo_gallery">
+                        <p>PHOTO GALLERY
+                            <a th:href="@{/campus/gallery}"><img style="float: right;" th:src="@{/images/bg-viewmore01.png}" alt="추가버튼"></a>
+                        </p>
+                        <a th:href="@{/campus/galleryview(no=1)}">
+                            <div>
+                                <div><p>글로벌 명문대학 그린대학교</p></div>
+                            </div>
+                        </a>
+                        <a th:href="@{/campus/galleryview(no=2)}">
+                        <div>
+                                <div><p>글로벌 명문대학 그린대학교</p></div>
+                            </div>
+                        </a>
+                        <a th:href="@{/campus/galleryview(no=3)}">
+                        <div>
+                                <div><p>글로벌 명문대학 그린대학교</p></div>
+                            </div>
+                        </a>
+                        <a th:href="@{/campus/galleryview(no=4)}">
+                        <div>
+                                <div><p>글로벌 명문대학 그린대학교</p></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            
+            </section>
+            <section class="main_helper">
+                <div class="helper">
+                    <p class="helper_txt1">동아리 HELPER</p>
+                    <p class="helper_txt2">
+                        공무원 시험 준비반을 운용함으로써 정치행정학과에서 공무원 시험을 준비하는 학생들에게<br>
+                        인터넷 강의, 교재를 제공하고 스터디 그룹의 활동을 도와주고 있습니다.
+                    </p>
+                    <a th:href="@{/campus/club_study}">
+                        <div class="helper_btn">
+                            자세히보기
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section class="main_new">
+                <div class="left_new">
+                    <div>
+                        <div class="title">
+                            <span>뉴스 및 칼럼</span>
+                            <a th:href="@{/community/news}">
+                                <img th:src="@{/images/bg-viewmore01.png}" alt="추가버튼">
+                            </a>
+                        </div>
+                        
+                        <table style="margin-top: 20px;" class="new_table">
+
+                                <tr th:each="notice, i:${news}">
+                                    <td>
+                                        <a th:href="@{/community/news/view(no=${notice.getNo()})}"><span>[[${notice.title}]]</span></a>
+                                        <img th:if="${i.index < 2}" th:src="@{/images/ico-new01.gif}" alt="아이콘">
+                                    </td>
+                                    <td width="100px">[[${notice.wdate}]]</td>
+                                </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="right_new">
+                    <div>
+                        <div class="title">
+                            <span>SMART LINK</span>
+                            <a href="#">
+                                <img th:src="@{/images/bg-viewmore01.png}" alt="추가버튼">
+                            </a>
+                        </div>
+                        <div class="smart_link">
+                            <div style="height: 159.39px;">
+                                <div>
+                                    <div>
+                                        <a th:href="@{/admission/adnotice}">
+                                            <img th:src="@{/images/bg-main-link01.png}" alt="입학안내">
+                                        </a>
+                                    </div>
+                                    <p>입학안내</p>
+                                </div>
+                            </div>
+                            <div style="height: 159.39px;">
+                                <div>
+                                    <div>
+                                        <a th:href="@{/academic/schedule}">
+                                            <img th:src="@{/images/bg-main-link02.png}" alt="학사일정">
+                                        </a>
+                                    </div>
+                                    <p>학사일정</p>
+                                </div>
+                            </div>
+                            <div style="height: 159.39px;">
+                                <div>
+                                    <div>
+                                        <a th:href="@{/campus/introduce}">
+                                            <img th:src="@{/images/bg-main-link03.png}" alt="학생회">
+                                        </a>
+                                    </div>
+                                    <p>학생회</p>
+                                </div>
+                            </div>
+                            <div style="height: 159.39px;">
+                                <div>
+                                    <div>
+                                        <a th:href="@{/academic/graduation}">
+                                            <img th:src="@{/images/bg-main-link04.png}" alt="수료 및 졸업">
+                                        </a>
+                                    </div>
+                                    <p>수료 및 졸업</p>
+                                </div>
+                            </div>
+                            <div style="height: 159.39px;">
+                                <div>
+                                    <div>
+                                        <a th:href="@{/community/employment}">
+                                            <img th:src="@{/images/bg-main-link05.png}" alt="취업안내">
+                                        </a>
+                                    </div>
+                                    <p>취업안내</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작-->
+        <th:block th:include="/inc/_footer.html"/>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>

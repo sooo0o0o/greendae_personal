@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/css/community/list.css">
+<link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+
+<div id="acanoticeSection">
+  <nav>
+    <form th:action="@{/academic/acanotice/search}">
+      <select name="searchType" style="padding: 6px;">
+        <option value="allFields" th:selected="${pageResponseDTO.searchType == 'allFields'}">전체</option>
+        <option value="title" th:selected="${pageResponseDTO.searchType == 'title'}">제목</option>
+        <option value="content" th:selected="${pageResponseDTO.searchType == 'content'}">내용</option>
+        <option value="writer" th:selected="${pageResponseDTO.searchType == 'writer'}">글쓴이</option>
+      </select>
+      <input type="text" name="keyword" th:value="${pageResponseDTO.keyword}" placeholder="검색 키워드 입력">
+      <input type="submit" value="검색">
+    </form>
+  </nav>
+
+
+  <table>
+    <tr>
+      <th>번호</th>
+      <th>제목</th>
+      <th>작성자</th>
+      <th>작성일</th>
+      <th>조회</th>
+    </tr>
+    <tr th:each="basicArticle, i:${pageResponseDTO.dtoList}" >
+      <td>[[${pageResponseDTO.startNo - i.index}]]</td>
+      <td><a th:href="@{/academic/acanotice/view(no=${basicArticle.no})}">[[${basicArticle.title}]]&#91;[[${basicArticle.comment}]]&#93;</a></td>
+      <td>[[${basicArticle.user.name}]]</td>
+      <td>[[${basicArticle.wdate}]]</td>
+      <td>[[${basicArticle.hit}]]</td>
+    </tr>
+  </table>
+
+  <div class="page">
+    <th:block th:if="${pageResponseDTO.first}">
+      <a th:href="@{/academic/acanotice/search(pg=1, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="first">
+        <img src="/images/btn-first-page.png" alt="첫 페이지">
+      </a>
+    </th:block>
+
+    <th:block th:if="${pageResponseDTO.prev}">
+      <a th:href="@{/academic/acanotice/search(pg=${pageResponseDTO.start-1}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="prev"><img src="/images/btn-prev-page.png"></a>
+    </th:block>
+
+    <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+      <a th:href="@{/academic/acanotice/search(pg=${num}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
+    </th:block>
+
+    <th:block th:if="${pageResponseDTO.next}">
+      <a th:href="@{/academic/acanotice/search(pg=${pageResponseDTO.end+1}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="next"><img src="/images/btn-next-page.png" alt="다음 페이지"></a>
+    </th:block>
+
+    <!-- 마지막 페이지 이동 버튼 -->
+    <th:block th:if="${pageResponseDTO.last}">
+      <a th:href="@{/academic/acanotice/search(pg=${pageResponseDTO.lastPage}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="last">
+        <img src="/images/btn-last-page.png" alt="마지막 페이지">
+      </a>
+    </th:block>
+  </div>
+  <!-- 로그인 여부에 따라 글쓰기 버튼 이동 -->
+  <a th:href="${#authorization.expression('isAuthenticated()') ? '/academic/acanotice/write' : '/user/login'}"
+     class="btn btnWrite">글쓰기</a>
+</div>
+
+
+
+</div>
+</article>
+</section>
+</main>

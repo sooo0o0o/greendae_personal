@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 학사관리시스템</title>
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+    <style>
+        .page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .page a {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .page a:hover {
+            background-color: #eee;
+        }
+
+        .page a.current {
+            background-color: #1A528E;
+            color: white;
+            border-color: #1A528E;
+            font-weight: bold;
+        }
+
+        .page a.prev, .page a.next {
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .page a.prev:hover, .page a.next:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+    <th:block th:include="/inc/admin/_header"/>
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <main>
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/admin/sidebar"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>학과 목록<span class="title_span">학과 목록</span> <span>대학 및 학과 > &nbsp; </span></p>
+                </div>
+                <div class="main_content_detail">
+                    <div class="Operations_main">
+
+
+                        <p class="Operations_title">
+                            <img src="/images/bullet-h4.png" alt="기호">
+                            교육 운영 현황
+                        </p>
+
+                        <!--검색-->
+                        <div style="width: 100%; height: 50px;">
+                            <div style="float: right;">
+                                <form th:action="@{/admin/departments/search}">
+                                    <select class="search_select" name="searchType">
+                                        <option value="college">대학</option>
+                                        <option value="department">학과</option>
+                                        <option value="chair">학과장</option>
+                                    </select>
+                                    <input type="text" name="keyword" class="search_text" placeholder="검색 키워드 입력">
+                                    <input type="submit" class="search_btn" value="검색">
+                                </form>
+                            </div>
+                        </div>
+                        <!--검색-->
+
+                        <!-- 학과목록 시작-->
+                        <table class="Education_Operations">
+                            <thead>
+                                <th style="width: 109px;">학과번호</th>
+                                <th style="width: 190px;">단과대학</th>
+                                <th style="width: 190px;">학과</th>
+                                <th style="width: 109px;">학과장</th>
+                                <th style="width: 163px;">학과 연락처</th>
+                                <th style="width: 109px;">소속 교수 수</th>
+                                <th style="width: 109px;">소속 학생 수</th>
+                                <th style="width: 109px;">개설 강의 수 </th>
+                                </thead>
+                            <tbody>
+
+                                <tr th:each="department :${pageResponseDTO.dtoList}">
+                                    <td>[[${department.deptNo}]]</td>
+                                    <td>[[${department.college}]]</td>
+                                    <td>[[${department.deptName}]]</td>
+                                    <td>[[${department.deptChair}]]</td>
+                                    <td>[[${department.deptHp}]]</td>
+                                    <td>[[${department.totalProfessors}]]</td>
+                                    <td>[[${department.totalStudents}]]</td>
+                                    <td>[[${department.totalLecturers}]]</td>
+                                </tr>
+                            </tbody>
+
+
+                        </table>
+                        <!-- 학과 목록 끝-->
+
+                        <div class="page">
+                            <th:block th:if="${pageResponseDTO.prev}">
+                                <a th:href="@{/admin/departments/search(pg=${pageResponseDTO.start-1}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="prev"> ◀ </a>
+                            </th:block>
+
+                            <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
+                                <a th:href="@{/admin/departments/search(pg=${num}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'"> [[${num}]] </a>
+                            </th:block>
+
+                            <th:block th:if="${pageResponseDTO.next}">
+                                <a th:href="@{/admin/departments/search(pg=${pageResponseDTO.end+1}, searchType=${pageResponseDTO.searchType}, keyword=${pageResponseDTO.keyword})}" class="next"> ▶ </a>
+                            </th:block>
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <th:block th:include="/inc/admin/_footer"/>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

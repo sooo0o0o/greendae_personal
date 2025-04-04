@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린대학교 갤러리</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/campus/gallery.css">
+
+    <style>
+        .main_content_detail > .page {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+    <th:block th:include="/inc/_header.html"/>
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <main>
+        <div class="background">
+            <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        대학생활
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">갤러리</span>
+                    </span>
+            </div>
+        </div>
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/campus/sidebar.html"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>갤러리</p>
+                </div>
+                <div class="main_content_detail">
+                    <div id="items">
+                        <div class="gallery-item">
+                            <a th:href="@{/campus/galleryview(no=1)}">
+                                <img class="gallery1" src="/images/gallary_sample1.jpg" alt="갤러리1">
+                                <p class="gallary_text">제40회 1995학년도 학위수여식</p>
+                                <p class="gallary_text2">조회수 23 | 글로벌... | 25.02.20</p>
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a th:href="@{/campus/galleryview(no=2)}">
+                                <img class="gallery1" src="/images/gallary_sample2.jpg" alt="갤러리1">
+                                <p class="gallary_text">제40회 1995학년도 학위수여식</p>
+                                <p class="gallary_text2">조회수 23 | 글로벌... | 25.02.20</p>
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a th:href="@{/campus/galleryview(no=3)}">
+                                <img class="gallery1" src="/images/gallary_sample3.jpg" alt="갤러리1">
+                                <p class="gallary_text">제40회 1995학년도 학위수여식</p>
+                                <p class="gallary_text2">조회수 23 | 글로벌... | 25.02.20</p>
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a th:href="@{/campus/galleryview(no=4)}">
+                                <img class="gallery1" src="/images/gallary_sample4.png" alt="갤러리1">
+                                <p class="gallary_text">제40회 1995학년도 학위수여식</p>
+                                <p class="gallary_text2">조회수 23 | 글로벌... | 25.02.20</p>
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a th:href="@{/campus/galleryview(no=5)}">
+                                <img class="gallery1" src="/images/gallary_sample5.jpg" alt="갤러리1">
+                                <p class="gallary_text">제40회 1995학년도 학위수여식</p>
+                                <p class="gallary_text2">조회수 23 | 글로벌... | 25.02.20</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <a href="" class="first"><img src="/images/btn-first-page.png" alt=""></a>
+                        <a href="" class="prev"><img src="/images/btn-prev-page.png" alt=""></a>
+                        <a href="" class="num">1</a>
+                        <a href="" class="next"><img src="/images/btn-next-page.png" alt=""></a>
+                        <a href="" class="last"><img src="/images/btn-last-page.png" alt=""></a>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <footer>
+        <div>
+            <div>
+                <ul>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">통합정보시스템</a></li>
+                    <li><a href="#">학사일정</a></li>
+                    <li><a href="#">주요인원 연락처</a></li>
+                    <li><a href="#">교내공지사항</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="/images/footer_logo.png" alt="그린대학교">
+                <p>
+                    그린대학교 <br>
+                    [12345] 부산광역시 부산진구 부전대로 123 그린대학교 / 대표전화 : 051-123-1000 / <br>
+                    입학안내 : 051-123-1302 팩스 : 051-123-3333
+
+                    <br><br>
+                    copyright ©Green University All rights reserved.
+                </p>
+                <div>
+                    <p>주요사이트
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▾</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

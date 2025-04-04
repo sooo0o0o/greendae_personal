@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대학생활 > 식단안내</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/campus/menu.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+
+</head>
+<body>
+<div id="wrapper">
+    <!-- 헤더 시작작-->
+    <th:block th:include="/inc/_header.html"/>
+    <!-- 헤더 끝-->
+    <!-- 메인 시작작-->
+    <!--          -->
+    <main>
+        <div class="background">
+            <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        대학생활
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">식단안내</span>
+                    </span>
+            </div>
+        </div>
+        <section class="content">
+            <!-- 왼쪽 사이드바 -->
+            <th:block th:include="/inc/campus/sidebar.html"/>
+            <!-- 오른쪽 글 -->
+            <article class="main_content">
+                <div class="main_title">
+                    <p>식단안내</p>
+                </div>
+                <div class="main_content_detail">
+                    <!-- 작성할 내용 시작-->
+                    <p>
+                        <a href=""><img src="/images/btn-calendar-prev.gif" alt=""></a>
+                        2025.03.10 ~ 2025.03.14
+                        <a href=""><img src="/images/btn-calendar-next.gif" alt=""></a>
+                    </p>
+                    <table>
+                        <tr>
+                            <th>구분</th>
+                            <th>2025.3.30(월)</th>
+                            <th>2025.3.31(화)</th>
+                            <th>2025.3.32(수)</th>
+                            <th>2025.3.33(목)</th>
+                            <th>2025.3.34(금)</th>
+                            <th>2025.3.35(토)</th>
+                        </tr>
+                        <tr>
+                            <td>조식</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                        </tr>
+                        <tr>
+                            <td>중식</td>
+                            <td>
+                                <span>정식5,500원</span><br>
+                                백미밥<br>
+                                바지락미역국<br>
+                                닭안심매콤조림<br>
+                                야끼우동<br>
+                                두부강정<br>
+                                상추겉절이<br>
+                                포기김치
+                            </td>
+                            <td>
+                                <span>정식5,500원</span><br>
+                                백미밥<br>
+                                바지락미역국<br>
+                                닭안심매콤조림<br>
+                                야끼우동<br>
+                                두부강정<br>
+                                상추겉절이<br>
+                                포기김치
+                            </td>
+                            <td>
+                                <span>정식5,500원</span><br>
+                                백미밥<br>
+                                바지락미역국<br>
+                                닭안심매콤조림<br>
+                                야끼우동<br>
+                                두부강정<br>
+                                상추겉절이<br>
+                                포기김치
+                            </td>
+                            <td>
+                                <span>정식5,500원</span><br>
+                                백미밥<br>
+                                바지락미역국<br>
+                                닭안심매콤조림<br>
+                                야끼우동<br>
+                                두부강정<br>
+                                상추겉절이<br>
+                                포기김치
+                            </td>
+                            <td>
+                                <span>정식5,500원</span><br>
+                                백미밥<br>
+                                바지락미역국<br>
+                                닭안심매콤조림<br>
+                                야끼우동<br>
+                                두부강정<br>
+                                상추겉절이<br>
+                                포기김치
+                            </td>
+                            <td>미운영</td>
+                        </tr>
+                        <tr>
+                            <td>석식</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                            <td>미운영</td>
+                        </tr>
+                    </table>
+                    <p>※ 항상 그린식당을 이용해 주셔서 감사합니다.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- 메인 끝-->
+    <!-- 푸터 시작작-->
+    <th:block th:include="/inc/_footer.html"/>
+    <!-- 푸터 끝-->
+</div>
+</body>
+</html>

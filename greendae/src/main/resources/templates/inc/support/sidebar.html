@@ -1,0 +1,47 @@
+<aside class="sidebar">
+  <article class="side_content">
+    <div class="side_title">
+      <p>학생지원</p>
+    </div>
+    <a th:href="@{/support/register}">
+      <div id="register">수강신청</div>
+    </a>
+    <a th:href="@{/support/register_list}">
+      <div id="register_list">수강신청내역</div>
+    </a>
+    <a th:href="@{/support/classes}">
+      <div id="classes">교과과정</div>
+    </a>
+    <a th:href="@{/support/grade}">
+      <div id="grade">성적조회</div>
+    </a>
+    <a th:href="@{/support/record}">
+      <div id="record">학적</div>
+    </a>
+  </article>
+</aside>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = location.pathname;
+
+    if (path.includes("classes")) {
+      document.getElementById("classes").classList.add("active");
+    }else if (path.includes("list")) {
+      document.getElementById("register_list").classList.add("active");
+    }else if (path.includes("register")) {
+      document.getElementById("register").classList.add("active");
+    }else if (path.includes("grade")) {
+      document.getElementById("grade").classList.add("active");
+    }else if (path.includes("record")) {
+      document.getElementById("record").classList.add("active");
+    }
+  });
+</script>
+
+<style>
+  .active {
+    background-color: #3F97F6; /* 선택된 메뉴 스타일 */
+    color: white;
+  }
+</style>

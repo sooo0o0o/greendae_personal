@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대학대학원 > 자연과학대학</title>
+    <link rel="stylesheet" href="/css/layout/layout.css">
+    <link rel="stylesheet" href="/css/info/info.css">
+    <link rel="website icon" type="png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작작-->
+        <th:block th:include="/inc/_header.html"/>
+        <!-- 헤더 끝-->
+        <!-- 메인 시작작-->
+        <main>
+            <div class="background">
+                <div>
+                    <span style="margin-top: 10px;">
+                        <img src="/images/ico-home.png" alt="HOME">
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        대학·대학원
+                        <img src="/images/bg-path-arrow.png" alt=">">
+                        <span style="color: #071F4B;">자연과학대학 </span>
+                    </span>
+                </div>
+            </div>
+            <section class="content">
+                <!-- 왼쪽 사이드바 -->
+                <th:block th:include="/inc/info/sidebar.html"/>
+                <!-- 오른쪽 글 -->
+                <article class="main_content">
+                    <div class="main_title">
+                        <p>자연과학대학</p>
+                    </div>
+                    <div class="main_content_detail">
+                        <!-- 작성할 내용 시작-->
+                        <img src="/images/college-introduce-2.jpg" alt="" style="float: left;">
+                        <div class="social_tit" style="float: left; margin-left: 15px;">
+                            <p>[[${college.engName}]]<br>
+                                <span>[[${college.title}]]</span><br>
+                                [[${college.content}]]
+                            </p>
+                        </div>
+
+                        <p>
+                            <img src="/images/bullet-h4.png" alt="" style="margin-right: 5px; margin-bottom: 4px; ">
+                            학부 및 학과
+                        </p>
+
+                        <table>
+                            <tr>
+                                <th>학과/전공</th>
+                                <th>학과장</th>
+                                <th>학과 사무실 번호</th>
+                                <th>비고</th>
+                            </tr>
+                            <tr th:each="department :${departmentDTOS}">
+                                <td>[[${department.deptName}]]
+                                    <a href="#" class="open-modal"
+                                       th:data-deptname="${department.deptName}"
+                                       th:data-deptchair="${department.deptChair}"
+                                       th:data-depthp="${department.deptHp}"
+                                       th:data-deptename="${department.deptEname}"
+                                       th:data-deptoffice="${department.deptOffice}">
+                                        <img src="/images/ico_link.png" alt="">
+                                    </a> </td>
+                                <td>[[${department.deptChair}]]</td>
+                                <td>[[${department.deptHp}]]</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <!-- 모달창 -->
+                        <div id="department-modal" class="modal">
+                            <div class="modal-content">
+                                <span id="close-modal" class="close">&times;</span>
+                                <h2 style="font-weight: 500; font-size: 20px">학과 정보</h2>
+                                <table>
+                                    <tr>
+                                        <th>학과명</th>
+                                        <td id="modal-deptName"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>영문 학과명</th>
+                                        <td id="modal-deptEname"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>학과장</th>
+                                        <td id="modal-deptChair"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>사무실 번호</th>
+                                        <td id="modal-deptHp"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>학과 사무실 위치</th>
+                                        <td id="modal-deptOffice"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!-- JavaScript -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll(".open-modal").forEach((link) => {
+                    link.addEventListener("click", function (event) {
+                        event.preventDefault(); // 링크 기본 동작 막기
+
+                        // `data-` 속성에서 정보 가져오기
+                        const deptName = this.dataset.deptname;
+                        const deptChair = this.dataset.deptchair;
+                        const deptHp = this.dataset.depthp;
+                        const deptEname = this.dataset.deptename;
+                        const deptOffice = this.dataset.deptoffice;
+
+                        // 모달 내용 업데이트
+                        document.getElementById("modal-deptName").textContent = deptName;
+                        document.getElementById("modal-deptChair").textContent = deptChair;
+                        document.getElementById("modal-deptHp").textContent = deptHp;
+                        document.getElementById("modal-deptEname").textContent = deptEname;
+                        document.getElementById("modal-deptOffice").textContent = deptOffice;
+
+                        // 모달 열기
+                        document.getElementById("department-modal").style.display = "block";
+                    });
+                });
+
+                // 모달 닫기 버튼 이벤트
+                document.getElementById("close-modal").addEventListener("click", function () {
+                    document.getElementById("department-modal").style.display = "none";
+                });
+            });
+        </script>
+        <!-- 메인 끝-->
+        <!-- 푸터 시작작-->
+        <th:block th:include="/inc/_footer.html"/>
+        <!-- 푸터 끝-->
+    </div>
+</body>
+</html>
