@@ -63,8 +63,6 @@ public class SupportService {
     }
 
     public int findStudentYearByStdNo(String stdNo) {
-        log.info("service##stdNo: {}", stdNo);
-
         return studentRepository.findYearByStdNo(stdNo);
     }
 
@@ -96,13 +94,11 @@ public class SupportService {
     }
 
     public PageResponseDTO findRegisterByStdNoByGrade(PageRequestDTO pageRequestDTO, int stdYear) {
-
         // 페이징 처리
         Pageable pageable = pageRequestDTO.getPageable("lecNo");
 
         // 페이징을 포함한 강의 목록 조회
         Page<Tuple> pageLecture = lectureRepository.selectAllByStdNoAndStdYear(pageable, stdYear);
-        log.info("pageLecture: {}", pageLecture);
 
         // 페이지 정보에서 강의 DTO 리스트 변환
         List<LectureDTO> lectureDTOList = pageLecture.getContent().stream()
@@ -131,7 +127,6 @@ public class SupportService {
 
         //페이징을 포함한 목록 조회
         Page<Tuple> pageRegistered = registerRepository.findRegisterByStdNo(pageable, stdNo);
-        log.info("pageRegistered: {}", pageRegistered);
 
         List<RegisterDTO> registerDTOList = pageRegistered.getContent().stream()
                 .map(tuple -> {
@@ -169,7 +164,6 @@ public class SupportService {
 
         //페이징 포함 목록 조회
         Page<Tuple> pageRegisteredGrade = registerRepository.findGradeByStdNo(pageable, stdNo);
-        //List<Object[]> optGradeStd = registerRepository.findGradeByStdNo(stdNo);
 
         List<RegisterDTO> gradeDTOList = pageRegisteredGrade.getContent().stream()
                 .map(tuple -> {
@@ -205,14 +199,6 @@ public class SupportService {
 
     public List<StudentDTO> findRecordByStdNo(String stdNo) {
         List<Object[]> optRecordStd = studentRepository.findRecordByStdNo(stdNo);
-        log.info("service##optRecordStd : {}", optRecordStd);
-
-        // 각 obj의 타입을 로그로 찍어보기
-        optRecordStd.stream().forEach(obj -> {
-            for (int i = 0; i < obj.length; i++) {
-                log.info("obj[{}] type: {}", i, obj[i].getClass().getName());
-            }
-        });
 
         List<StudentDTO> recordList = optRecordStd.stream().map(obj -> {
             StudentDTO studentDTO = modelMapper.map(obj, StudentDTO.class);
@@ -230,8 +216,6 @@ public class SupportService {
             return studentDTO;
 
         }).collect(Collectors.toList());
-
-        log.info("service##recordList : {}", recordList);
 
         return recordList;
     }
@@ -288,7 +272,6 @@ public class SupportService {
             // Object 배열에서 필요한 데이터를 추출
             String lecCate = (String) register[4]; // '전공', '교양' 등 카테고리 정보
             int lecCredits = (Integer) register[2];
-            log.info("@#@##@#@#"+lecCredits);
 
             // 카테고리에 따라 학점 계산
             if ("전공".equals(lecCate) || "전공필수".equals(lecCate) || "전공선택".equals(lecCate)) {
@@ -310,7 +293,6 @@ public class SupportService {
                 other++;
                 otherCredit += (Integer) register[2];
             }
-
 
         }
 
@@ -376,7 +358,10 @@ public class SupportService {
 
     public boolean registerLecture(StudentDTO studentDTO, Lecture lecture) {
 
-        Student student = modelMapper.map(studentDTO, Student.class);
+
+        //
+        Student student = studentRepository.findById(studentDTO.getStdNo()).get();
+        // Student student = modelMapper.map(studentDTO, Student.class);
 
         Register register = new Register();
         register.setStudent(student);
@@ -446,9 +431,6 @@ public class SupportService {
             lecture.setLecStdCount(count - 1);
 
             lectureRepository.save(lecture);
-
-            // 학생 총점 -
-            //
 
             // 삭제가 완료되었으면 true 반환
             return true;
@@ -602,28 +584,4 @@ public class SupportService {
         public int getLiberalArtsC() { return liberalArtsC; }
     }
 
-
-
-
-
-
-    //학과별
-    public void findByClass() {
-    }
-
-    //과목명
-    public void findByClassName() {
-    }
-
-    //교수명
-    public void findByProfessor() {
-    }
-
-    //구분
-    public void findByCate() {
-    }
-
-
-    public void modify() {
-    }
 }

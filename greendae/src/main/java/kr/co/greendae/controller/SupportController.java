@@ -44,8 +44,6 @@ public class SupportController {
         String stdNo = userDetails.getUsername();
         StudentDTO studentDTO = supportService.findStudentByStdNo(stdNo);
 
-        // 학년, 학과
-
         // 전공 데이터 출력
         // 전공 1학년 데이터 출력
         List<LectureDTO> majorListLevel1 = supportService.findLectureByLecCate(studentDTO, "1");
@@ -90,9 +88,6 @@ public class SupportController {
         model.addAttribute("pageResponseDTO", registeredPageResponseDTO);
         model.addAttribute("total", total);
 
-        //List<RegisterDTO> gradeList = supportService.findGradeByStdNo(stdNo);
-        //model.addAttribute("gradeList", gradeList);
-
         return "/support/grade";
     }
 
@@ -121,7 +116,6 @@ public class SupportController {
     @ResponseBody
     @PostMapping("/register")
     public ResponseEntity<?> registerLecture(@AuthenticationPrincipal UserDetails userDetails, @RequestBody RegisterDTO registerDTO) {
-
         //학번조회
         String stdNo = userDetails.getUsername();
         String lecNo = registerDTO.getRegLecNo();
@@ -140,10 +134,7 @@ public class SupportController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Collections.singletonMap("error", "duplicate_registration"));
         }
 
-        log.info("stdNo: " + stdNo);
-
         boolean success = supportService.registerLecture(student,lecture);
-
 
         if(success){
             return ResponseEntity.ok().body(Collections.singletonMap("success", true));
@@ -155,7 +146,6 @@ public class SupportController {
     //수강신청 검색하기
     @GetMapping("/search_register")
     public String search(@AuthenticationPrincipal UserDetails userDetails, Model model, PageRequestDTO pageRequestDTO){
-
         //학번조회
         String stdNo = userDetails.getUsername();
 
@@ -176,7 +166,6 @@ public class SupportController {
     public String registerListByStdNo(@AuthenticationPrincipal UserDetails userDetails, RegisteredPageRequestDTO registeredPageRequestDTO, Model model){
         //학번 조회
         String stdNo = userDetails.getUsername();
-        log.info("stdNo: " + stdNo);
 
         //글 조회 서비스
         RegisteredPageResponseDTO registeredPageResponseDTO = supportService.findRegisterByStdNo(registeredPageRequestDTO, stdNo);
@@ -195,8 +184,6 @@ public class SupportController {
     @ResponseBody
     @PostMapping("/cancel_lecture")
     public ResponseEntity<Map<String, Object>> cancelLecture(@RequestParam("lecNo") String lecNo) {
-
-        System.out.println(lecNo);
         Map<String, Object> response = new HashMap<>();
         try {
             boolean isCancelled = supportService.cancelLecture(lecNo);
@@ -218,7 +205,6 @@ public class SupportController {
     @GetMapping("/record")
     public String recordByStdNo(@AuthenticationPrincipal UserDetails userDetails, Model model){
         String stdNo = userDetails.getUsername();
-        log.info("stdNo: " + stdNo);
 
         List<StudentDTO> studentList = supportService.findRecordByStdNo(stdNo);
         List<String> lectureYears = supportService.getLectureYearsByStudent(stdNo);
@@ -237,11 +223,6 @@ public class SupportController {
             if(totalCredits > 0){
                 averageCredits = (double) totalCredits / 3;
             }
-
-            // 년도/ 학기별 취득학점현환
-            // 학번 202510010
-            // 2025년 1학기 2학기
-
 
             List<RecordDTO> recordDTOS = supportService.calculateRecode(studentDTO);
 

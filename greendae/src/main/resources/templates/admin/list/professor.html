@@ -74,15 +74,15 @@
                         <!-- 학생 목록 끝-->
                         <div class="page">
                             <th:block th:if="${pageResponseDTO.prev}">
-                                <a th:href="@{/admin/professor/list(pg=${pageResponseDTO.start-1})}" class="prev">이전</a>
+                                <a th:href="@{/admin/professors/list(pg=${pageResponseDTO.start-1})}" class="prev">이전</a>
                             </th:block>
 
                             <th:block th:each="num:${#numbers.sequence(pageResponseDTO.start, pageResponseDTO.end)}">
-                                <a th:href="@{/admin/professor/list(pg=${num})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
+                                <a th:href="@{/admin/professors/list(pg=${num})}" th:class="${num == pageResponseDTO.pg} ? 'current' : 'num'">[[${num}]]</a>
                             </th:block>
 
                             <th:block th:if="${pageResponseDTO.next}">
-                                <a th:href="@{/admin/professor/list(pg=${pageResponseDTO.end+1})}" class="next">다음</a>
+                                <a th:href="@{/admin/professors/list(pg=${pageResponseDTO.end+1})}" class="next">다음</a>
                             </th:block>
 
                             <a class="register_btn_b" th:href="@{/admin/professor/register}">등록</a>

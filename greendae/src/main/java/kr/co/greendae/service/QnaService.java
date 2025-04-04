@@ -78,7 +78,6 @@ public class QnaService {
         return modelMapper.map(stateArticleRepository.findById(no), ArticleDTO.class);
     }
 
-
     @Transactional
     public StateArticle registerRes(ArticleDTO articleDTO) {
 

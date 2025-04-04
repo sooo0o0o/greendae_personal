@@ -11,7 +11,6 @@ public interface BasicCommentRepository extends JpaRepository<BasicComment, Inte
 
     public List<BasicComment> findByParent(int parent);
 
-
     void deleteByParent(int no);
 
     void deleteById(int cno);

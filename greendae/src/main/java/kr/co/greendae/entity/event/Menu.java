@@ -25,4 +25,5 @@ public class Menu {
     private String title; // 조식, 중식, 석식
     private String date;
     private String week;
+
 }

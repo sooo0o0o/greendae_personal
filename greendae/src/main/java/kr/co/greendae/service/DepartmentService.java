@@ -21,7 +21,6 @@ public class DepartmentService {
     private final DepartmentRepository departmentRepository;
     private final ModelMapper modelMapper;
 
-
     public List<DepartmentDTO> findDepartmentByCollege(String college) {
 
         List<Department> collegeList = departmentRepository.findAllByCollege(college);

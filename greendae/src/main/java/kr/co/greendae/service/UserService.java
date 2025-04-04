@@ -13,7 +13,6 @@ import kr.co.greendae.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,15 +28,12 @@ import java.util.concurrent.ThreadLocalRandom;
 @Service
 public class UserService {
 
-
-
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final JavaMailSender mailSender;
 
     private final HttpServletRequest request;
-
 
     public void register(UserDTO userDTO) {
         // 비밀번호 암호화
@@ -152,8 +148,7 @@ public class UserService {
         return String.valueOf(code);  // 생성된 인증 코드를 문자열로 반환
     }
 
-
-    public String sendPasswordResetEmailCode(String email) {
+    public String sendPasswordResetEmailCode(String email, String uid) {
         // 인증 코드 생성
         String authCode = generateAuthCode();
 
@@ -212,8 +207,5 @@ public class UserService {
 
         return ResponseEntity.ok(Map.of("success", true, "message", "비밀번호가 성공적으로 변경되었습니다."));
     }
-
-
-
 
 }

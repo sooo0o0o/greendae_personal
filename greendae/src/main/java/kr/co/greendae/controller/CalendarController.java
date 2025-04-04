@@ -31,12 +31,6 @@ public class CalendarController {
             eventList.add(createEvent(eventDTO.getTitle(), eventDTO.getDate()));
         }
 
-        /*
-        eventList.add(createEvent("좋은하루", "2025-03-15"));
-        eventList.add(createEvent("좋은하루2", "2025-03-20"));
-        eventList.add(createEvent("좋은하루3", "2025-03-25"));
-*/
-
         return eventList; // Spring Boot가 자동으로 JSON 변환
     }
 

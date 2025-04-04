@@ -15,7 +15,4 @@
         `wdate`=NOW();
     </insert>
 
-
-
-
 </mapper>

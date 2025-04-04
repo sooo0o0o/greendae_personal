@@ -86,7 +86,7 @@ public class AcademicController {
         PageResponseDTO pageResponseDTO = articleService.findAll(pageRequestDTO, cate);
 
         model.addAttribute(pageResponseDTO);
-        model.addAttribute("isListing", true);  // isWriting=false로 설정하여 리스트 화면 표시
+        model.addAttribute("isListing", true);
 
         return "/academic/acanotice";
     }
@@ -97,7 +97,7 @@ public class AcademicController {
         HttpSession session = request.getSession();
         session.setAttribute("cate", "acanotice");
 
-        model.addAttribute("isWriting", true);  // isWriting=true로 설정하여 글쓰기 화면 표시
+        model.addAttribute("isWriting", true);
         return "/academic/acanotice";
     }
 
@@ -136,7 +136,6 @@ public class AcademicController {
     @GetMapping("/acanotice/view")
     public String acanoticeview(Model model, int no){
 
-        System.out.println(no);
         // 글 조회 서비스 호출
         ArticleDTO articleDTO = articleService.findById(no);
 
@@ -149,7 +148,7 @@ public class AcademicController {
         model.addAttribute(articleDTO);
         model.addAttribute("isViewing", true);
 
-        // return "redirect:/community/freeboard";
+
         return "/academic/acanotice";
     }
 

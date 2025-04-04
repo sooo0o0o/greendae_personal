@@ -52,10 +52,6 @@ public class CommentController {
         articleService.CountUpComment(no);
 
 
-        // basisArticle - no pk findByID
-        // .setComment(basicArticle.getCom + 1)
-
-
         return savedCommentDTO;
     }
 

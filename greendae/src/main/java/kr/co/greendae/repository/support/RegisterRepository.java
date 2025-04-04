@@ -27,7 +27,6 @@ public interface RegisterRepository extends JpaRepository<Register, Integer> , R
             "where r.student.stdNo = :stdNo")
     public List<Object[]> findGradeByStdNo(String stdNo);
 
-
     void deleteByLecture(Lecture lecture);
 
     Register findByLecture(Lecture lecture);

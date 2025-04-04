@@ -22,7 +22,6 @@ public class AppInfoInterceptor implements HandlerInterceptor {
 
      */
 
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 컨트롤러 수행 전 실행

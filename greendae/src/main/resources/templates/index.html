@@ -155,8 +155,8 @@
                                 <table style="margin-top: 10px;" class="intro_right_table">
                                     <tr th:each="notice, i : ${notices}">
                                         <td>
-                                            <a th:href="@{/community/notice/view(no=${notice.getNo()})}"><span>[[${notice.title}]]</span></a>
-                                            <img th:if="${i.index < 2}" th:src="@{/images/ico-new01.gif}" alt="아이콘">
+                                            <a style="color: white;" th:href="@{/community/notice/view(no=${notice.getNo()})}"><span>[[${notice.title}]]</span></a>
+                                            <img th:if="${i.index < 2}" th:src="@{/images/ico-new02.gif}" alt="아이콘">
                                         </td>
                                         <td width="100px">[[${notice.wdate}]]</td>
                                     </tr>

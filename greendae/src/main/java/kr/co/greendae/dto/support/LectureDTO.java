@@ -42,6 +42,4 @@ public class LectureDTO {
 
     private ProfessorDTO professor;
 
-
-
 }

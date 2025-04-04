@@ -37,9 +37,7 @@ public class SecurityConfig {
              - Spring Security는 기본적으로 인가 페이지 대해 login 페이지로 redirect 수행
         */
 
-
-
-        // Student, Professor, Normal,Admin
+        // Student, Professor, Normal, Admin
 
         http.authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/").permitAll()
@@ -56,16 +54,11 @@ public class SecurityConfig {
 
                 .anyRequest().permitAll());
 
-
         // 기타 보안 설정
         http.csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
     }
-
-
-
-
 
     @Bean
     public PasswordEncoder passwordEncoder() {

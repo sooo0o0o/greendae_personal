@@ -66,19 +66,6 @@ public class BasicArticleRepositoryImpl implements BasicArticleRepositoryCustom 
         // 검색 조건에 따라 where 조건 표현식 생성
         BooleanExpression cateExpression = qArticle.cate.eq(cate);
 
-
-
-        /*
-        전체 기능 검색이 안됨
-        if(searchType.equals("title")){
-            expression = qArticle.title.contains(keyword);
-        }else if(searchType.equals("content")){
-            expression = qArticle.content.contains(keyword);
-        }else if(searchType.equals("writer")){
-            expression = qUser.name.contains(keyword);
-        }
-         */
-
         if (keyword != null && !keyword.trim().isEmpty()) {
             BooleanExpression titleCondition = qArticle.title.contains(keyword);
             BooleanExpression contentCondition = qArticle.content.contains(keyword);
@@ -125,7 +112,6 @@ public class BasicArticleRepositoryImpl implements BasicArticleRepositoryCustom 
 
         // 페이징 처리를 위한 페이지 객체 반환
         return new PageImpl<Tuple>(tupleList, pageable, total);
-
 
     }
 }

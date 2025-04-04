@@ -84,7 +84,7 @@ public class AdmissionController {
         PageResponseDTO pageResponseDTO = articleService.findAll(pageRequestDTO, cate);
 
         model.addAttribute(pageResponseDTO);
-        model.addAttribute("isListing", true);  // isWriting=false로 설정하여 리스트 화면 표시
+        model.addAttribute("isListing", true);
 
         return "/admission/adnotice";
     }
@@ -95,7 +95,7 @@ public class AdmissionController {
         HttpSession session = request.getSession();
         session.setAttribute("cate", "adnotice");
 
-        model.addAttribute("isWriting", true);  // isWriting=true로 설정하여 글쓰기 화면 표시
+        model.addAttribute("isWriting", true);
         return "/admission/adnotice";
     }
 
@@ -134,7 +134,6 @@ public class AdmissionController {
     @GetMapping("/adnotice/view")
     public String adnoticeview(Model model, int no){
 
-        System.out.println(no);
         // 글 조회 서비스 호출
         ArticleDTO articleDTO = articleService.findById(no);
 
@@ -147,7 +146,7 @@ public class AdmissionController {
         model.addAttribute(articleDTO);
         model.addAttribute("isViewing", true);
 
-        // return "redirect:/community/freeboard";
+
         return "/admission/adnotice";
     }
 

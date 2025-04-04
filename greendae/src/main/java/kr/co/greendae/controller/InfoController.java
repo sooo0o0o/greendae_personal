@@ -73,8 +73,6 @@ public class InfoController {
         model.addAttribute("college",collegeDTO);
         model.addAttribute("departmentDTOS", departmentDTOS);
 
-
-
         return "/info/education";
     }
 

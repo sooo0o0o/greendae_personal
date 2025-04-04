@@ -75,10 +75,6 @@ public class AdminController {
         int deptNo = adminService.getMaxDepNo();
         departmentDTO.setDeptNo(deptNo);
 
-        System.out.println(departmentDTO);
-        System.out.println(departmentDTO);
-        System.out.println(departmentDTO);
-
         adminService.register(departmentDTO);
 
         return "redirect:/admin/college/register";
@@ -131,9 +127,6 @@ public class AdminController {
 
         // 학과에 교수 수 + 1 하기
         adminService.CountUpProfessor(departmentDTO);
-
-
-        System.out.println(departmentDTO);
         return "redirect:/admin/professor/register";
     }
 
@@ -231,11 +224,7 @@ public class AdminController {
     @ResponseBody
     @GetMapping("/professor/list")
     public List<ProfessorDTO> professorList(@RequestParam("department") String department){
-        System.out.println("시작");
-        System.out.println(department);
-        System.out.println("끝");
         List<ProfessorDTO> professorDTOS = adminService.findAllProfessorByName(department);
-
         return professorDTOS;
     }
 
@@ -256,12 +245,9 @@ public class AdminController {
     // 학과 검색
     @GetMapping("/departments/search")
     public String search(PageDepartmentRequestDTO pageRequestDTO, Model model){
-        log.info("pageRequestDTO : {}", pageRequestDTO);
 
         // 서비스 호출
         PageDepartmentResponseDTO pageResponseDTO = adminService.searchAllDepartment(pageRequestDTO);
-        System.out.println(pageResponseDTO);
-
         model.addAttribute("pageResponseDTO",pageResponseDTO);
 
         return "/admin/list/departmentSearch";
@@ -273,20 +259,15 @@ public class AdminController {
 
         PageStudentResponseDTO pageStudentResponseDTO = adminService.findAllStudent(pageRequestDTO);
         model.addAttribute("pageResponseDTO",pageStudentResponseDTO);
-        System.out.println(pageStudentResponseDTO);
-
         return "/admin/list/student";
     }
 
     // 학생 검색
     @GetMapping("/student/search")
     public String search(PageRequestDTO pageRequestDTO, Model model){
-        log.info("pageRequestDTO : {}", pageRequestDTO);
 
         // 서비스 호출
         PageStudentResponseDTO pageResponseDTO = adminService.searchAllStudent(pageRequestDTO);
-        System.out.println(pageResponseDTO);
-
         model.addAttribute("pageResponseDTO",pageResponseDTO);
 
         return "/admin/list/studentSearch";
@@ -305,12 +286,9 @@ public class AdminController {
     // 교수 검색
     @GetMapping("/professor/search")
     public String professorSearch(PageRequestDTO pageRequestDTO, Model model){
-        log.info("pageRequestDTO : {}", pageRequestDTO);
 
         // 서비스 호출
         PageProfessorResponseDTO pageResponseDTO = adminService.searchAllProfessor(pageRequestDTO);
-        System.out.println(pageResponseDTO);
-
         model.addAttribute("pageResponseDTO",pageResponseDTO);
 
         return "/admin/list/professorSearch";
@@ -321,7 +299,6 @@ public class AdminController {
     public String  operation(Model model, PageRequestDTO pageRequestDTO){
 
         PageLectureResponseDTO pageResponseDTO = adminService.allLecture(pageRequestDTO);
-        System.out.println(pageResponseDTO);
         model.addAttribute("pageResponseDTO",pageResponseDTO);
 
         return "/admin/list/operation";
@@ -331,12 +308,8 @@ public class AdminController {
     @GetMapping("/operation/search")
     public String operationSearch(PageRequestDTO pageRequestDTO, Model model){
 
-        log.info("pageRequestDTO : {}", pageRequestDTO);
-
         // 서비스 호출
         PageLectureResponseDTO pageResponseDTO = adminService.searchAllLecture(pageRequestDTO);
-        System.out.println(pageResponseDTO);
-
         model.addAttribute("pageResponseDTO",pageResponseDTO);
 
         return "/admin/list/operationSearch";
@@ -358,8 +331,6 @@ public class AdminController {
     @GetMapping("/lecture/search")
     public String lectureSearch(PageRequestDTO pageRequestDTO, Model model){
 
-        log.info("pageRequestDTO : {}", pageRequestDTO);
-
         // 서비스 호출
         PageLectureResponseDTO pageResponseDTO = adminService.searchAllLecture(pageRequestDTO);
         model.addAttribute("pageResponseDTO",pageResponseDTO);
@@ -379,8 +350,6 @@ public class AdminController {
 
     @GetMapping("/register/search")
     public String registerSearch(PageRequestDTO pageRequestDTO, Model model){
-
-        log.info("pageRequestDTO : {}", pageRequestDTO);
 
         // 서비스 호출
         PageRegisterResponseDTO pageResponseDTO = adminService.searchAllRegister(pageRequestDTO);

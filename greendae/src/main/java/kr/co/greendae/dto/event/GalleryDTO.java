@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 public class GalleryDTO {
 
     private int no;
-
     private String title;      //제목
     private String content;    //내용 
     private String comment;    //댓글
@@ -26,7 +25,6 @@ public class GalleryDTO {
     private int hit;           //조회수
     private String regip;
     private User user;
-
     private String wdate;
 
 

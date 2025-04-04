@@ -20,28 +20,14 @@ public class GalleryService {
     private final ModelMapper modelMapper;
     private final GalleryRepository galleryRepository;
 
-
-
     public List<Gallery> getAllGalleries(){
         return galleryRepository.findAll();
     }
 
     public GalleryDTO getGalleryById(int no) {
         Optional<Gallery> gallery = galleryRepository.findById(no); // Optional로 받기
-
-
-
-
-
-
-
-        // 임시 맛보기용 코드
-
         GalleryDTO galleryDTO = modelMapper.map(gallery, GalleryDTO.class);
-
         return galleryDTO;
     }
-
-
 
 }

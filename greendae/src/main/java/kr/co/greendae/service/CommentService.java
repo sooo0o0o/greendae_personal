@@ -67,7 +67,6 @@ public class CommentService {
         basicCommentRepository.deleteById(cno);
     }
 
-
     public boolean updateComment(CommentDTO commentDTO) {
         Optional<BasicComment> optionalComment = basicCommentRepository.findById(commentDTO.getCno());
 

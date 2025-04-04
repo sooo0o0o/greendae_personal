@@ -10,5 +10,4 @@ public interface DepartmentRepositoryCustom {
 
     Page<Tuple> selectDepartmentForSearch(PageDepartmentRequestDTO pageRequestDTO, Pageable pageable);
 
-
 }

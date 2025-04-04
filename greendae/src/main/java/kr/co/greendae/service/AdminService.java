@@ -77,7 +77,6 @@ public class AdminService {
 
         // 파일 업로드 디렉터리 시스템 경로 구하기
         String fileUploadPath = fileUploadDir.getAbsolutePath();
-        log.info("fileUploadPath : {}", fileUploadPath);
 
         MultipartFile multipartFile = collageDTO.getImage();
 
@@ -204,9 +203,6 @@ public class AdminService {
     public List<ProfessorDTO> findAllProfessorByName(String department) {
 
         Department findDepartment = departmentRepository.findById(Integer.parseInt(department)).get();
-        System.out.println(findDepartment);
-        System.out.println(findDepartment);
-        System.out.println(findDepartment);
         List<Professor> professors = professorRepository.findByDepartment((findDepartment));
         List<ProfessorDTO> professorDTOS = new ArrayList<>();
         for (Professor professor : professors) {

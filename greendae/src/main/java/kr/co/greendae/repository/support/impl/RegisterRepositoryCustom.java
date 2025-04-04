@@ -11,8 +11,6 @@ public interface RegisterRepositoryCustom {
 
     public Page<Tuple> findRegisterByStdNo(Pageable pageable, String stdNo);
     public Page<Tuple> findGradeByStdNo(Pageable pageable, String stdNo);
-
     Page<Tuple> selectAll(Pageable pageable);
-
     Page<Tuple> selectRegisterForSearch(PageRequestDTO pageRequestDTO, Pageable pageable);
 }

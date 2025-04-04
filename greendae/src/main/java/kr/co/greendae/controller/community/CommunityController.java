@@ -133,7 +133,6 @@ public class CommunityController {
         model.addAttribute(articleDTO);
         model.addAttribute("isViewing", true);
 
-        // return "redirect:/community/freeboard";
         return "/community/notice";
     }
 
@@ -226,7 +225,7 @@ public class CommunityController {
     public String newswrite(ArticleDTO articleDTO) {
         HttpSession session = request.getSession();
         String cate = articleDTO.getCate();
-        //String cate = (String) session.getAttribute("cate");
+
 
         String regip = request.getRemoteAddr();
         articleDTO.setCate(cate);
@@ -270,7 +269,6 @@ public class CommunityController {
         model.addAttribute(articleDTO);
         model.addAttribute("isViewing", true);
 
-        // return "redirect:/community/freeboard";
         return "/community/news";
     }
 
@@ -315,18 +313,7 @@ public class CommunityController {
         // 리다이렉트 시 카테고리에 맞는 리스트 페이지로 이동
         return "redirect:/community/news";
 
-        /*
-        //서비스 호출
-
-        articleService.modifybasicArticle(articleDTO);
-
-        // 리다이렉트
-        return "redirect:/community/news";
-
-         */
     }
-
-
 
 
 
@@ -364,7 +351,7 @@ public class CommunityController {
         PageResponseDTO pageResponseDTO = articleService.findAll(pageRequestDTO, cate);
 
         model.addAttribute(pageResponseDTO);
-        model.addAttribute("isListing", true);  // isWriting=false로 설정하여 리스트 화면 표시
+        model.addAttribute("isListing", true);
 
         return "/community/employment";
     }
@@ -377,7 +364,7 @@ public class CommunityController {
         HttpSession session = request.getSession();
         session.setAttribute("cate", "employment");
 
-        model.addAttribute("isWriting", true);  // isWriting=true로 설정하여 글쓰기 화면 표시
+        model.addAttribute("isWriting", true);
         return "/community/employment";
     }
 
@@ -434,7 +421,6 @@ public class CommunityController {
         model.addAttribute(articleDTO);
         model.addAttribute("isViewing", true);
 
-        // return "redirect:/community/freeboard";
         return "/community/employment";
     }
 
@@ -473,9 +459,6 @@ public class CommunityController {
 
 
 
-
-
-
     // 자유게시판 검색
     @GetMapping("/freeboard/search")
     public String search(PageRequestDTO pageRequestDTO, Model model){
@@ -507,7 +490,6 @@ public class CommunityController {
         PageResponseDTO pageResponseDTO = articleService.findAll(pageRequestDTO, cate);
 
 
-        //model.addAttribute("articleDTOList", articleDTOList);
         //System.out.println(articleDTOList);
         model.addAttribute(pageResponseDTO);
         model.addAttribute("isListing", true);  // isWriting=false로 설정하여 리스트 화면 표시
@@ -520,7 +502,7 @@ public class CommunityController {
         HttpSession session = request.getSession();
         session.setAttribute("cate", "freeboard");
 
-        model.addAttribute("isWriting", true);  // isWriting=true로 설정하여 글쓰기 화면 표시
+        model.addAttribute("isWriting", true);
         return "/community/freeboard";  // freeboard.html을 렌더링하며 write.html 포함
     }
 
@@ -559,7 +541,6 @@ public class CommunityController {
     @GetMapping("/freeboard/view")
     public String view(Model model, int no){
 
-        System.out.println(no);
         // 글 조회 서비스 호출
         ArticleDTO articleDTO = articleService.findById(no);
         
@@ -572,7 +553,6 @@ public class CommunityController {
          model.addAttribute(articleDTO);
          model.addAttribute("isViewing", true);
 
-        // return "redirect:/community/freeboard";
         return "/community/freeboard";
     }
 
@@ -733,7 +713,7 @@ public class CommunityController {
         PageResponseDTO pageResponseDTO = articleService.findAll(pageRequestDTO, cate);
 
         model.addAttribute(pageResponseDTO);
-        model.addAttribute("isListing", true);  // isWriting=false로 설정하여 리스트 화면 표시
+        model.addAttribute("isListing", true);
 
         return "/community/data";
     }
@@ -744,7 +724,7 @@ public class CommunityController {
         HttpSession session = request.getSession();
         session.setAttribute("cate", "data");
 
-        model.addAttribute("isWriting", true);  // isWriting=true로 설정하여 글쓰기 화면 표시
+        model.addAttribute("isWriting", true);
         return "/community/data";
     }
 
@@ -796,7 +776,7 @@ public class CommunityController {
         model.addAttribute(articleDTO);
         model.addAttribute("isViewing", true);
 
-        // return "redirect:/community/freeboard";
+
         return "/community/data";
     }
 

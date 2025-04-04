@@ -17,4 +17,5 @@ public class Event {
     private int no;
     private String title;
     private String date;
+
 }

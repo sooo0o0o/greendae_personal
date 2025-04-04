@@ -101,7 +101,7 @@
     <nav>
         <form th:action="@{/community/notice/search}">
             <select name="searchType" style="padding: 6px;">
-                <option value="title">공지사항</option>
+                <option value="title">전체</option>
                 <option value="title">제목</option>
                 <option value="content">내용</option>
                 <option value="writer">글쓴이</option>
@@ -125,7 +125,7 @@
         </tr>
         <tr th:each="basicArticle, i:${pageResponseDTO.dtoList}">
             <td>[[${pageResponseDTO.startNo - i.index}]]</td>
-            <td><a th:href="@{/community/notice/view(no=${basicArticle.no})}"><img src="/images/ico-new01.gif" style="margin-right: 5px">[[${basicArticle.title}]]&#91;[[${basicArticle.comment}]]&#93;</a></td>
+            <td><a th:href="@{/community/notice/view(no=${basicArticle.no})}"><img th:if="${i.index < 2}" src="/images/ico-new01.gif" style="margin-right: 5px">[[${basicArticle.title}]]&#91;[[${basicArticle.comment}]]&#93;</a></td>
             <td>[[${basicArticle.user.name}]]</td>
             <td>[[${basicArticle.wdate}]]</td>
             <td>[[${basicArticle.hit}]]</td>
@@ -172,7 +172,7 @@
     <nav>
         <form th:action="@{/admission/adnotice/search}">
             <select name="searchType" style="padding: 6px;">
-                <option value="title">ad공지사항</option>
+                <option value="title">전체</option>
                 <option value="title">제목</option>
                 <option value="content">내용</option>
                 <option value="writer">글쓴이</option>
@@ -196,7 +196,7 @@
         </tr>
         <tr th:each="basicArticle, i:${pageResponseDTO.dtoList}">
             <td>[[${pageResponseDTO.startNo - i.index}]]</td>
-            <td><a th:href="@{/admission/adnotice/view(no=${basicArticle.no})}"><img src="/images/ico-new01.gif" style="margin-right: 5px">[[${basicArticle.title}]]&#91;[[${basicArticle.comment}]]&#93;</a></td>
+            <td><a th:href="@{/admission/adnotice/view(no=${basicArticle.no})}"><img th:if="${i.index < 2}" src="/images/ico-new01.gif" style="margin-right: 5px">[[${basicArticle.title}]]&#91;[[${basicArticle.comment}]]&#93;</a></td>
             <td>[[${basicArticle.user.name}]]</td>
             <td>[[${basicArticle.wdate}]]</td>
             <td>[[${basicArticle.hit}]]</td>
